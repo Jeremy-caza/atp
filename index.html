@@ -3,117 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vitrine Sport — Playground Live Preview</title>
+  <title>ATP — Vitrine</title>
   <style>
-    :root{
-      --brand:#1f4b3a;--bg:#0f3a2f;--text:#111;--accent:#1f4b3a;
-      --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
-      --font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif
-    }
+    :root{--brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;--font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;--font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif}
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
-    .toolbar{position:sticky;top:0;background:#161a22;padding:10px;display:flex;gap:.5rem;align-items:center;border-bottom:1px solid #222;z-index:10;color:#fff}
-    .toolbar button{border:1px solid #2a2f3a;background:transparent;color:#fff;padding:.4rem .7rem;border-radius:999px;cursor:pointer}
-    .toolbar button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-    .device{display:flex;justify-content:center;padding:16px}
-    .screen{background:#fff;color:#111;border:10px solid #111;border-radius:24px;width:375px;max-width:100%;height:720px;overflow-y:auto;overflow-x:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6)}
-    .screen.w-mobile{width:375px}
-    .screen.w-tablet{width:768px}
-    .screen.w-desktop{width:1200px}
 
-    /* HERO — contenu collé en bas, lisible, et 100% écran */
-    .hero{min-height:100svh;display:flex;justify-content:flex-end;align-items:center;padding:0 20px calc(env(safe-area-inset-bottom) + 1.5vh);background: url('atp/accueil.jpg') center/cover no-repeat;color:#fff;text-align:center;position:relative}
-    .hero-inner{width:min(1120px,96%);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;padding-bottom:0}
+    .hero{min-height:100svh;display:flex;justify-content:flex-end;align-items:center;padding:0 20px calc(env(safe-area-inset-bottom) + 1.5vh);background: linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/accueil.jpg') center/cover no-repeat;color:#fff;text-align:center}
+    .hero-inner{width:min(1120px,96%);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:18px}
     .hero h1{font-family:var(--font-display);font-size:28px;line-height:1.08;letter-spacing:-.01em;margin:0;color:#fff;max-width:100%;text-wrap:balance;overflow-wrap:anywhere}
-    .hero p{font-family:var(--font-text);font-size:clamp(16px,2.4vw,20px);margin:4px 0 8px;color:#fff;max-width:42ch}
+    .hero p{font-family:var(--font-text);font-size:18px;margin:4px 0 8px;color:#fff;max-width:42ch}
     .cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:4px}
     .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
     .badges{margin:6px 0 2px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
     .badge{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.55);color:#fff}
 
-    .section{padding:36px 20px;text-align:center}
-    .section h2{margin:0 0 14px;font-size:28px;color:var(--brand);font-family:var(--font-display)}
-    .section p{max-width:900px;margin:0 auto 14px;text-align:justify;color:#111;font-size:16px;font-family:var(--font-text)}
+    .section{padding:24px 16px;text-align:center}
+    .section .wrap{width:min(1120px,96%);margin:0 auto}
+    .section h2{margin:0 0 12px;font-size:26px;color:var(--brand);font-family:var(--font-display)}
+    .section p{max-width:900px;margin:0 auto 12px;text-align:justify;color:#111;font-size:16px}
 
-    .embed{width:100%;max-width:900px;margin:12px auto 0;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden}
+    .try-wrap{display:grid;gap:16px;align-items:start}
+    .try-text{order:1}
+    .try-embed{order:2}
+    .calendly-inline-widget{width:100%;min-height:620px;border-radius:12px;overflow:hidden}
+
+    @media (min-width:900px){
+      .section{padding:32px 20px}
+      .try-wrap{grid-template-columns:1fr 1fr;gap:24px}
+      .try-text{padding-right:4px}
+      .try-embed{padding-left:4px}
+      .hero h1{font-size:36px}
+      .hero p{font-size:20px}
+    }
+    @media (min-width:1200px){
+      .hero h1{font-size:44px}
+    }
+
+    #team .center-btn{display:flex;justify-content:center;margin-top:24px}
+    #video .center-btn{display:flex;justify-content:center;margin-top:28px}
+    .embed{width:100%;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden}
     .embed iframe{width:100%;height:100%;border:0}
 
-    .small-note{font-size:16px;color:#111}
-    .center-btn{display:flex;justify-content:center;margin-top:16px}
-    #video .center-btn{margin-top:28px}
-    footer{padding:20px;font-size:12px;color:#111;background:#f8fafc;text-align:center}
-
-    /* Fix du débordement horizontal sur petits écrans */
-    @media (max-width:480px){
-      .hero{padding:0 16px calc(env(safe-area-inset-bottom) + 1.2vh)}
-    }
-    #screen.w-mobile .hero h1{white-space:normal;font-size:28px}
-    #screen.w-tablet .hero h1{white-space:nowrap;font-size:36px}
-    #screen.w-desktop .hero h1{white-space:nowrap;font-size:42px}
   </style>
 </head>
 <body>
-  <div class="toolbar">
-    <strong>Prévisualiser :</strong>
-    <button data-size="mobile" class="active">Mobile</button>
-    <button data-size="tablet">Tablet</button>
-    <button data-size="desktop">Desktop</button>
-  </div>
-  <div class="device">
-    <div id="screen" class="screen w-mobile">
-      <section class="hero">
-        <div class="hero-inner">
-          <h1>ATHLETIC TRAINING PERFORMANCE</h1>
-          <p>ATP... Une salle ATYPIQUE</p>
-          <div class="cta-row">
-            <a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver un essai</a>
-          </div>
-          <div class="badges">
-            <span class="badge">Motivation+</span>
-            <span class="badge">Essai offert</span>
-            <span class="badge">Avis 4.9★</span>
-          </div>
-        </div>
-      </section>
 
-      <section class="section">
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>ATHLETIC TRAINING PERFORMANCE</h1>
+      <p>ATP... Une salle ATYPIQUE</p>
+      <div class="cta-row">
+        <a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver un essai</a>
+      </div>
+      <div class="badges">
+        <span class="badge">Motivation+</span>
+        <span class="badge">Essai offert</span>
+        <span class="badge">Avis 4.9★</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="try">
+    <div class="wrap try-wrap">
+      <div class="try-text">
         <h2>SÉANCE D'ESSAI OFFERTE</h2>
-        <p class="small-note">À ATP, profitez d’une semaine d’essai 100% gratuite. Testez plusieurs cours : ATP Class (renfo fonctionnel), Team Running, Team Cardio (HIIT/HEAT), Barbell Club (technique & charges) et Gainage. Réservez votre première séance ci-dessous ; sur place, on vous propose facilement d’autres créneaux d’essai dans la semaine.</p>
-<div class="calendly-inline-widget" data-url="https://calendly.com/atp-seancedessaie/seancedessaie?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      </section>
+        <p>À ATP, profitez d’une semaine d’essai 100% gratuite. Testez plusieurs cours : ATP Class (renfo fonctionnel), Team Running, Team Cardio (HIIT/HEAT), Barbell Club (technique & charges) et Gainage. Réservez votre première séance ci-dessous ; sur place, on vous propose facilement d’autres créneaux d’essai dans la semaine.</p>
+      </div>
+      <div class="try-embed">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/atp-seancedessaie/seancedessaie?hide_event_type_details=1&hide_gdpr_banner=1" style="height:700px;"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </section>
 
-      <section class="section" id="team">
-        <h2>L'ÉQUIPE ATP</h2>
-        <p>ATP, c’est ATyPique.
+  <section class="section" id="team">
+    <div class="wrap">
+      <h2>L'ÉQUIPE ATP</h2>
+      <p>ATP, c’est ATyPique.
 Fondée en 2018 à Tarbes par Mathieu, et co-dirigée avec Louis, tous deux diplômés Master STAPS, ATP propose l’entraînement fonctionnel : ni musculation “bodybuilding”, ni CrossFit® un travail intelligent pour bouger mieux au quotidien.
 Notre devise : « C’est le moteur qui compte, avant la carrosserie ! » Ici, on renforce le corps entier avec des charges libres, du cardio, du running, du barbell et du gainage, pour améliorer santé, posture, mobilité et endurance, tout en réduisant le risque de blessure.
 Fort de +15 ans d’expérience cumulée et de 1500+ sportifs accompagnés (du débutant à l’athlète), notre coaching reste simple, efficace et sûr : vous progressez là où ça compte vraiment, dans la vie comme dans le sport.</p>
-        <p class="center-btn"><a class="cta" href="equipeatp.html">Découvrir l’équipe</a></p>
-      </section>
-
-      <section class="section" id="video">
-        <h2>NOUS LES LAISSONS EUX-MÊMES EN PARLER</h2>
-        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/ml9NR9tplp4?si=47LFhd6ODBgPGRrp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <p class="center-btn"><a class="cta" href="avis.html">Voir les Avis d'ATP</a></p>
-      </section>
-
-      <footer>
-        © 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a>
-      </footer>
+      <p class="center-btn"><a class="cta" href="equipeatp.html">Découvrir l’équipe</a></p>
     </div>
-  </div>
-  <script>
-    const screen=document.getElementById('screen');
-    const btns=document.querySelectorAll('.toolbar button');
-    btns.forEach(b=>{
-      b.addEventListener('click',()=>{
-        btns.forEach(x=>x.classList.remove('active'));
-        b.classList.add('active');
-        screen.classList.remove('w-mobile','w-tablet','w-desktop');
-        screen.classList.add('w-'+b.dataset.size);
-      });
-    });
-  </script>
+  </section>
+
+  <section class="section" id="video">
+    <div class="wrap">
+      <h2>NOUS LES LAISSONS EUX-MÊMES EN PARLER</h2>
+      <div class="embed"><iframe src="https://www.youtube.com/embed/ml9NR9tplp4?si=47LFhd6ODBgPGRrp" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <p class="center-btn"><a class="cta" href="avis.html">Voir les Avis d'ATP</a></p>
+    </div>
+  </section>
+
+  <footer class="section" style="background:#f8fafc">
+    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+  </footer>
+
 </body>
 </html>
