@@ -9,42 +9,50 @@
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
 
-    .hero{min-height:100svh;display:flex;justify-content:flex-end;align-items:center;padding:0 20px calc(env(safe-area-inset-bottom) + 1.5vh);background: linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/accueil.jpg') center/cover no-repeat;color:#fff;text-align:center}
-    .hero-inner{width:min(1120px,96%);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:18px}
+    /* HERO */
+    .hero{position:relative;min-height:100svh;background:linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/accueil.jpg') center/cover no-repeat;color:#fff;text-align:center}
+    .hero-inner{position:absolute;left:50%;transform:translateX(-50%);bottom:2.2vh;width:min(1120px,96%);display:flex;flex-direction:column;align-items:center;gap:12px}
     .hero h1{font-family:var(--font-display);font-size:28px;line-height:1.08;letter-spacing:-.01em;margin:0;color:#fff;max-width:100%;text-wrap:balance;overflow-wrap:anywhere}
-    .hero p{font-family:var(--font-text);font-size:18px;margin:4px 0 8px;color:#fff;max-width:42ch}
-    .cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:4px}
+    .hero p{font-family:var(--font-text);font-size:18px;margin:2px 0 6px;color:#fff;max-width:44ch}
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:0}
     .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
-    .badges{margin:6px 0 2px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+    .badges{margin:4px 0 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
     .badge{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.55);color:#fff}
 
-    .section{padding:24px 16px;text-align:center}
-    .section .wrap{width:min(1120px,96%);margin:0 auto}
-    .section h2{margin:0 0 12px;font-size:26px;color:var(--brand);font-family:var(--font-display)}
-    .section p{max-width:900px;margin:0 auto 12px;text-align:justify;color:#111;font-size:16px}
+    /* SECTIONS */
+    .section{padding:20px 16px;text-align:center}
+    .section .wrap{width:min(1200px,96%);margin:0 auto}
+    .section h2{margin:0 0 10px;font-size:26px;color:var(--brand);font-family:var(--font-display)}
+    .section p{max-width:min(1100px,92%);margin:0 auto 10px;text-align:justify;color:#111;font-size:17px;line-height:1.6}
 
-    .try-wrap{display:grid;gap:16px;align-items:start}
+    /* ESSAI (texte + Calendly côte à côte) */
+    .try-wrap{display:grid;gap:18px;align-items:center}
     .try-text{order:1}
     .try-embed{order:2}
     .calendly-inline-widget{width:100%;min-height:620px;border-radius:12px;overflow:hidden}
 
+    /* ÉQUIPE */
+    #team .center-btn{display:flex;justify-content:center;margin-top:22px}
+
+    /* VIDÉO */
+    #video .center-btn{display:flex;justify-content:center;margin-top:24px}
+    .embed{width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden}
+    .embed iframe{width:100%;height:100%;border:0}
+
+    /* WAVES (séparateurs) */
+    .sep-wave{height:70px}
+    .sep-wave svg{display:block;width:100%;height:70px}
+
+    /* RESPONSIVE */
     @media (min-width:900px){
-      .section{padding:32px 20px}
-      .try-wrap{grid-template-columns:1fr 1fr;gap:24px}
-      .try-text{padding-right:4px}
-      .try-embed{padding-left:4px}
+      .section{padding:28px 20px}
+      .try-wrap{grid-template-columns:1.05fr .95fr;gap:28px}
       .hero h1{font-size:36px}
       .hero p{font-size:20px}
     }
     @media (min-width:1200px){
       .hero h1{font-size:44px}
     }
-
-    #team .center-btn{display:flex;justify-content:center;margin-top:24px}
-    #video .center-btn{display:flex;justify-content:center;margin-top:28px}
-    .embed{width:100%;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden}
-    .embed iframe{width:100%;height:100%;border:0}
-
   </style>
 </head>
 <body>
@@ -77,13 +85,14 @@
     </div>
   </section>
 
+  <div class="sep-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+  </div>
+
   <section class="section" id="team">
     <div class="wrap">
       <h2>L'ÉQUIPE ATP</h2>
-      <p>ATP, c’est ATyPique.
-Fondée en 2018 à Tarbes par Mathieu, et co-dirigée avec Louis, tous deux diplômés Master STAPS, ATP propose l’entraînement fonctionnel : ni musculation “bodybuilding”, ni CrossFit® un travail intelligent pour bouger mieux au quotidien.
-Notre devise : « C’est le moteur qui compte, avant la carrosserie ! » Ici, on renforce le corps entier avec des charges libres, du cardio, du running, du barbell et du gainage, pour améliorer santé, posture, mobilité et endurance, tout en réduisant le risque de blessure.
-Fort de +15 ans d’expérience cumulée et de 1500+ sportifs accompagnés (du débutant à l’athlète), notre coaching reste simple, efficace et sûr : vous progressez là où ça compte vraiment, dans la vie comme dans le sport.</p>
+      <p>ATP, c’est ATyPique. Fondée en 2018 à Tarbes par Mathieu, et co-dirigée avec Louis, tous deux diplômés Master STAPS, ATP propose l’entraînement fonctionnel : ni musculation “bodybuilding”, ni CrossFit® – un travail intelligent pour bouger mieux au quotidien. Notre devise : « C’est le moteur qui compte, avant la carrosserie ! » Ici, on renforce le corps entier avec des charges libres, du cardio, du running, du barbell et du gainage, pour améliorer santé, posture, mobilité et endurance, tout en réduisant le risque de blessure. Fort de +15 ans d’expérience cumulée et de 1500+ sportifs accompagnés (du débutant à l’athlète), notre coaching reste simple, efficace et sûr : vous progressez là où ça compte vraiment, dans la vie comme dans le sport.</p>
       <p class="center-btn"><a class="cta" href="equipeatp.html">Découvrir l’équipe</a></p>
     </div>
   </section>
@@ -95,6 +104,10 @@ Fort de +15 ans d’expérience cumulée et de 1500+ sportifs accompagnés (du d
       <p class="center-btn"><a class="cta" href="avis.html">Voir les Avis d'ATP</a></p>
     </div>
   </section>
+
+  <div class="sep-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+  </div>
 
   <footer class="section" style="background:#f8fafc">
     <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
