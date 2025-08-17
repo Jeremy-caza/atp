@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarifs — ATP</title>
+  <style>
+    :root{
+      --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
+      --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
+      --font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
+
+    /* ===== Header / Nav ===== */
+    .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);z-index:50}
+    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand-logo{height:36px;display:block}
+    .desktop-nav{display:none;gap:6px}
+    .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
+    .desktop-nav a:hover{background:rgba(255,255,255,.12)}
+    .desktop-nav a.active{background:rgba(255,255,255,.16)}
+    .burger{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:12px;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+    .burger .bar{position:relative;display:block;width:24px;height:3px;background:#fff;border-radius:2px}
+    .burger .bar::before,.burger .bar::after{content:"";position:absolute;left:50%;top:50%;width:24px;height:3px;background:#fff;border-radius:2px;transform:translate(-50%,-50%)}
+    .burger .bar::before{transform:translate(-50%,-50%) translateY(-7px)}
+    .burger .bar::after{transform:translate(-50%,-50%) translateY(7px)}
+    body.menu-open .burger .bar{background:transparent}
+    body.menu-open .burger .bar::before{transform:translate(-50%,-50%) rotate(45deg)}
+    body.menu-open .burger .bar::after{transform:translate(-50%,-50%) rotate(-45deg)}
+    .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+    .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
+    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
+    .mobile-menu a:hover{background:rgba(255,255,255,.12)}
+    .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:55}
+    body.menu-open .mobile-menu{transform:translateX(0)}
+    body.menu-open .backdrop{opacity:1;pointer-events:auto}
+    body.menu-open{overflow:hidden}
+
+    @media (min-width:900px){
+      .desktop-nav{display:flex}
+      .burger{display:none}
+      .mobile-menu,.backdrop{display:none}
+    }
+
+    main{display:block;padding-top:64px}
+
+    /* ===== Hero ===== */
+    .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/tarifs.jpg') center/cover no-repeat}
+    .hero h1{font-family:var(--font-display);font-size:clamp(36px,5.5vw,72px);margin:0;color:#fff;text-shadow:none}
+
+    /* ===== Sections ===== */
+    .section{padding:24px 16px;text-align:center}
+    .wrap{width:min(1200px,96%);margin:0 auto}
+    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand);font-family:var(--font-display)}
+    .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.85}
+
+    /* ===== Blocs tarifs (non cliquables) ===== */
+    .prices{display:grid;gap:20px;margin-top:8px}
+    .price-card{border:4px solid var(--brand);border-radius:22px;padding:18px 18px 22px;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.06)}
+    .price-card .label{font-family:var(--font-display);font-weight:700;font-size:20px;margin-bottom:6px;color:#222}
+    .price-card .amount{font-family:var(--font-display);font-weight:900;font-size:44px;letter-spacing:-.01em;color:var(--brand)}
+    .price-card .amount span{font-weight:800;font-size:.48em;margin-left:6px}
+    .price-card.featured{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .price-card.featured .label{color:#fff}
+    .price-card.featured .amount{color:#fff}
+
+    @media (min-width:900px){
+      .prices.grid-3{grid-template-columns:repeat(3,1fr)}
+    }
+
+    .prices h3{grid-column:1/-1;margin:8px 0 0;font-size:26px;color:#111;font-family:var(--font-display)}
+
+    .tarif-notes{margin:18px auto 0;max-width:min(1100px,92%);text-align:justify}
+    .center-btn{display:flex;justify-content:center;margin-top:22px}
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+
+    /* ===== Medias 3 images ===== */
+    .media-row{display:grid;gap:14px;margin-top:6px}
+    .media-row .item{aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#f1f5f9}
+    .media-row img{display:block;width:100%;height:100%;object-fit:cover}
+    @media (min-width:900px){.media-row{grid-template-columns:repeat(3,1fr)}}
+
+    /* ===== Galerie 8 photos (2 x 4) ===== */
+    .gallery{display:grid;gap:10px}
+    .gallery .ph{aspect-ratio:1/1;background:#f2f4f7;border-radius:10px;overflow:hidden}
+    .gallery .ph img{display:block;width:100%;height:100%;object-fit:cover}
+    @media (min-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:1024px){.gallery{grid-template-columns:repeat(4,1fr)}}
+
+    /* ===== Waves & footer ===== */
+    .sep-wave{height:70px}
+    .sep-wave svg{display:block;width:100%;height:70px}
+    footer.section{background:#f8fafc}
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.jpeg" alt="Accueil ATP"></a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="equipeatp.html">Équipe ATP</a>
+        <a href="avis.html">Avis</a>
+        <a href="planning.html">Planning</a>
+        <a href="salle.html">Salle</a>
+        <a class="active" href="tarifs.html">Tarifs</a>
+      </nav>
+      <button id="menuBtn" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu"><span class="bar" aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html">Accueil</a>
+    <a href="equipeatp.html">Équipe ATP</a>
+    <a href="avis.html">Avis</a>
+    <a href="planning.html">Planning</a>
+    <a href="salle.html">Salle</a>
+    <a class="active" href="tarifs.html">Tarifs</a>
+  </nav>
+  <div id="backdrop" class="backdrop" hidden></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero"><h1>Tarifs</h1></section>
+
+    <!-- TARIFS BLOCS -->
+    <section class="section" id="tarifs">
+      <div class="wrap">
+        <div class="prices grid-3" aria-label="Abonnements">
+          <div class="price-card">
+            <div class="label">Abonnement 12 mois</div>
+            <div class="amount">65€<span>/mois</span></div>
+          </div>
+          <div class="price-card featured" aria-label="Plus populaire">
+            <div class="label">Abonnement 6 mois (plus populaire)</div>
+            <div class="amount">75€<span>/mois</span></div>
+          </div>
+          <div class="price-card">
+            <div class="label">Abonnement 3 mois</div>
+            <div class="amount">85€<span>/mois</span></div>
+          </div>
+
+          <h3>Séances</h3>
+          <div class="price-card">
+            <div class="label">Carnet avec 10 séances</div>
+            <div class="amount">120€</div>
+          </div>
+          <div class="price-card">
+            <div class="label">Carnet avec 20 séances</div>
+            <div class="amount">190€</div>
+          </div>
+          <div class="price-card">
+            <div class="label">Carnet avec 30 séances</div>
+            <div class="amount">210€</div>
+          </div>
+        </div>
+
+        <!-- Zone texte à remplir (réductions, conditions…) -->
+        <div class="tarif-notes">
+          <p><em>Ajoute ici tes précisions : réductions étudiants/métiers, modalités de paiement, conditions d’engagement, etc.</em></p>
+        </div>
+        <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
+      </div>
+    </section>
+
+    <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
+
+    <!-- MÉDIAS (3 images) -->
+    <section class="section" id="medias">
+      <div class="wrap">
+        <h2>Médias</h2>
+        <div class="media-row">
+          <div class="item"><img src="atp/media-1.jpg" alt="Média 1"></div>
+          <div class="item"><img src="atp/media-2.jpg" alt="Média 2"></div>
+          <div class="item"><img src="atp/media-3.jpg" alt="Média 3"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
+
+    <!-- GALERIE 8 PHOTOS -->
+    <section class="section" id="galerie">
+      <div class="wrap">
+        <h2>Galerie photo</h2>
+        <div class="gallery">
+          <div class="ph"><img src="atp/gal-01.jpg" alt="Galerie 1"></div>
+          <div class="ph"><img src="atp/gal-02.jpg" alt="Galerie 2"></div>
+          <div class="ph"><img src="atp/gal-03.jpg" alt="Galerie 3"></div>
+          <div class="ph"><img src="atp/gal-04.jpg" alt="Galerie 4"></div>
+          <div class="ph"><img src="atp/gal-05.jpg" alt="Galerie 5"></div>
+          <div class="ph"><img src="atp/gal-06.jpg" alt="Galerie 6"></div>
+          <div class="ph"><img src="atp/gal-07.jpg" alt="Galerie 7"></div>
+          <div class="ph"><img src="atp/gal-08.jpg" alt="Galerie 8"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="section">
+    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+  </footer>
+
+  <script>
+    const body=document.body;const btn=document.getElementById('menuBtn');const menu=document.getElementById('mobileMenu');const backdrop=document.getElementById('backdrop');
+    const openMenu=()=>{body.classList.add('menu-open');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label','Fermer le menu');menu.setAttribute('aria-hidden','false');backdrop.hidden=false};
+    const closeMenu=()=>{body.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Ouvrir le menu');menu.setAttribute('aria-hidden','true');backdrop.hidden=true};
+    btn.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu()});
+    backdrop.addEventListener('click',closeMenu);menu.addEventListener('click',e=>{if(e.target.tagName==='A') closeMenu()});document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu()});
+  </script>
+</body>
+</html>
