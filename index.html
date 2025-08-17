@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ATP Tarbes</title>
+  <title>ATP — Vitrine</title>
   <style>
     :root{
       --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
@@ -21,9 +21,16 @@
     .desktop-nav{display:none;gap:6px}
     .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
     .desktop-nav a:hover{background:rgba(255,255,255,.12)}
-    .burger{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:var(--brand);cursor:pointer}
-    .burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-    .burger span+span{margin-top:5px}
+    .burger{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:12px;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+    .burger .bar{position:relative;display:block;width:24px;height:3px;background:#fff;border-radius:2px}
+    .burger .bar::before,.burger .bar::after{content:"";position:absolute;left:50%;top:50%;width:24px;height:3px;background:#fff;border-radius:2px;transform:translate(-50%,-50%)}
+    .burger .bar::before{transform:translate(-50%,-50%) translateY(-7px)}
+    .burger .bar::after{transform:translate(-50%,-50%) translateY(7px)}
+    body.menu-open .burger .bar{background:transparent}
+    body.menu-open .burger .bar::before{transform:translate(-50%,-50%) rotate(45deg)}
+    body.menu-open .burger .bar::after{transform:translate(-50%,-50%) rotate(-45deg)}
+    .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    
 
     .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
     .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
@@ -106,9 +113,7 @@
         <a href="#">Salle</a>
         <a href="#">Tarifs</a>
       </nav>
-      <button id="menuBtn" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+      <button id="menuBtn" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu"><span class="bar" aria-hidden="true"></span></button>
     </div>
   </header>
 
@@ -186,8 +191,8 @@
     const btn=document.getElementById('menuBtn');
     const menu=document.getElementById('mobileMenu');
     const backdrop=document.getElementById('backdrop');
-    const openMenu=()=>{body.classList.add('menu-open');btn.setAttribute('aria-expanded','true');menu.setAttribute('aria-hidden','false');backdrop.hidden=false};
-    const closeMenu=()=>{body.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');menu.setAttribute('aria-hidden','true');backdrop.hidden=true};
+    const openMenu=()=>{body.classList.add('menu-open');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label','Fermer le menu');menu.setAttribute('aria-hidden','false');backdrop.hidden=false};
+    const closeMenu=()=>{body.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Ouvrir le menu');menu.setAttribute('aria-hidden','true');backdrop.hidden=true};
     btn.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu()});
     backdrop.addEventListener('click',closeMenu);
     menu.addEventListener('click',e=>{if(e.target.tagName==='A') closeMenu()});
