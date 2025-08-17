@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planning — ATP</title>
+  <style>
+    :root{
+      --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
+      --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
+      --font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
+
+    /* ===== Header / Nav ===== */
+    .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);z-index:50}
+    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand-logo{height:36px;display:block}
+    .desktop-nav{display:none;gap:6px}
+    .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
+    .desktop-nav a:hover{background:rgba(255,255,255,.12)}
+    .desktop-nav a.active{background:rgba(255,255,255,.16)}
+    .burger{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:12px;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+    .burger .bar{position:relative;display:block;width:24px;height:3px;background:#fff;border-radius:2px}
+    .burger .bar::before,.burger .bar::after{content:"";position:absolute;left:50%;top:50%;width:24px;height:3px;background:#fff;border-radius:2px;transform:translate(-50%,-50%)}
+    .burger .bar::before{transform:translate(-50%,-50%) translateY(-7px)}
+    .burger .bar::after{transform:translate(-50%,-50%) translateY(7px)}
+    body.menu-open .burger .bar{background:transparent}
+    body.menu-open .burger .bar::before{transform:translate(-50%,-50%) rotate(45deg)}
+    body.menu-open .burger .bar::after{transform:translate(-50%,-50%) rotate(-45deg)}
+    .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+    .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
+    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
+    .mobile-menu a:hover{background:rgba(255,255,255,.12)}
+    .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:55}
+    body.menu-open .mobile-menu{transform:translateX(0)}
+    body.menu-open .backdrop{opacity:1;pointer-events:auto}
+    body.menu-open{overflow:hidden}
+
+    @media (min-width:900px){
+      .desktop-nav{display:flex}
+      .burger{display:none}
+      .mobile-menu,.backdrop{display:none}
+    }
+
+    main{display:block;padding-top:64px}
+
+    /* ===== Hero ===== */
+    .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/planning-hero.jpg') center/cover no-repeat}
+    .hero h1{font-family:var(--font-display);font-size:clamp(34px,5.5vw,68px);margin:0;color:#fff;text-shadow:none}
+    .hero-badges{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);display:flex;gap:10px;flex-wrap:wrap}
+    .hero-badges .chip{color:#fff;border:1px solid rgba(255,255,255,.6);padding:6px 12px;border-radius:999px;font-weight:700}
+
+    /* ===== Sections ===== */
+    .section{padding:24px 16px;text-align:center}
+    .wrap{width:min(1200px,96%);margin:0 auto}
+    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand);font-family:var(--font-display)}
+    .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.85}
+
+    /* ===== Cartes cours (5 types) ===== */
+    .cards{display:grid;gap:16px}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.06);overflow:hidden;text-align:left}
+    .card .media{aspect-ratio:1/1;background:#f2f4f7}
+    .card .media img{display:block;width:100%;height:100%;object-fit:cover}
+    .card .body{padding:14px}
+    .card h3{margin:0 0 6px;font-size:20px;color:var(--brand);font-family:var(--font-display)}
+    .card p{margin:0;font-size:16px;line-height:1.6;text-align:justify}
+
+    @media (min-width:720px){
+      .cards{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (min-width:1040px){
+      .cards{grid-template-columns:repeat(5,1fr)}
+    }
+
+    /* ===== Embed image (planning) ===== */
+    .embed-img{width:100%;max-width:900px;margin:0 auto;border-radius:12px;overflow:hidden;background:#f1f5f9}
+    .embed-img img{display:block;width:100%;height:auto}
+
+    /* ===== Bouton ===== */
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+    .center-btn{display:flex;justify-content:center;margin-top:24px}
+
+    /* ===== Waves ===== */
+    .sep-wave{height:70px}
+    .sep-wave svg{display:block;width:100%;height:70px}
+
+    footer.section{background:#f8fafc}
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.jpeg" alt="Accueil ATP"></a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="equipeatp.html">Équipe ATP</a>
+        <a href="avis.html">Avis</a>
+        <a class="active" href="planning.html">Planning</a>
+        <a href="salle.html">Salle</a>
+        <a href="tarifs.html">Tarifs</a>
+      </nav>
+      <button id="menuBtn" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu"><span class="bar" aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html">Accueil</a>
+    <a href="equipeatp.html">Équipe ATP</a>
+    <a href="avis.html">Avis</a>
+    <a class="active" href="planning.html">Planning</a>
+    <a href="salle.html">Salle</a>
+    <a href="tarifs.html">Tarifs</a>
+  </nav>
+  <div id="backdrop" class="backdrop" hidden></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Planning</h1>
+      <div class="hero-badges">
+        <span class="chip">Lun → Sam</span>
+        <span class="chip">Matin</span>
+        <span class="chip">Midi</span>
+        <span class="chip">Soir</span>
+      </div>
+    </section>
+
+    <!-- INTRO TEXTE -->
+    <section class="section" id="intro">
+      <div class="wrap">
+        <h2>Comment fonctionne le planning ?</h2>
+        <p>Nous organisons la semaine autour de 5 formats complémentaires : <strong>ATP Class</strong>, <strong>Team Running</strong>, <strong>Team Cardio</strong>, <strong>Barbell Club</strong> et <strong>Gainage</strong>. L’objectif : te proposer des créneaux réguliers et lisibles, pour t’entraîner quand c’est le plus simple pour toi — matin, midi ou soir.</p>
+        <p>Tu peux démarrer quand tu veux : choisis un créneau d’essai, viens découvrir une séance et on t’aide à bâtir une routine efficace et durable. Tout est pensé pour progresser sans se blesser, dans une ambiance motivante.</p>
+      </div>
+    </section>
+
+    <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
+
+    <!-- 5 TYPES DE COURS -->
+    <section class="section" id="cours">
+      <div class="wrap">
+        <h2>Les 5 formats de cours</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="media"><img src="atp/cours-atpclass.jpg" alt="ATP Class"></div>
+            <div class="body"><h3>ATP Class</h3><p>Renforcement fonctionnel complet : force, cardio, mobilité. Adapté à tous les niveaux avec coaching personnalisé.</p></div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="atp/cours-running.jpg" alt="Team Running"></div>
+            <div class="body"><h3>Team Running</h3><p>Sorties et séances structurées pour progresser en endurance, vitesse et technique de course.</p></div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="atp/cours-cardio.jpg" alt="Team Cardio"></div>
+            <div class="body"><h3>Team Cardio</h3><p>HIIT/HEAT pour booster le cœur et le métabolisme. Intensité modulable, résultats rapides.</p></div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="atp/cours-barbell.jpg" alt="Barbell Club"></div>
+            <div class="body"><h3>Barbell Club</h3><p>Technique et charges libres : apprendre à bouger lourd en sécurité, et gagner en force utile.</p></div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="atp/cours-gainage.jpg" alt="Gainage"></div>
+            <div class="body"><h3>Gainage</h3><p>Tronc solide, posture et prévention des blessures : le socle qui fait tout le reste.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
+
+    <!-- SCHÉMA / IMAGE DE PLANNING -->
+    <section class="section" id="schema">
+      <div class="wrap">
+        <h2>Le planning en un coup d’œil</h2>
+        <div class="embed-img"><img src="atp/planning-schema.jpg" alt="Schéma du planning (remplace l'image par la tienne)"></div>
+        <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="section">
+    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+  </footer>
+
+  <script>
+    const body=document.body;const btn=document.getElementById('menuBtn');const menu=document.getElementById('mobileMenu');const backdrop=document.getElementById('backdrop');
+    const openMenu=()=>{body.classList.add('menu-open');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label','Fermer le menu');menu.setAttribute('aria-hidden','false');backdrop.hidden=false};
+    const closeMenu=()=>{body.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Ouvrir le menu');menu.setAttribute('aria-hidden','true');backdrop.hidden=true};
+    btn.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu()});
+    backdrop.addEventListener('click',closeMenu);menu.addEventListener('click',e=>{if(e.target.tagName==='A') closeMenu()});document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu()});
+  </script>
+</body>
+</html>
