@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Équipe ATP</title>
+  <style>
+    :root{
+      --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
+      --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
+      --font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
+
+    /* ===== Header / Nav (copié depuis l'index pour cohérence) ===== */
+    .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);border-bottom:none;z-index:50}
+    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:block}
+    .brand-logo{height:36px;display:block}
+    .desktop-nav{display:none;gap:6px}
+    .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
+    .desktop-nav a:hover{background:rgba(255,255,255,.12)}
+    .desktop-nav a.active{background:rgba(255,255,255,.16)}
+    .burger{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:12px;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+    .burger .bar{position:relative;display:block;width:24px;height:3px;background:#fff;border-radius:2px}
+    .burger .bar::before,.burger .bar::after{content:"";position:absolute;left:50%;top:50%;width:24px;height:3px;background:#fff;border-radius:2px;transform:translate(-50%,-50%)}
+    .burger .bar::before{transform:translate(-50%,-50%) translateY(-7px)}
+    .burger .bar::after{transform:translate(-50%,-50%) translateY(7px)}
+    body.menu-open .burger .bar{background:transparent}
+    body.menu-open .burger .bar::before{transform:translate(-50%,-50%) rotate(45deg)}
+    body.menu-open .burger .bar::after{transform:translate(-50%,-50%) rotate(-45deg)}
+    .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+    .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
+    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
+    .mobile-menu a:hover{background:rgba(255,255,255,.12)}
+    .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:55}
+    body.menu-open .mobile-menu{transform:translateX(0)}
+    body.menu-open .backdrop{opacity:1;pointer-events:auto}
+    body.menu-open{overflow:hidden}
+
+    @media (min-width:900px){
+      .desktop-nav{display:flex}
+      .burger{display:none}
+      .mobile-menu,.backdrop{display:none}
+    }
+
+    /* ===== Hero plein écran ===== */
+    main{display:block;padding-top:64px}
+    .hero{min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:url('atp/equipe-hero.jpg') center/cover no-repeat}
+    .hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,64px);margin:0;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+
+    /* ===== Bios (Mathieu / Louis) ===== */
+    .section{padding:24px 16px;text-align:center}
+    .wrap{width:min(1200px,96%);margin:0 auto}
+    .section h2{margin:0 0 14px;font-size:28px;color:var(--brand);font-family:var(--font-display)}
+    .bios{display:grid;gap:28px}
+    .bio{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;text-align:left}
+    .bio-img{border-radius:16px;overflow:hidden;background:#f2f4f7}
+    .bio-img img{display:block;width:100%;height:auto}
+    .bio h3{margin:0 0 8px;font-size:22px;color:var(--brand);font-family:var(--font-display)}
+    .bio p{margin:0;font-size:17px;line-height:1.7}
+    .bio.reverse .bio-img{order:2}
+
+    @media (min-width:900px){
+      .section{padding:32px 20px}
+      .bios{gap:36px}
+      .bio{grid-template-columns:1fr 1fr;gap:26px}
+    }
+
+    /* ===== Embed vidéo (même taille que l'index) ===== */
+    .embed{width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden}
+    .embed iframe{width:100%;height:100%;border:0}
+
+    /* ===== Séparateurs wave ===== */
+    .sep-wave{height:70px}
+    .sep-wave svg{display:block;width:100%;height:70px}
+
+    /* ===== Footer (même que l'index) ===== */
+    footer.section{background:#f8fafc}
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.jpg" alt="Accueil ATP"></a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a class="active" href="equipeatp.html">Équipe ATP</a>
+        <a href="#">Avis</a>
+        <a href="#">Planning</a>
+        <a href="#">Salle</a>
+        <a href="#">Tarifs</a>
+      </nav>
+      <button id="menuBtn" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu"><span class="bar" aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html">Accueil</a>
+    <a class="active" href="equipeatp.html">Équipe ATP</a>
+    <a href="#">Avis</a>
+    <a href="#">Planning</a>
+    <a href="#">Salle</a>
+    <a href="#">Tarifs</a>
+  </nav>
+  <div id="backdrop" class="backdrop" hidden></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Équipe ATP</h1>
+    </section>
+
+    <!-- BIOS -->
+    <section class="section" id="bios">
+      <div class="wrap bios">
+        <!-- Mathieu -->
+        <article class="bio">
+          <div class="bio-img"><img src="atp/mathieu.jpg" alt="Mathieu — Coach ATP"></div>
+          <div class="bio-text">
+            <h3>Mathieu</h3>
+            <p>Mathieu est le fondateur et gérant d’ATP depuis 2018. Diplômé d’un Master STAPS (Bac+5), spécialité préparation physique et mentale en 2015, il a construit son expertise sur le terrain : salle de CrossFit, club de rugby, coaching privé, préparation de sportifs individuels et accompagnement au sein d’un centre de formation de gardiens de but en football. En 2018, il concrétise son projet de vie en lançant ATP.
+Depuis, il a encadré et préparé plus de 1 500 sportifs, du niveau départemental au niveau national, dans des disciplines variées : rugby, golf, boxe, triathlon, course à pied, football, natation, etc.
+Côté pratique personnelle, il a évolué en force athlétique (niveau régional), en haltérophilie (niveau fédéral), en CrossFit (top 50 France, top 150 Europe) et en trail (finisher du GRP : 43 km / 3 400 m D+).à changer</p>
+          </div>
+        </article>
+        <!-- Louis -->
+        <article class="bio reverse">
+          <div class="bio-text">
+            <h3>Louis</h3>
+            <p>Louis est gérant d’ATP. Titulaire d’un Master « Expert en préparation physique et mentale » (Bac+5) obtenu en 2022, il a forgé son expérience au sein de structures d’haltérophilie et dans la préparation physique pour le rugby (club local et Académie Pôle Espoir Rugby de Pau).
+Il conçoit également des programmations et assure le suivi d’athlètes en ligne, du loisir au haut niveau, dans des disciplines variées : rugby, haltérophilie, football, basket, triathlon, handball, remise en forme… Parallèlement, il accompagne les sportifs d’ATP depuis plusieurs années.
+Sportif curieux plus jeune, il s’oriente vers la musculation avant de se passionner pour l’haltérophilie et l’entraînement fonctionnel.à changer</p>
+          </div>
+          <div class="bio-img"><img src="atp/louis.jpg" alt="Louis — Coach ATP"></div>
+        </article>
+      </div>
+    </section>
+
+    <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
+
+    <!-- VIDÉO -->
+    <section class="section" id="intimes">
+      <div class="wrap">
+        <h2>Pour les plus intimes :</h2>
+        <div class="embed"><<iframe width="560" height="315" src="https://www.youtube.com/embed/ml9NR9tplp4?si=Ih2cjx870Sw_Mpn5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      </div>
+    </section>
+
+    <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
+  </main>
+
+  <footer class="section">
+    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+  </footer>
+
+  <script>
+    const body=document.body;
+    const btn=document.getElementById('menuBtn');
+    const menu=document.getElementById('mobileMenu');
+    const backdrop=document.getElementById('backdrop');
+    const openMenu=()=>{body.classList.add('menu-open');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label','Fermer le menu');menu.setAttribute('aria-hidden','false');backdrop.hidden=false};
+    const closeMenu=()=>{body.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Ouvrir le menu');menu.setAttribute('aria-hidden','true');backdrop.hidden=true};
+    btn.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu()});
+    backdrop.addEventListener('click',closeMenu);
+    menu.addEventListener('click',e=>{if(e.target.tagName==='A') closeMenu()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu()});
+  </script>
+</body>
+</html>
