@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ATP — Vitrine</title>
+  <title>ATP Tarbes</title>
   <style>
     :root{
       --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
@@ -14,19 +14,20 @@
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
 
     /* ===== Header / Nav ===== */
-    .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:#fff;border-bottom:1px solid #e5e7eb;z-index:50}
+    .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);border-bottom:none;z-index:50}
     .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{font-family:var(--font-display);font-weight:800;letter-spacing:.4px;color:var(--brand);text-decoration:none}
+    .brand{display:block}
+    .brand-logo{height:36px;display:block}
     .desktop-nav{display:none;gap:6px}
-    .desktop-nav a{color:var(--brand);text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
-    .desktop-nav a:hover{background:rgba(31,75,58,.08)}
-    .burger{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid #e5e7eb;border-radius:10px;background:#fff;cursor:pointer}
-    .burger span{display:block;width:22px;height:2px;background:var(--brand);border-radius:2px}
+    .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
+    .desktop-nav a:hover{background:rgba(255,255,255,.12)}
+    .burger{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:var(--brand);cursor:pointer}
+    .burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
     .burger span+span{margin-top:5px}
 
-    .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:#fff;box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
-    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:var(--brand);font-weight:700}
-    .mobile-menu a:hover{background:rgba(31,75,58,.08)}
+    .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
+    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
+    .mobile-menu a:hover{background:rgba(255,255,255,.12)}
     .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:55}
     body.menu-open .mobile-menu{transform:translateX(0)}
     body.menu-open .backdrop{opacity:1;pointer-events:auto}
@@ -96,10 +97,10 @@
 
   <header class="site-header" role="banner">
     <div class="wrap">
-      <a class="brand" href="#">ATP</a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.jpg" alt="Accueil ATP"></a>
       <nav class="desktop-nav" aria-label="Navigation principale">
         <a href="#">Accueil</a>
-        <a href="#">équipeATP</a>
+        <a href="#">Équipe ATP</a>
         <a href="#">Avis</a>
         <a href="#">Planning</a>
         <a href="#">Salle</a>
@@ -113,7 +114,7 @@
 
   <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
     <a href="#">Accueil</a>
-    <a href="#">équipeATP</a>
+    <a href="#">Équipe ATP</a>
     <a href="#">Avis</a>
     <a href="#">Planning</a>
     <a href="#">Salle</a>
@@ -125,7 +126,7 @@
     <section class="hero">
       <div class="hero-inner">
         <h1>ATHLETIC TRAINING PERFORMANCE</h1>
-        <h2>ATP... Une salle ATYPIQUE</h2>
+        <p>ATP... Une salle ATYPIQUE</p>
         <div class="cta-row">
           <a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver un essai</a>
         </div>
@@ -141,7 +142,7 @@
       <div class="wrap try-wrap">
         <div class="try-text">
           <h2>SÉANCE D'ESSAI OFFERTE</h2>
-          <p>Découvre notre méthode en conditions réelles. Pendant une semaine, tu peux tester plusieurs formats <strong>ATP Class</strong> (renforcement fonctionnel), <strong>Team Running</strong>, <strong>Team Cardio</strong> (HIIT/HEAT), <strong>Barbell Club</strong> (technique & charges) et <strong>Gainage</strong>. On t’accompagne dès la première séance pour que tu saches exactement quoi faire, à quel rythme et comment progresser sans te blesser.</p>
+          <p>Découvre notre méthode en conditions réelles. Pendant une semaine, tu peux tester plusieurs formats — <strong>ATP Class</strong> (renforcement fonctionnel), <strong>Team Running</strong>, <strong>Team Cardio</strong> (HIIT/HEAT), <strong>Barbell Club</strong> (technique & charges) et <strong>Gainage</strong>. On t’accompagne dès la première séance pour que tu saches exactement quoi faire, à quel rythme et comment progresser sans te blesser.</p>
           <p>Choisis un créneau qui t’arrange, on s’occupe du reste. À la fin de la séance, on te propose simplement d’autres horaires d’essai dans la semaine si tu veux comparer les formats ou rencontrer d’autres coachs. C’est simple, <em>sans engagement</em>, et pensé pour que tu ressortes avec un plan clair.</p>
         </div>
         <div class="try-embed">
