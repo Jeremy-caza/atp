@@ -51,6 +51,8 @@
     /* ===== Hero plein écran ===== */
     .hero{min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:url('atp/groupe.jpg') center/cover no-repeat}
     .hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,64px);margin:0;color:#fff;text-shadow:none}
+    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0;}
+    .hero > *{ position: relative; z-index: 1; }
 
     /* ===== Sections ===== */
     .section{padding:24px 16px;text-align:center}
