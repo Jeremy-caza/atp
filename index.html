@@ -73,7 +73,7 @@
     .section p{max-width:min(1100px,92%);margin:0 auto 10px;text-align:justify;color:#111;font-size:17px;line-height:1.6}
 
     /* ESSAI */
-    .try-wrap{display:grid;gap:18px;align-items:center}
+    .try-wrap{display:grid;gap:18px;align-items:start}
     .try-text{order:1}
     .try-embed{order:2}
     #try{padding-top:10px;padding-bottom:16px}
@@ -96,7 +96,7 @@
     /* Responsive */
     @media (min-width:900px){
       .section{padding:28px 20px}
-      .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px}
+      .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
       #try{padding-top:14px;padding-bottom:20px}
       #try p{font-size:18px;line-height:1.9}
       .hero h1{font-size:36px}
