@@ -96,7 +96,10 @@
     /* Responsive */
     @media (min-width:900px){
       .section{padding:28px 20px}
-      .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
+      .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
+      .try-text{display:grid;grid-template-rows:auto 1fr;align-self:stretch;}
+      .try-text h2{ margin:0 0 8px; align-self:start; }
+      .try-body{display:flex;flex-direction:column;justify-content:center;gap:12px;}
       #try{padding-top:14px;padding-bottom:20px}
       #try p{font-size:18px;line-height:1.9}
       .hero h1{font-size:36px}
@@ -159,9 +162,13 @@
       <div class="wrap try-wrap">
         <div class="try-text">
           <h2>SÉANCE D'ESSAI OFFERTE</h2>
-          <p>Découvre notre méthode en conditions réelles. Pendant une semaine, tu peux tester plusieurs formats — <strong>ATP Class</strong> (renforcement fonctionnel), <strong>Team Running</strong>, <strong>Team Cardio</strong> (HIIT/HEAT), <strong>Barbell Club</strong> (technique & charges) et <strong>Gainage</strong>. On t’accompagne dès la première séance pour que tu saches exactement quoi faire, à quel rythme et comment progresser sans te blesser.</p>
-          <p>Choisis un créneau qui t’arrange, on s’occupe du reste. À la fin de la séance, on te propose simplement d’autres horaires d’essai dans la semaine si tu veux comparer les formats ou rencontrer d’autres coachs. C’est simple, <em>sans engagement</em>, et pensé pour que tu ressortes avec un plan clair.</p>
+          
+         <div class="try-body">
+        <p>Découvre notre méthode en conditions réelles. Pendant une semaine, tu peux tester plusieurs formats — <strong>ATP Class</strong> (renforcement fonctionnel), <strong>Team Running</strong>, <strong>Team Cardio</strong> (HIIT/HEAT), <strong>Barbell Club</strong> (technique & charges) et <strong>Gainage</strong>. On t’accompagne dès la première séance pour que tu saches exactement quoi faire, à quel rythme et comment progresser sans te blesser.</p>
+        <p>Choisis un créneau qui t’arrange, on s’occupe du reste. À la fin de la séance, on te propose simplement d’autres horaires d’essai dans la semaine si tu veux comparer les formats ou rencontrer d’autres coachs. C’est simple, <em>sans engagement</em>, et pensé pour que tu ressortes avec un plan clair.</p>
         </div>
+        </div>
+        
         <div class="try-embed">
           <div class="calendly-inline-widget" data-url="https://calendly.com/atp-seancedessaie/seancedessaie?hide_event_type_details=1&hide_gdpr_banner=1" style="height:700px;"></div>
           <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
