@@ -7,7 +7,7 @@
   <!-- ===== SEO de base ===== -->
   <title>ATP Tarbes — Salle de sport & préparation physique à Tarbes (Essai offert)</title>
   <meta name="description" content="Salle de sport à Tarbes : coaching intelligent, préparation physique, accès libre, running, HIIT/HEAT, barbell, gainage. Essai offert : réserve ton créneau." />
-  <link rel="canonical" href="https://exemple.fr/index.html" />
+  <link rel="canonical" href="https://exemple.fr/index.html" /> <!-- TODO: remplace par le domaine réel -->
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#1f4b3a" />
 
@@ -16,11 +16,11 @@
   <meta property="og:site_name" content="ATP Tarbes" />
   <meta property="og:title" content="ATP Tarbes — Salle de sport & préparation physique à Tarbes" />
   <meta property="og:description" content="Essai offert. Coaching intelligent, préparation physique, accès libre, HIIT/HEAT, barbell, running, gainage." />
-  <meta property="og:url" content="https://exemple.fr/index.html" />
-  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" />
+  <meta property="og:url" content="https://exemple.fr/index.html" /> <!-- TODO -->
+  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO -->
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- ===== Google Fonts (fiable & rapide) ===== -->
+  <!-- ===== Google Fonts (League Spartan titres / Montserrat texte) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i -->
@@ -67,11 +67,12 @@
       .mobile-menu,.backdrop{display:none}
     }
 
-    /* ===== Titres / emphases ===== */
-    h1,h2,h3{font-family:var(--font-display); letter-spacing:.2px}
+    /* ===== Titres / emphases (identiques à ton rendu) ===== */
+    h1,h2,h3{font-family:var(--font-display)}
     h1{font-weight:900}
-    h2,h3{font-weight:700}
-    strong{font-weight:700; text-decoration:underline; text-underline-offset:2px}
+    h2{font-weight:900}
+    h3{font-weight:700}
+    strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
     em{font-style:italic}
 
     /* ===== Hero ===== */
@@ -117,12 +118,20 @@
     .calendly-inline-widget{width:100%;min-height:620px;border-radius:12px;overflow:hidden}
 
     /* ÉQUIPE */
-    #team .center-btn{display:flex;justify-content:center;margin-top:22px}
+    #team{padding-top:36px;padding-bottom:40px}
+
+    #team .center-btn{display:flex;justify-content:center;margin-top:28px}
 
     /* VIDÉO */
     #video .center-btn{display:flex;justify-content:center;margin-top:24px}
     .embed{width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden}
     .embed iframe{width:100%;height:100%;border:0}
+
+    /* Footer */
+    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .socials{display:flex;gap:10px}
+    .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
+    .social-btn:hover{filter:brightness(1.08)}
 
     /* WAVES */
     .sep-wave{height:70px}
@@ -131,6 +140,21 @@
     /* Responsive */
     @media (min-width:900px){
       .section{padding:28px 20px}
+      .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
+      .try-text{display:grid;grid-template-rows:auto 1fr;align-self:stretch}
+      .try-text h2{margin:0 0 8px;align-self:start}
+      .try-body{display:flex;flex-direction:column;justify-content:center;gap:12px}
+      #try{padding-top:14px;padding-bottom:20px}
+      #try p{font-size:18px;line-height:1.9}
+
+      /* Espace supplémentaire autour de la section Équipe */
+      #team{padding-top:56px;padding-bottom:56px}
+      #team .center-btn{margin-top:36px}
+
+      /* on garde ces deux lignes pour conserver ton rendu actuel */
+      .hero h1{font-size:36px}
+      .hero p{font-size:20px}
+    }
       .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
       .try-text{display:grid;grid-template-rows:auto 1fr;align-self:stretch}
       .try-text h2{margin:0 0 8px;align-self:start}
@@ -233,7 +257,13 @@
   </main>
 
   <footer class="section" style="background:#f8fafc">
-    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+    <div class="wrap">
+      <div>© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+      <div class="socials">
+        <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
+        <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
+      </div>
+    </div>
   </footer>
 
   <script>
