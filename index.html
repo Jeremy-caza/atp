@@ -83,7 +83,7 @@
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none;z-index:0}
     .hero>*{position:relative;z-index:1}
     .hero-inner{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);bottom:auto;width:min(1120px,96%);display:flex;flex-direction:column;align-items:center;gap:12px}
-    .hero h1{font-size:clamp(48px,6vw,74px);line-height:.9;margin:0;color:#fff;max-width:100%;text-wrap:balance;overflow-wrap:anywhere;text-transform:uppercase}
+    .hero h1{font-size:clamp(48px, 6vw, 96px);line-height:.9;margin:0;color:#fff;max-width:100%;text-wrap:balance;overflow-wrap:anywhere;text-transform:uppercase}
     .hero p{font-weight:700;font-style:italic;text-transform:uppercase;text-align:center;font-size:clamp(64px,9vw,160px);margin:2px 0 6px;color:#fff;max-width:44ch}
 
     .cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:0}
@@ -146,10 +146,6 @@
       #team{padding-top:56px;padding-bottom:56px}
       #team .center-btn{margin-top:36px}
 
-      /* on garde ces deux lignes pour conserver ton rendu actuel */
-      .hero h1{font-size:36px}
-      .hero p{font-size:20px}
-    }
       .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
       .try-text{display:grid;grid-template-rows:auto 1fr;align-self:stretch}
       .try-text h2{margin:0 0 8px;align-self:start}
@@ -257,7 +253,7 @@
 
   <footer class="section" style="background:#f8fafc">
     <div class="wrap">
-      <div>© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+      <div>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></div>
       <div class="socials">
         <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
         <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
