@@ -30,7 +30,13 @@
     :root{
       --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
       --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
-      --font-text:'Montserrat', Arial, Helvetica, sans-serif
+      --font-text:'Montserrat', Arial, Helvetica, sans-serif;
+      /* Couleurs planning */
+      --c1:#0e7490; /* bleu canard */
+      --c2:#f59e0b; /* jaune */
+      --c3:#caa186; /* sable/bronze */
+      --c4:#1d4ed8; /* bleu */
+      --card-shadow:0 10px 26px rgba(0,0,0,.10);
     }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
@@ -100,20 +106,23 @@
     .card h3{margin:0 0 6px;font-size:20px;color:var(--brand)}
     .card p{margin:0;font-size:16px;line-height:1.6;text-align:justify}
 
-    @media (min-width:720px){
-      .cards{grid-template-columns:repeat(3,1fr)}
-    }
-    @media (min-width:1040px){
-      .cards{grid-template-columns:repeat(5,1fr)}
-    }
+    @media (min-width:720px){.cards{grid-template-columns:repeat(3,1fr)}}
+    @media (min-width:1040px){.cards{grid-template-columns:repeat(5,1fr)}}
 
-    /* ===== Embed image (planning) ===== */
-    .embed-img{width:100%;max-width:900px;margin:0 auto;border-radius:12px;overflow:hidden;background:#f1f5f9}
-    .embed-img img{display:block;width:100%;height:auto}
-
-    /* espace sous le schéma + bouton plus bas */
-    #schema .embed-img{margin-bottom:18px}
-    #schema .center-btn{margin-top:28px}
+    /* ===== Schedule (codé) ===== */
+    .schedule{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));align-items:stretch}
+    .day-card{background:#fff;border:1px solid #e5e7eb;border-radius:22px;box-shadow:var(--card-shadow);padding:18px}
+    .day{font-family:var(--font-display);font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);text-align:center;margin:2px 0 12px}
+    .slots{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+    .slot{display:flex;flex-direction:column;gap:4px}
+    .slot time{font-family:var(--font-display);font-weight:900;letter-spacing:.08em;color:var(--c1)}
+    .line,.line2{font-weight:700;letter-spacing:.04em}
+    .line2:empty{display:none}
+    .slot.c1 time,.slot.c1 .line,.slot.c1 .line2{color:var(--c1)}
+    .slot.c2 time,.slot.c2 .line,.slot.c2 .line2{color:var(--c2)}
+    .slot.c3 time,.slot.c3 .line,.slot.c3 .line2{color:var(--c3)}
+    .slot.c4 time,.slot.c4 .line,.slot.c4 .line2{color:var(--c4)}
+    .slot.open-gym time,.slot.open-gym .line{color:var(--c2)}
 
     /* ===== Bouton ===== */
     .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
@@ -215,11 +224,87 @@
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
 
-    <!-- SCHÉMA / IMAGE DE PLANNING -->
+    <!-- PLANNING CODÉ (remplace l'ancienne image) -->
     <section class="section" id="schema">
       <div class="wrap">
         <h2>Le planning en un coup d’œil</h2>
-        <div class="embed-img"><img src="atp/planning-schema.jpg" alt="Schéma du planning (remplace l'image par la tienne)"></div>
+
+        <div class="schedule">
+          <!-- LUNDI -->
+          <article class="day-card">
+            <h3 class="day">LUNDI</h3>
+            <ul class="slots">
+              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
+            </ul>
+          </article>
+
+          <!-- MARDI -->
+          <article class="day-card">
+            <h3 class="day">MARDI</h3>
+            <ul class="slots">
+              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
+            </ul>
+          </article>
+
+          <!-- MERCREDI -->
+          <article class="day-card">
+            <h3 class="day">MERCREDI</h3>
+            <ul class="slots">
+              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
+            </ul>
+          </article>
+
+          <!-- JEUDI -->
+          <article class="day-card">
+            <h3 class="day">JEUDI</h3>
+            <ul class="slots">
+              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
+            </ul>
+          </article>
+
+          <!-- VENDREDI -->
+          <article class="day-card">
+            <h3 class="day">VENDREDI</h3>
+            <ul class="slots">
+              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
+            </ul>
+          </article>
+
+          <!-- SAMEDI -->
+          <article class="day-card">
+            <h3 class="day">SAMEDI</h3>
+            <ul class="slots">
+              <li class="slot c1"><time>10h00</time><span class="line">Type de cours</span><span class="line2"></span></li>
+              <li class="slot open-gym"><time>Open Gym</time><span class="line">9h30 – 12h30</span></li>
+            </ul>
+          </article>
+        </div>
+
         <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
       </div>
     </section>
