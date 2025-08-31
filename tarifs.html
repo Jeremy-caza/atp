@@ -3,15 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tarifs — ATP</title>
+
+  <!-- ===== SEO (Top propre) ===== -->
+  <title>Tarifs — Abonnements & à la carte | ATP Tarbes</title>
+  <meta name="description" content="Tarifs ATP Tarbes : abonnements 3/6/12 mois, accès libre, carnets de séances et drop-in. Salle de sport à Tarbes, préparation physique, HIIT/HEAT, barbell, running. Essai offert." />
+  <link rel="canonical" href="https://exemple.fr/tarifs.html" /> <!-- TODO: remplace par le domaine réel -->
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1f4b3a" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ATP Tarbes" />
+  <meta property="og:title" content="Tarifs — ATP Tarbes" />
+  <meta property="og:description" content="Abonnements et formules à la carte. Préparation physique, entraînement fonctionnel, accès libre. Essai offert." />
+  <meta property="og:url" content="https://exemple.fr/tarifs.html" /> <!-- TODO -->
+  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ===== Google Fonts (identiques à l’index) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
-      --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
-      --font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif
+      --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
+      --font-text:'Montserrat', Arial, Helvetica, sans-serif
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
 
     /* ===== Header / Nav ===== */
     .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);z-index:50}
@@ -45,49 +67,58 @@
       .mobile-menu,.backdrop{display:none}
     }
 
+    /* ===== Titres / emphases (identiques à l’index) ===== */
+    h1,h2,h3{font-family:var(--font-display)}
+    h1{font-weight:900}
+    h2{font-weight:900}
+    h3{font-weight:700}
+    strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+    em{font-style:italic}
+    .sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
     main{display:block;padding-top:64px}
 
     /* ===== Hero ===== */
     .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/tarifs.jpg') center/cover no-repeat}
-    .hero h1{font-family:var(--font-display);font-size:clamp(36px,5.5vw,72px);margin:0;color:#fff;text-shadow:none}
-    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0;}
-    .hero > *{ position: relative; z-index: 1; }
-    
+    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0}
+    .hero>*{ position: relative; z-index: 1 }
+    .hero h1{font-size:clamp(32px,5vw,64px);margin:0;color:#fff;text-shadow:none;text-wrap:balance}
+
     /* ===== Sections ===== */
     .section{padding:24px 16px;text-align:center}
     .wrap{width:min(1200px,96%);margin:0 auto}
-    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand);font-family:var(--font-display)}
+    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand)}
     .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.85}
 
-   /* ===== Tarifs (nouvelle présentation) ===== */
-.pricing-head h2{margin:0 0 8px;font-size:30px;color:var(--brand);font-family:var(--font-display)}
-.pillnav{display:flex;justify-content:center;gap:8px;margin:6px 0 14px}
-.pillnav .pill{display:inline-block;border:1px solid var(--brand);color:var(--brand);padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:700}
-.pillnav .pill:hover,.pillnav .pill.active{background:var(--brand);color:#fff}
+    /* ===== Tarifs (Présentation) ===== */
+    .pricing-head h2{margin:0 0 8px;font-size:30px;color:var(--brand)}
+    .pillnav{display:flex;justify-content:center;gap:8px;margin:6px 0 14px}
+    .pillnav .pill{display:inline-block;border:1px solid var(--brand);color:var(--brand);padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:700}
+    .pillnav .pill:hover,.pillnav .pill.active{background:var(--brand);color:#fff}
 
-.pricing-grid{display:grid;gap:16px}
-@media (min-width:900px){
-  .pricing-grid.cols-3{grid-template-columns:repeat(3,1fr)}
-  .pricing-grid.cols-4{grid-template-columns:repeat(4,1fr)}
-}
+    .pricing-grid{display:grid;gap:16px}
+    @media (min-width:900px){
+      .pricing-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+      .pricing-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    }
 
-.tier{position:relative;background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:18px 16px 16px;box-shadow:0 10px 24px rgba(0,0,0,.06);text-align:left}
-.tier.featured{border:2px solid var(--brand);box-shadow:0 16px 36px rgba(31,75,58,.18)}
-.tier .ribbon{position:absolute;top:12px;right:12px;background:var(--brand);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
-.tier .top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.tier .name{font-family:var(--font-display);font-weight:900;font-size:20px;color:#111}
-.tier .badge{font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px;background:#eaf7f1;color:var(--brand)}
-.tier .price{font-family:var(--font-display);font-weight:900;font-size:42px;letter-spacing:-.01em;color:var(--brand);margin:4px 0 6px}
-.tier .price span{font-size:.5em;font-weight:700;margin-left:6px;color:#555}
-.tier ul.features{list-style:none;padding:0;margin:8px 0 0}
-.tier ul.features li{position:relative;padding-left:26px;margin:6px 0;font-size:16px;line-height:1.6}
-.tier ul.features li::before{content:"✔";position:absolute;left:0;top:0;color:var(--brand);font-weight:900}
+    .tier{position:relative;background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:18px 16px 16px;box-shadow:0 10px 24px rgba(0,0,0,.06);text-align:left}
+    .tier.featured{border:2px solid var(--brand);box-shadow:0 16px 36px rgba(31,75,58,.18)}
+    .tier .ribbon{position:absolute;top:12px;right:12px;background:var(--brand);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    .tier .top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .tier .name{font-family:var(--font-display);font-weight:900;font-size:20px;color:#111}
+    .tier .badge{font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px;background:#eaf7f1;color:var(--brand)}
+    .tier .price{font-family:var(--font-display);font-weight:900;font-size:42px;letter-spacing:-.01em;color:#1f4b3a;margin:4px 0 6px}
+    .tier .price span{font-size:.5em;font-weight:700;margin-left:6px;color:#555}
+    .tier ul.features{list-style:none;padding:0;margin:8px 0 0}
+    .tier ul.features li{position:relative;padding-left:26px;margin:6px 0;font-size:16px;line-height:1.6}
+    .tier ul.features li::before{content:"✔";position:absolute;left:0;top:0;color:var(--brand);font-weight:900}
 
-.callout{border:2px dashed var(--brand);border-radius:16px;background:#f5fbf8;padding:14px 16px;text-align:left}
-.callout strong{color:var(--brand)}
+    .callout{border:2px dashed var(--brand);border-radius:16px;background:#f5fbf8;padding:14px 16px;text-align:left}
+    .callout strong{color:var(--brand)}
 
-#tarifs .pricing-grid{margin-top:10px}
-#tarifs .center-btn{margin-top:28px}
+    #tarifs .pricing-grid{margin-top:10px}
+    #tarifs .center-btn{margin-top:28px}
 
     /* ===== Medias 3 images ===== */
     .media-row{display:grid;gap:14px;margin-top:6px}
@@ -95,7 +126,7 @@
     .media-row img{display:block;width:100%;height:100%;object-fit:cover}
     @media (min-width:900px){.media-row{grid-template-columns:repeat(3,1fr)}}
 
-    /* ===== Galerie 8 photos (2 x 4) ===== */
+    /* ===== Galerie 8 photos ===== */
     .gallery{display:grid;gap:10px}
     .gallery .ph{aspect-ratio:1/1;background:#f2f4f7;border-radius:10px;overflow:hidden}
     .gallery .ph img{display:block;width:100%;height:100%;object-fit:cover}
@@ -105,16 +136,19 @@
     /* ===== Waves & footer ===== */
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
+
+    /* Footer + RS */
     footer.section{background:#f8fafc}
+    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .socials{display:flex;gap:10px}
+    .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
+    .social-btn:hover{filter:brightness(1.08)}
 
-    /* Bouton vert centré (même style que les autres pages) */
-.cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
-.cta:hover{filter:brightness(.95)}
-.center-btn{display:flex;justify-content:center;margin-top:24px}
-
-/* Sur la section tarifs, un peu plus d’air sous les blocs */
-#tarifs .center-btn{ margin-top:28px; }
-
+    /* Bouton CTA */
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+    .cta:hover{filter:brightness(.95)}
+    .center-btn{display:flex;justify-content:center;margin-top:24px}
+    #tarifs .center-btn{ margin-top:28px }
   </style>
 </head>
 <body>
@@ -147,126 +181,125 @@
     <!-- HERO -->
     <section class="hero"><h1>Tarifs</h1></section>
 
- <!-- TARIFS (nouvelle présentation) -->
-<section class="section" id="tarifs">
-  <div class="wrap">
+    <!-- TARIFS (présentation) -->
+    <section class="section" id="tarifs">
+      <div class="wrap">
 
-    <div class="pricing-head">
-      <h2>Nos formules</h2>
-      <div class="pillnav">
-        <a class="pill active" href="#abos">Abonnements</a>
-        <a class="pill" href="#alacarte">À la carte</a>
+        <div class="pricing-head">
+          <h2>Nos formules</h2>
+          <div class="pillnav">
+            <a class="pill active" href="#abos">Abonnements</a>
+            <a class="pill" href="#alacarte">À la carte</a>
+          </div>
+        </div>
+
+        <!-- Abonnements -->
+        <h3 id="abos" class="sr">Abonnements</h3>
+        <div class="pricing-grid cols-4" aria-label="Abonnements">
+          <article class="tier">
+            <div class="top"><div class="name">12 mois</div></div>
+            <div class="price">65€<span>/mois</span></div>
+            <ul class="features">
+              <li>Accès illimité aux cours</li>
+              <li>Coaching personnalisé</li>
+              <li>Sans frais cachés</li>
+            </ul>
+          </article>
+
+          <article class="tier featured">
+            <span class="ribbon">Populaire</span>
+            <div class="top"><div class="name">6 mois</div></div>
+            <div class="price">75€<span>/mois</span></div>
+            <ul class="features">
+              <li>Accès illimité aux cours</li>
+              <li>Routine progressive</li>
+              <li>Accompagnement inclus</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">3 mois</div></div>
+            <div class="price">85€<span>/mois</span></div>
+            <ul class="features">
+              <li>Démarrage express</li>
+              <li>Parfait pour tester</li>
+              <li>Coaching inclus</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Accès libre (salle)</div><span class="badge">Libre accès</span></div>
+            <div class="price">—€<span>/mois</span></div>
+            <ul class="features">
+              <li>Accès aux espaces hors cours</li>
+              <li>Idéal horaires autonomes</li>
+              <li>Ajoute du coaching si besoin</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Promo du moment -->
+        <div class="callout" style="margin-top:14px">
+          <strong>PROMO du moment :</strong> remplace ce texte par ton offre (ex. 1er mois à -20%, frais offerts, etc.).
+        </div>
+
+        <!-- À la carte -->
+        <h3 id="alacarte" style="margin:18px 0 6px;font-size:22px;color:#111">À la carte</h3>
+        <div class="pricing-grid cols-4" aria-label="À la carte">
+          <article class="tier">
+            <div class="top"><div class="name">Carnet 10 séances</div></div>
+            <div class="price">120€</div>
+            <ul class="features">
+              <li>Utilisable sur tous les formats</li>
+              <li>Souplesse & liberté</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Carnet 20 séances</div></div>
+            <div class="price">190€</div>
+            <ul class="features">
+              <li>Meilleur prix par séance</li>
+              <li>Parfait pour 2–3 mois</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Carnet 30 séances</div></div>
+            <div class="price">210€</div>
+            <ul class="features">
+              <li>Engagement souple</li>
+              <li>Multi-formats</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Drop-in (séance)</div><span class="badge">Visiteur</span></div>
+            <div class="price">—€</div>
+            <ul class="features">
+              <li>Une séance à la demande</li>
+              <li>Idéal pour essayer</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Forfait semaine</div><span class="badge">Short-stay</span></div>
+            <div class="price">—€</div>
+            <ul class="features">
+              <li>Accès sur 7 jours</li>
+              <li>Voyageurs / stages</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Notes & CTA -->
+        <div class="tarif-notes">
+          <p><em>Ajoute ici tes précisions : réductions étudiants/métiers, modalités de paiement, conditions d’engagement, pénalités de retard, etc.</em></p>
+        </div>
+        <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
+
       </div>
-    </div>
-
-    <!-- Abonnements -->
-    <h3 id="abos" class="sr">Abonnements</h3>
-    <div class="pricing-grid cols-4" aria-label="Abonnements">
-      <article class="tier">
-        <div class="top"><div class="name">12 mois</div></div>
-        <div class="price">65€<span>/mois</span></div>
-        <ul class="features">
-          <li>Accès illimité aux cours</li>
-          <li>Coaching personnalisé</li>
-          <li>Sans frais cachés</li>
-        </ul>
-      </article>
-
-      <article class="tier featured">
-        <span class="ribbon">Populaire</span>
-        <div class="top"><div class="name">6 mois</div></div>
-        <div class="price">75€<span>/mois</span></div>
-        <ul class="features">
-          <li>Accès illimité aux cours</li>
-          <li>Routine progressive</li>
-          <li>Accompagnement inclus</li>
-        </ul>
-      </article>
-
-      <article class="tier">
-        <div class="top"><div class="name">3 mois</div></div>
-        <div class="price">85€<span>/mois</span></div>
-        <ul class="features">
-          <li>Démarrage express</li>
-          <li>Parfait pour tester</li>
-          <li>Coaching inclus</li>
-        </ul>
-      </article>
-
-      <article class="tier">
-        <div class="top"><div class="name">Accès libre (salle)</div><span class="badge">Libre accès</span></div>
-        <div class="price">—€<span>/mois</span></div>
-        <ul class="features">
-          <li>Accès aux espaces hors cours</li>
-          <li>Idéal horaires autonomes</li>
-          <li>Ajoute du coaching si besoin</li>
-        </ul>
-      </article>
-    </div>
-
-    <!-- Promo du moment -->
-    <div class="callout" style="margin-top:14px">
-      <strong>PROMO du moment :</strong> remplace ce texte par ton offre (ex. 1er mois à -20%, frais offerts, etc.). 
-      Tu peux mettre à jour à tout moment.
-    </div>
-
-    <!-- À la carte -->
-    <h3 id="alacarte" style="margin:18px 0 6px;font-size:22px;color:#111;font-family:var(--font-display)">À la carte</h3>
-    <div class="pricing-grid cols-4" aria-label="À la carte">
-      <article class="tier">
-        <div class="top"><div class="name">Carnet 10 séances</div></div>
-        <div class="price">120€</div>
-        <ul class="features">
-          <li>Utilisable sur tous les formats</li>
-          <li>Souplesse & liberté</li>
-        </ul>
-      </article>
-
-      <article class="tier">
-        <div class="top"><div class="name">Carnet 20 séances</div></div>
-        <div class="price">190€</div>
-        <ul class="features">
-          <li>Meilleur prix par séance</li>
-          <li>Parfait pour 2–3 mois</li>
-        </ul>
-      </article>
-
-      <article class="tier">
-        <div class="top"><div class="name">Carnet 30 séances</div></div>
-        <div class="price">210€</div>
-        <ul class="features">
-          <li>Engagement souple</li>
-          <li>Multi-formats</li>
-        </ul>
-      </article>
-
-      <article class="tier">
-        <div class="top"><div class="name">Drop-in (séance)</div><span class="badge">Visiteur</span></div>
-        <div class="price">—€</div>
-        <ul class="features">
-          <li>Une séance à la demande</li>
-          <li>Idéal pour essayer</li>
-        </ul>
-      </article>
-
-      <article class="tier">
-        <div class="top"><div class="name">Forfait semaine</div><span class="badge">Short-stay</span></div>
-        <div class="price">—€</div>
-        <ul class="features">
-          <li>Accès sur 7 jours</li>
-          <li>Voyageurs / stages</li>
-        </ul>
-      </article>
-    </div>
-
-    <!-- Notes & CTA -->
-    <div class="tarif-notes">
-      <p><em>Ajoute ici tes précisions : réductions étudiants/métiers, modalités de paiement, conditions d’engagement, pénalités de retard, etc.</em></p>
-    </div>
-    <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
-
-  </div>
-</section>
+    </section>
 
     <div class="sep-wave" aria-hidden="true">
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
@@ -308,7 +341,13 @@
   </main>
 
   <footer class="section">
-    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+    <div class="wrap">
+      <div>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></div>
+      <div class="socials">
+        <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
+        <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
+      </div>
+    </div>
   </footer>
 
   <script>
