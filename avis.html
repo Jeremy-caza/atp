@@ -3,17 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vos Avis — ATP</title>
+
+  <!-- ===== SEO (Top propre) ===== -->
+  <title>Vos Avis — Salle de sport & préparation physique à Tarbes | ATP Tarbes</title>
+  <meta name="description" content="Découvrez les avis sur ATP Tarbes : 4.9★, coaching intelligent, préparation physique, HIIT/HEAT, running, barbell. Essai offert, rejoignez-nous à Tarbes." />
+  <link rel="canonical" href="https://exemple.fr/avis.html" /> <!-- TODO: remplace par le domaine réel -->
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1f4b3a" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ATP Tarbes" />
+  <meta property="og:title" content="Vos Avis — ATP Tarbes" />
+  <meta property="og:description" content="4.9★ à Tarbes. Préparation physique, entraînement fonctionnel, running, HIIT/HEAT, barbell. Essai offert." />
+  <meta property="og:url" content="https://exemple.fr/avis.html" /> <!-- TODO -->
+  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ===== Google Fonts (identiques à l’index) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
-      --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
-      --font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif
+      --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
+      --font-text:'Montserrat', Arial, Helvetica, sans-serif
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
 
-    /* ===== Header / Nav (cohérent avec le site) ===== */
+    /* ===== Header / Nav (cohérent site) ===== */
     .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);border-bottom:none;z-index:50}
     .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:block}
@@ -46,18 +68,26 @@
       .mobile-menu,.backdrop{display:none}
     }
 
+    /* ===== Titres / emphases (identiques à l’index) ===== */
+    h1,h2,h3{font-family:var(--font-display)}
+    h1{font-weight:900}
+    h2{font-weight:900}
+    h3{font-weight:700}
+    strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+    em{font-style:italic}
+
     main{display:block;padding-top:64px}
 
     /* ===== Hero plein écran ===== */
-    .hero{min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:url('atp/groupe.jpg') center/cover no-repeat}
-    .hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,64px);margin:0;color:#fff;text-shadow:none}
-    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0;}
-    .hero > *{ position: relative; z-index: 1; }
+    .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:url('atp/groupe.jpg') center/cover no-repeat}
+    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0}
+    .hero>*{ position: relative; z-index: 1 }
+    .hero h1{font-size:clamp(32px,5vw,64px);margin:0;color:#fff;text-shadow:none;text-wrap:balance}
 
     /* ===== Sections ===== */
     .section{padding:24px 16px;text-align:center}
     .wrap{width:min(1200px,96%);margin:0 auto}
-    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand);font-family:var(--font-display)}
+    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand)}
     .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.85}
 
     /* ===== Galerie Avis (captures) ===== */
@@ -78,7 +108,7 @@
     .twocol .grid{display:grid;gap:24px;align-items:center}
     .twocol .img{border-radius:16px;overflow:hidden;background:#f2f4f7}
     .twocol .img img{display:block;width:100%;height:auto}
-    .twocol h3{margin:0 0 8px;font-size:24px;color:var(--brand);font-family:var(--font-display)}
+    .twocol h3{margin:0 0 8px;font-size:24px;color:var(--brand)}
     .twocol p{margin:0;font-size:17px;line-height:1.75;text-align:justify}
     .twocol .reverse{order:2}
     @media (min-width:900px){
@@ -90,19 +120,24 @@
     .embed{width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;line-height:0}
     .embed iframe{display:block;width:100%;height:100%;border:0}
 
-      /* Boutons (même style que l’index) */
-.cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
-.center-btn{display:flex;justify-content:center;margin-top:24px}
+    /* Boutons (même style que l’index) */
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+    .center-btn{display:flex;justify-content:center;margin-top:24px}
 
     /* Avis : espacer le bouton sous la vidéo */
-#video .embed{ margin-bottom: 18px; }
-#video .center-btn{ margin-top: 28px; }
+    #video .embed{ margin-bottom: 18px }
+    #video .center-btn{ margin-top: 28px }
 
     /* ===== Séparateurs wave ===== */
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
 
+    /* Footer + RS */
     footer.section{background:#f8fafc}
+    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .socials{display:flex;gap:10px}
+    .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
+    .social-btn:hover{filter:brightness(1.08)}
   </style>
 </head>
 <body>
@@ -132,7 +167,7 @@
   <div id="backdrop" class="backdrop" hidden></div>
 
   <main>
-    <!-- HERO (pas de sep-wave juste dessous) -->
+    <!-- HERO -->
     <section class="hero"><h1>Vos Avis</h1></section>
 
     <!-- INTRO TEXTE -->
@@ -194,7 +229,7 @@
     <!-- VIDÉO SANS TITRE -->
     <section class="section" id="video">
       <div class="wrap">
-        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/ml9NR9tplp4?si=VIKAHqqc6E4tmlRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/ml9NR9tplp4?si=VIKAHqqc6E4tmlRE" title="Avis — ATP Tarbes (vidéo)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="center-btn"><a class="cta" href="planning.html">Voir le planning</a></p>
       </div>
     </section>
@@ -205,7 +240,13 @@
   </main>
 
   <footer class="section">
-    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+    <div class="wrap">
+      <div>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></div>
+      <div class="socials">
+        <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
+        <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
+      </div>
+    </div>
   </footer>
 
   <script>
