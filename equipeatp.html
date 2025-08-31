@@ -3,25 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Équipe ATP</title>
 
+  <!-- ===== SEO (Top propre) ===== -->
+  <title>Équipe ATP — Coaches & préparation physique à Tarbes | ATP Tarbes</title>
+  <meta name="description" content="Découvrez l’équipe ATP : Mathieu et Louis, coaches diplômés (Master STAPS). Préparation physique, haltérophilie et entraînement fonctionnel à Tarbes." />
+  <link rel="canonical" href="https://exemple.fr/equipeatp.html" /> <!-- TODO: remplace par le domaine réel -->
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1f4b3a" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ATP Tarbes" />
+  <meta property="og:title" content="Équipe ATP — Coaches & préparation physique à Tarbes" />
+  <meta property="og:description" content="Mathieu & Louis, coaches diplômés (Master STAPS). Préparation physique, haltérophilie, entraînement fonctionnel." />
+  <meta property="og:url" content="https://exemple.fr/equipeatp.html" /> <!-- TODO -->
+  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ===== Google Fonts (identiques à l’index) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <style>
-   :root{
-  --brand:#1f4b3a; --bg:#ffffff; --text:#111; --accent:#1f4b3a;
-  --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
-  --font-text:'Montserrat', Arial, Helvetica, sans-serif;
-}
-    html,body{font-family:var(--font-text)}
-h1,h2,h3{font-family:var(--font-display)}
-
+    :root{
+      --brand:#1f4b3a; --bg:#ffffff; --text:#111; --accent:#1f4b3a;
+      --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
+      --font-text:'Montserrat', Arial, Helvetica, sans-serif;
+    }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
 
-    /* ===== Header / Nav (copié depuis l'index pour cohérence) ===== */
+    /* ===== Header / Nav (cohérent index) ===== */
     .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);border-bottom:none;z-index:50}
     .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:block}
@@ -54,22 +68,30 @@ h1,h2,h3{font-family:var(--font-display)}
       .mobile-menu,.backdrop{display:none}
     }
 
+    /* ===== Titres / emphases (identiques à l’index) ===== */
+    h1,h2,h3{font-family:var(--font-display)}
+    h1{font-weight:900}
+    h2{font-weight:900}
+    h3{font-weight:700}
+    strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+    em{font-style:italic}
+
     /* ===== Hero plein écran ===== */
     main{display:block;padding-top:64px}
-    .hero{min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:url('atp/equipeatp.jpg') center/cover no-repeat}
-    .hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,64px);margin:0;text-shadow:0 2px 30px rgba(0,0,0,.35)}
-    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0;}
-    .hero > *{ position: relative; z-index: 1; }
-    
-    /* ===== Bios (Mathieu / Louis) ===== */
+    .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:url('atp/equipeatp.jpg') center/cover no-repeat}
+    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0}
+    .hero>*{position:relative;z-index:1}
+    .hero h1{font-size:clamp(32px,5vw,64px);margin:0;text-shadow:0 2px 30px rgba(0,0,0,.35);text-wrap:balance}
+
+    /* ===== Sections / Bios ===== */
     .section{padding:24px 16px;text-align:center}
     .wrap{width:min(1200px,96%);margin:0 auto}
-    .section h2{margin:0 0 14px;font-size:28px;color:var(--brand);font-family:var(--font-display)}
+    .section h2{margin:0 0 14px;font-size:28px;color:var(--brand)}
     .bios{display:grid;gap:28px}
     .bio{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;text-align:left}
     .bio-img{border-radius:16px;overflow:hidden;background:#f2f4f7}
     .bio-img img{display:block;width:100%;height:auto}
-    .bio h3{margin:0 0 8px;font-size:22px;color:var(--brand);font-family:var(--font-display)}
+    .bio h3{margin:0 0 8px;font-size:22px;color:var(--brand)}
     .bio p{margin:0;font-size:17px;line-height:1.7;text-align:justify}
     .bio.reverse .bio-img{order:2}
 
@@ -79,20 +101,24 @@ h1,h2,h3{font-family:var(--font-display)}
       .bio{grid-template-columns:1fr 1fr;gap:26px}
     }
 
-    /* ===== Embed vidéo (même taille que l'index) ===== */
+    /* ===== Embed vidéo ===== */
     .embed{width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden}
     .embed iframe{width:100%;height:100%;border:0}
 
-    /* Boutons (même style que l’index) */
-.cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
-.center-btn{display:flex;justify-content:center;margin-top:24px}
+    /* Boutons CTA */
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+    .center-btn{display:flex;justify-content:center;margin-top:24px}
 
-    /* ===== Séparateurs wave ===== */
+    /* Footer (identique à l’index + RS) */
+    footer.section{background:#f8fafc}
+    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .socials{display:flex;gap:10px}
+    .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
+    .social-btn:hover{filter:brightness(1.08)}
+
+    /* Séparateurs wave */
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
-
-    /* ===== Footer (même que l'index) ===== */
-    footer.section{background:#f8fafc}
   </style>
 </head>
 <body>
@@ -137,7 +163,7 @@ h1,h2,h3{font-family:var(--font-display)}
             <h3>Mathieu</h3>
             <p>Mathieu est le fondateur et gérant d’ATP depuis 2018. Diplômé d’un Master STAPS (Bac+5), spécialité préparation physique et mentale en 2015, il a construit son expertise sur le terrain : salle de CrossFit, club de rugby, coaching privé, préparation de sportifs individuels et accompagnement au sein d’un centre de formation de gardiens de but en football. En 2018, il concrétise son projet de vie en lançant ATP.
 Depuis, il a encadré et préparé plus de 1 500 sportifs, du niveau départemental au niveau national, dans des disciplines variées : rugby, golf, boxe, triathlon, course à pied, football, natation, etc.
-Côté pratique personnelle, il a évolué en force athlétique (niveau régional), en haltérophilie (niveau fédéral), en CrossFit (top 50 France, top 150 Europe) et en trail (finisher du GRP : 43 km / 3 400 m D+).à changer</p>
+Côté pratique personnelle, il a évolué en force athlétique (niveau régional), en haltérophilie (niveau fédéral), en CrossFit (top 50 France, top 150 Europe) et en trail (finisher du GRP : 43 km / 3 400 m D+).</p>
           </div>
         </article>
         <!-- Louis -->
@@ -146,7 +172,7 @@ Côté pratique personnelle, il a évolué en force athlétique (niveau régiona
             <h3>Louis</h3>
             <p>Louis est gérant d’ATP. Titulaire d’un Master « Expert en préparation physique et mentale » (Bac+5) obtenu en 2022, il a forgé son expérience au sein de structures d’haltérophilie et dans la préparation physique pour le rugby (club local et Académie Pôle Espoir Rugby de Pau).
 Il conçoit également des programmations et assure le suivi d’athlètes en ligne, du loisir au haut niveau, dans des disciplines variées : rugby, haltérophilie, football, basket, triathlon, handball, remise en forme… Parallèlement, il accompagne les sportifs d’ATP depuis plusieurs années.
-Sportif curieux plus jeune, il s’oriente vers la musculation avant de se passionner pour l’haltérophilie et l’entraînement fonctionnel.à changer</p>
+Sportif curieux plus jeune, il s’oriente vers la musculation avant de se passionner pour l’haltérophilie et l’entraînement fonctionnel.</p>
           </div>
           <div class="bio-img"><img src="atp/louis.jpg" alt="Louis — Coach"></div>
         </article>
@@ -161,8 +187,8 @@ Sportif curieux plus jeune, il s’oriente vers la musculation avant de se passi
     <section class="section" id="intimes">
       <div class="wrap">
         <h2>Pour les plus intimes :</h2>
-        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/ml9NR9tplp4?si=Ih2cjx870Sw_Mpn5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <p class="center-btn"> <a class="cta" href="avis.html">Voir les avis</a></p>
+        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/ml9NR9tplp4?si=Ih2cjx870Sw_Mpn5" title="Équipe ATP — vidéo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="center-btn"><a class="cta" href="avis.html">Voir les avis</a></p>
       </div>
     </section>
 
@@ -172,7 +198,13 @@ Sportif curieux plus jeune, il s’oriente vers la musculation avant de se passi
   </main>
 
   <footer class="section">
-    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+    <div class="wrap">
+      <div>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></div>
+      <div class="socials">
+        <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
+        <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
+      </div>
+    </div>
   </footer>
 
   <script>
