@@ -3,15 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Planning — ATP</title>
+
+  <!-- ===== SEO (Top propre) ===== -->
+  <title>Planning — Cours & créneaux | ATP Tarbes</title>
+  <meta name="description" content="Planning des cours ATP Tarbes : salle de sport à Tarbes, préparation physique, HIIT/HEAT, barbell, running, accès libre. Choisis ton créneau, essai offert." />
+  <link rel="canonical" href="https://exemple.fr/planning.html" /> <!-- TODO: remplace par le domaine réel -->
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1f4b3a" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ATP Tarbes" />
+  <meta property="og:title" content="Planning — ATP Tarbes" />
+  <meta property="og:description" content="Cours et créneaux à Tarbes : préparation physique, HIIT/HEAT, running, barbell. Essai offert." />
+  <meta property="og:url" content="https://exemple.fr/planning.html" /> <!-- TODO -->
+  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ===== Google Fonts (identiques à l’index) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
-      --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
-      --font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif
+      --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
+      --font-text:'Montserrat', Arial, Helvetica, sans-serif
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
 
     /* ===== Header / Nav ===== */
     .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);z-index:50}
@@ -45,20 +67,28 @@
       .mobile-menu,.backdrop{display:none}
     }
 
+    /* ===== Titres / emphases (identiques à l’index) ===== */
+    h1,h2,h3{font-family:var(--font-display)}
+    h1{font-weight:900}
+    h2{font-weight:900}
+    h3{font-weight:700}
+    strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+    em{font-style:italic}
+
     main{display:block;padding-top:64px}
 
     /* ===== Hero ===== */
     .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/louisecrit.jpg') center/cover no-repeat}
-    .hero h1{font-family:var(--font-display);font-size:clamp(34px,5.5vw,68px);margin:0;color:#fff;text-shadow:none}
-    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0;}
-    .hero > *{ position: relative; z-index: 1; }
+    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0}
+    .hero>*{ position: relative; z-index: 1 }
+    .hero h1{font-size:clamp(32px,5vw,64px);margin:0;color:#fff;text-shadow:none;text-wrap:balance}
     .hero-badges{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);display:flex;gap:10px;flex-wrap:wrap}
     .hero-badges .chip{color:#fff;border:1px solid rgba(255,255,255,.6);padding:6px 12px;border-radius:999px;font-weight:700}
 
     /* ===== Sections ===== */
     .section{padding:24px 16px;text-align:center}
     .wrap{width:min(1200px,96%);margin:0 auto}
-    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand);font-family:var(--font-display)}
+    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand)}
     .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.85}
 
     /* ===== Cartes cours (5 types) ===== */
@@ -67,7 +97,7 @@
     .card .media{aspect-ratio:1/1;background:#f2f4f7}
     .card .media img{display:block;width:100%;height:100%;object-fit:cover}
     .card .body{padding:14px}
-    .card h3{margin:0 0 6px;font-size:20px;color:var(--brand);font-family:var(--font-display)}
+    .card h3{margin:0 0 6px;font-size:20px;color:var(--brand)}
     .card p{margin:0;font-size:16px;line-height:1.6;text-align:justify}
 
     @media (min-width:720px){
@@ -81,7 +111,7 @@
     .embed-img{width:100%;max-width:900px;margin:0 auto;border-radius:12px;overflow:hidden;background:#f1f5f9}
     .embed-img img{display:block;width:100%;height:auto}
 
-     /* espace sous le schéma + bouton plus bas */
+    /* espace sous le schéma + bouton plus bas */
     #schema .embed-img{margin-bottom:18px}
     #schema .center-btn{margin-top:28px}
 
@@ -93,7 +123,12 @@
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
 
+    /* Footer + RS */
     footer.section{background:#f8fafc}
+    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .socials{display:flex;gap:10px}
+    .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
+    .social-btn:hover{filter:brightness(1.08)}
   </style>
 </head>
 <body>
@@ -192,7 +227,13 @@
   </main>
 
   <footer class="section">
-    <div class="wrap">© 2025 Ton Nom — Adresse — <a href="#">Mentions légales</a></div>
+    <div class="wrap">
+      <div>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></div>
+      <div class="socials">
+        <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
+        <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
+      </div>
+    </div>
   </footer>
 
   <script>
