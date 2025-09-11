@@ -11,34 +11,30 @@
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#1f4b3a" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="ATP Tarbes" />
-  <meta property="og:title" content="ATP Tarbes — Salle de sport & préparation physique à Tarbes" />
-  <meta property="og:description" content="Essai offert. Coaching intelligent, préparation physique, accès libre, HIIT/HEAT, barbell, running, gainage." />
-  <meta property="og:url" content="https://exemple.fr/index.html" /> <!-- TODO -->
-  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- ===== Google Fonts (League Spartan titres / Montserrat texte) ===== -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-     :root{
-  --font-display: 'League Spartan', sans-serif; /* Titres */
-  --font-text: 'League Spartan', sans-serif;    /* Texte courant */
-}
-/* réglages proches du visuel */
-h1,h2,h3{font-family:var(--font-display); font-weight:900; line-height:1.05; letter-spacing:-0.01em;}
-body{font-family:var(--font-text); font-weight:400;}
-strong,b{font-weight:700;}
+ <!-- Open Graph / Twitter --> 
+  <meta property="og:type" content="website" /> 
+  <meta property="og:site_name" content="ATP Tarbes" /> 
+  <meta property="og:title" content="ATP Tarbes — Salle de sport & préparation physique à Tarbes" /> 
+  <meta property="og:description" content="Essai offert. Coaching intelligent, préparation physique, accès libre, HIIT/HEAT, barbell, running, gainage." /> 
+  <meta property="og:url" content="https://exemple.fr/index.html" /> <!-- TODO --> 
+  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO --> 
+  <meta name="twitter:card" content="summary_large_image" /> 
   
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
-
-    /* ===== Header / Nav ===== */
+  <!-- ===== Google Fonts (League Spartan titres / Montserrat texte) ===== --> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  
+  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i --> 
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+  
+  <style> 
+    :root{ --brand:#1f4b3a; --bg:#ffffff; --text:#111; --accent:#1f4b3a; 
+          --font-display:'League Spartan', Impact, 'Arial Black', sans-serif; 
+          --font-text:'Montserrat', Arial, Helvetica, sans-serif; } 
+    
+    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
+   
+   /* ===== Header / Nav ===== */
     .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);border-bottom:none;z-index:50}
     .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:block}
