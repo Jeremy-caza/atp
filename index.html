@@ -6,10 +6,10 @@
 
   <!-- ===== SEO de base ===== -->
   <title>ATP Tarbes — Salle de sport & préparation physique à Tarbes (Essai offert)</title>
-  <meta name="description" content="Salle de sport à Tarbes : coaching intelligent, préparation physique, accès libre, running, HIIT/Cardio, barbell, gainage. Essai offert : réserve ton créneau." />
+  <meta name="description" content="Salle de sport à Tarbes : coaching intelligent, préparation physique, accès libre, running, HIIT/HEAT, barbell, gainage. Essai offert : réserve ton créneau." />
   <link rel="canonical" href="https://exemple.fr/index.html" /> <!-- TODO: remplace par le domaine réel -->
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#294836" />
+  <meta name="theme-color" content="#1D4935" />
 
  <!-- Open Graph / Twitter --> 
   <meta property="og:type" content="website" /> 
@@ -25,21 +25,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   
   <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i --> 
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript> 
   
   <style> 
-   
-    :root{ --brand:#294836; --bg:#ffffff; --text:#111; --accent:var(--brand); 
+    /* Étape 1 — Header plus grand + typo menu plus grande + logo plus grand
+       Couleur : on garde la variable --brand. Dès que tu m'envoies le logo, je remplace par son HEX exact.
+       (Tu peux aussi remplacer toi-même ci-dessous.) */
+    :root{ --brand:#1D4935; /* TODO: remplacer par le vert EXACT du logo */ --bg:#ffffff; --text:#111; --accent:var(--brand); 
           --font-display:'League Spartan', Impact, 'Arial Black', sans-serif; 
           --font-text:'Montserrat', Arial, Helvetica, sans-serif; } 
     
-    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
+    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-synthesis-weight:none;font-synthesis-style:none}
    
    /* ===== Header / Nav ===== */
-    .site-header{position:fixed;inset:0 0 auto 0;height:76px; /* était 64px */ background:var(--brand);border-bottom:none;z-index:50}
+    .site-header{position:fixed;inset:0 0 auto 0;height:876px; /* était 64px */ background:var(--brand);border-bottom:none;z-index:50}
     .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}
     .brand{display:block}
-    .brand-logo{height:48px; /* était 36px */ display:block}
+    .brand-logo{height:60px; /* était 36px */ display:block}
     .desktop-nav{display:none;gap:8px}
     .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:10px 14px;border-radius:999px;font-size:18px;/* + lisible */}
     .desktop-nav a:hover{background:rgba(255,255,255,.12)}
