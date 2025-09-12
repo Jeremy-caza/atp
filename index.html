@@ -25,16 +25,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   
   <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i --> 
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript> 
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap"></noscript> 
   
   <style> 
     /* Étape 1 — Header plus grand + typo menu plus grande + logo plus grand
        Couleur : on garde la variable --brand. Dès que tu m'envoies le logo, je remplace par son HEX exact.
        (Tu peux aussi remplacer toi-même ci-dessous.) */
     :root{ --brand:#1D4935; /* TODO: remplacer par le vert EXACT du logo */ --bg:#ffffff; --text:#111; --accent:var(--brand); 
-          --font-display:'League Spartan', Impact, 'Arial Black', sans-serif; 
-          --font-text:'Montserrat', Arial, Helvetica, sans-serif; } 
+          --font-display:'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+          --font-text:'Manrope', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; } 
     
     *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-synthesis-weight:none;font-synthesis-style:none}
    
@@ -44,7 +44,7 @@
     .brand{display:block}
     .brand-logo{height:60px; /* était 36px */ display:block}
     .desktop-nav{display:none;gap:8px}
-    .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:10px 14px;border-radius:999px;font-size:18px;/* + lisible */}
+    .desktop-nav a{color:#fff;text-decoration:none;font-weight:800;padding:10px 16px;border-radius:999px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}
     .desktop-nav a:hover{background:rgba(255,255,255,.12)}
     .burger{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:12px;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
     .burger .bar{position:relative;display:block;width:24px;height:3px;background:#fff;border-radius:2px}
@@ -57,7 +57,7 @@
     .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
     .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
-    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
+    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
     .mobile-menu a:hover{background:rgba(255,255,255,.12)}
     .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:55}
     body.menu-open .mobile-menu{transform:translateX(0)}
@@ -98,7 +98,7 @@
     .hero-bottom .badges{margin:0}
 
     /* push content under fixed header (MAJ hauteur) */
-    main{display:block;padding-top:76px} /* était 64px */
+    main{display:block;padding-top:86px}  /* était 64px */
 
     /* ===== Sections ===== */
     .section{padding:20px 16px;text-align:center}
@@ -171,7 +171,7 @@
       <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.png" alt="Accueil ATP"></a>
       <nav class="desktop-nav" aria-label="Navigation principale">
         <a href="#">Accueil</a>
-        <a href="equipeatp.html">Équipe ATP</a>
+        <a href="equipeatp.html">$1L'équipe ATP$2</a>
         <a href="avis.html">Avis</a>
         <a href="planning.html">Planning</a>
         <a href="salle.html">Salle</a>
@@ -183,7 +183,7 @@
 
   <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
     <a href="#">Accueil</a>
-    <a href="equipeatp.html">Équipe ATP</a>
+    <a href="equipeatp.html">$1L'équipe ATP$2</a>
     <a href="avis.html">Avis</a>
     <a href="planning.html">Planning</a>
     <a href="salle.html">Salle</a>
