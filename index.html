@@ -3,46 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- ===== SEO de base ===== -->
   <title>ATP Tarbes — Salle de sport & préparation physique à Tarbes (Essai offert)</title>
   <meta name="description" content="Salle de sport à Tarbes : coaching personnalisée, préparation physique, accès libre, running, HIIT, Cardio, Force, Haltérophilie, gainage. Essai offert : réserve ton créneau." />
-  <link rel="canonical" href="https://exemple.fr/index.html" /> <!-- TODO: remplace par le domaine réel -->
+  <link rel="canonical" href="https://exemple.fr/index.html" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#1D4935" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ATP Tarbes" />
+  <meta property="og:title" content="ATP Tarbes — Salle de sport & préparation physique à Tarbes" />
+  <meta property="og:description" content="Essai offert. Coaching intelligent, préparation physique, accès libre, HIIT/HEAT, barbell, running, gainage." />
+  <meta property="og:url" content="https://exemple.fr/index.html" />
+  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" />
 
- <!-- Open Graph / Twitter --> 
-  <meta property="og:type" content="website" /> 
-  <meta property="og:site_name" content="ATP Tarbes" /> 
-  <meta property="og:title" content="ATP Tarbes — Salle de sport & préparation physique à Tarbes" /> 
-  <meta property="og:description" content="Essai offert. Coaching intelligent, préparation physique, accès libre, HIIT/HEAT, barbell, running, gainage." /> 
-  <meta property="og:url" content="https://exemple.fr/index.html" /> <!-- TODO --> 
-  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO --> 
-  <meta name="twitter:card" content="summary_large_image" /> 
-  
-  <!-- ===== Google Fonts (League Spartan titres / Montserrat texte) ===== --> 
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  
-  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i --> 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap"></noscript> 
-  
-  <style> 
-    /* Étape 1 — Header plus grand + typo menu plus grande + logo plus grand
-       Couleur : on garde la variable --brand. Dès que tu m'envoies le logo, je remplace par son HEX exact.
-       (Tu peux aussi remplacer toi-même ci-dessous.) */
-    :root{ --brand:#1D4935; /* TODO: remplacer par le vert EXACT du logo */ --bg:#ffffff; --text:#111; --accent:var(--brand); 
-          --font-display:'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-          --font-text:'Manrope', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; } 
-    
-    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-synthesis-weight:none;font-synthesis-style:none}
-   
-   /* ===== Header / Nav ===== */
-    .site-header{position:fixed;inset:0 0 auto 0;height:86px; /* était 64px */ background:var(--brand);border-bottom:none;z-index:50}
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap"></noscript>
+
+  <style>
+    :root{
+      --brand:#1D4935; /* vert ATP */
+      --bg:#ffffff; --text:#111; --accent:var(--brand);
+      --font-display:'Poppins','Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      --font-text:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      /* header sizing */
+      --header-h: 86px;           /* mobile par défaut */
+      --logo-h:   60px;           /* mobile par défaut */
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+
+    /* ===== Header / Nav ===== */
+    .site-header{position:fixed;inset:0 0 auto 0;height:var(--header-h);background:var(--brand);z-index:50}
     .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}
     .brand{display:block}
-    .brand-logo{height:60px; /* était 36px */ display:block}
+    .brand-logo{height:var(--logo-h);display:block}
     .desktop-nav{display:none;gap:8px}
     .desktop-nav a{color:#fff;text-decoration:none;font-weight:800;padding:10px 16px;border-radius:999px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}
     .desktop-nav a:hover{background:rgba(255,255,255,.12)}
@@ -65,12 +62,17 @@
     body.menu-open{overflow:hidden}
 
     @media (min-width:900px){
+      /* ++ desktop: logo & header plus grands */
+      :root{ --header-h: 120px; --logo-h: 84px; }
       .desktop-nav{display:flex}
       .burger{display:none}
       .mobile-menu,.backdrop{display:none}
     }
+    @media (min-width:1400px){
+      :root{ --header-h: 128px; --logo-h: 92px; }
+    }
 
-    /* ===== Titres / emphases (identiques à ton rendu) ===== */
+    /* ===== Titres ===== */
     h1,h2,h3{font-family:var(--font-display)}
     h1{font-weight:900}
     h2{font-weight:900}
@@ -81,24 +83,30 @@
     /* ===== Hero ===== */
     .hero{position:relative;min-height:100svh;background:
       linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),
-      url('atp/commu.jpg') center/cover no-repeat;
-      color:#fff;text-align:center}
+      url('atp/commu.jpg') center/cover no-repeat;color:#fff;text-align:center}
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none;z-index:0}
     .hero>*{position:relative;z-index:1}
     .hero-inner{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);bottom:auto;width:min(1120px,96%);display:flex;flex-direction:column;align-items:center;gap:12px}
-    .hero h1{font-size:clamp(56px, 7vw, 108px);line-height:.9;margin:0;color:#fff;max-width:100%;text-wrap:balance;overflow-wrap:anywhere;text-transform:uppercase}
-    .hero p{font-weight:700;font-style:italic;text-transform:uppercase;text-align:center;font-size:clamp(64px,9vw,160px);margin:2px 0 6px;color:#fff;max-width:44ch}
+
+    /* Nouveau sizing de titre :
+       - pas de coupure au milieu des mots (on enlève overflow-wrap:anywhere)
+       - responsive via clamp, grand sur desktop, plus raisonnable sur mobile */
+    .hero h1{font-size:clamp(34px, 6.2vw, 90px); line-height:.95; margin:0; color:#fff; max-width:100%;
+             word-break:normal; overflow-wrap:normal; hyphens:auto; text-wrap:balance; letter-spacing:.01em; text-transform:uppercase}
+    .hero h2{font-size:clamp(16px, 2.6vw, 28px); margin:0; text-transform:uppercase}
+
+    @media (max-width:480px){
+      .hero h1{font-size:clamp(28px, 9vw, 44px)} /* sécurité très petit écran */
+    }
 
     .cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:0}
     .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
     .badges{margin:4px 0 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
     .badge{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.55);color:#fff}
     .hero-bottom{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom) + 1.8vh);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;width:min(1120px,96%)}
-    .hero-bottom .cta-row{margin:0}
-    .hero-bottom .badges{margin:0}
 
-    /* push content under fixed header (MAJ hauteur) */
-    main{display:block;padding-top:86px}  /* était 64px */
+    /* padding-top du contenu = hauteur header */
+    main{display:block;padding-top:var(--header-h)}
 
     /* ===== Sections ===== */
     .section{padding:20px 16px;text-align:center}
@@ -117,7 +125,6 @@
 
     /* ÉQUIPE */
     #team{padding-top:36px;padding-bottom:40px}
-
     #team .center-btn{display:flex;justify-content:center;margin-top:28px}
 
     /* VIDÉO */
@@ -136,7 +143,7 @@
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
 
-    /* Responsive */
+    /* Desktop layout tweaks */
     @media (min-width:900px){
       .section{padding:28px 20px}
       .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
@@ -145,28 +152,12 @@
       .try-body{display:flex;flex-direction:column;justify-content:center;gap:12px}
       #try{padding-top:14px;padding-bottom:20px}
       #try p{font-size:18px;line-height:1.9}
-
-      /* Espace supplémentaire autour de la section Équipe */
       #team{padding-top:56px;padding-bottom:56px}
       #team .center-btn{margin-top:36px}
-
-      .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
-      .try-text{display:grid;grid-template-rows:auto 1fr;align-self:stretch}
-      .try-text h2{margin:0 0 8px;align-self:start}
-      .try-body{display:flex;flex-direction:column;justify-content:center;gap:12px}
-      #try{padding-top:14px;padding-bottom:20px}
-      #try p{font-size:18px;line-height:1.9}
-      /* on garde ces deux lignes pour conserver ton rendu actuel */
-      .hero h1{font-size:36px}
-      .hero p{font-size:20px}
-    }
-    @media (min-width:1200px){
-      .hero h1{font-size:44px}
     }
   </style>
 </head>
 <body>
-
   <header class="site-header" role="banner">
     <div class="wrap">
       <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.png" alt="Accueil ATP"></a>
@@ -202,7 +193,6 @@
         <div class="cta-row">
           <a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver un essai</a>
         </div>
-        
       </div>
     </section>
 
