@@ -86,7 +86,7 @@
     /* ===== Hero (pleine hauteur) ===== */
     .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:
       linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),
-      url('atp/tarifs.jpg') center/cover no-repeat}
+      url('atp/tarifs.heic') center/cover no-repeat}
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none;z-index:0}
     .hero>*{position:relative;z-index:1}
     .hero h1{font-size:clamp(34px,6.2vw,90px);line-height:.95;margin:0;text-transform:uppercase}
@@ -99,26 +99,23 @@
 
     /* ===== Pricing ===== */
     .pricing-head h2{margin:0 0 8px;font-size:30px;color:var(--brand)}
-    .pillnav{display:flex;justify-content:center;gap:8px;margin:6px 0 14px}
-    .pillnav .pill{display:inline-block;border:1px solid var(--brand);color:var(--brand);padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:800}
-    .pillnav .pill:hover,.pillnav .pill.active{background:var(--brand);color:#fff}
 
     .pricing-grid{display:grid;gap:16px}
     @media (min-width:900px){ .pricing-grid.cols-4{grid-template-columns:repeat(4,1fr)} }
 
     .tier{position:relative;background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:18px 16px 16px;box-shadow:0 10px 24px rgba(0,0,0,.06);text-align:left}
     .tier.featured{border:2px solid var(--brand);box-shadow:0 16px 36px rgba(31,75,58,.18)}
-    .tier .top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-    .tier .name{font-family:var(--font-display);font-weight:900;font-size:20px;color:#111}
-    .tier .badge{font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px;background:#eaf7f1;color:var(--brand)}
-    .tier .price{font-family:var(--font-display);font-weight:900;font-size:42px;letter-spacing:-.01em;color:#1f4b3a;margin:4px 0 6px}
-    .tier .price span{font-size:.5em;font-weight:700;margin-left:6px;color:#555}
-    .tier ul.features{list-style:none;padding:0;margin:8px 0 0}
-    .tier ul.features li{position:relative;padding-left:26px;margin:6px 0;font-size:16px;line-height:1.6}
-    .tier ul.features li::before{content:"✔";position:absolute;left:0;top:0;color:var(--brand);font-weight:900}
+    .ribbon{position:absolute;top:12px;right:12px;background:var(--brand);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    .top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .name{font-family:var(--font-display);font-weight:900;font-size:20px;color:#111}
+    .badge{font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px;background:#eaf7f1;color:var(--brand)}
+    .price{font-family:var(--font-display);font-weight:900;font-size:42px;letter-spacing:-.01em;color:#1f4b3a;margin:4px 0 6px}
+    .price span{font-size:.5em;font-weight:700;margin-left:6px;color:#555}
+    ul.features{list-style:none;padding:0;margin:8px 0 0}
+    ul.features li{position:relative;padding-left:26px;margin:6px 0;font-size:16px;line-height:1.6}
+    ul.features li::before{content:"✔";position:absolute;left:0;top:0;color:var(--brand);font-weight:900}
 
     /* Médias */
-    .media-row{display:grid;gap:14px;margin-top:6px}
     .wide-media{aspect-ratio:2292/458;border-radius:14px;overflow:hidden;background:#f1f5f9}
     .wide-media img{display:block;width:100%;height:100%;object-fit:cover}
 
@@ -172,16 +169,92 @@
     <!-- TARIFS -->
     <section class="section" id="tarifs">
       <div class="wrap">
-        <div class="pricing-head">
-          <h2>Nos formules</h2>
-          
-        </div>
+        <div class="pricing-head"><h2>Nos formules</h2></div>
 
         <!-- Abonnements -->
-        <h3 id="abos" class="sr-only" style="position:absolute;left:-9999px">Abonnements</h3>
         <div class="pricing-grid cols-4" aria-label="Abonnements">
           <article class="tier">
-            <div class="top"><div class="name">12 mois</div>
+            <div class="top"><div class="name">12 mois</div></div>
+            <div class="price">65€<span>/mois</span></div>
+            <ul class="features">
+              <li>Accès illimité aux cours</li>
+              <li>Accès aux espaces hors cours</li>
+            </ul>
+          </article>
+
+          <article class="tier featured">
+            <span class="ribbon">Populaire</span>
+            <div class="top"><div class="name">6 mois</div></div>
+            <div class="price">75€<span>/mois</span></div>
+            <ul class="features">
+              <li>Accès illimité aux cours</li>
+              <li>Accès aux espaces hors cours</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">3 mois</div></div>
+            <div class="price">85€<span>/mois</span></div>
+            <ul class="features">
+              <li>Accès illimité aux cours</li>
+              <li>Accès aux espaces hors cours</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Accès libre (salle)</div><span class="badge">Libre accès</span></div>
+            <div class="price">30€<span>/mois</span></div>
+            <ul class="features">
+              <li>Accès aux espaces hors cours</li>
+              <li>Idéal horaires autonomes</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
+
+        <div class="sep-wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+        </div>
+
+        <!-- À la carte -->
+        <div class="pricing-grid cols-4" aria-label="À la carte">
+          <article class="tier">
+            <div class="top"><div class="name">Carnet 10 séances</div></div>
+            <div class="price">120€</div>
+            <ul class="features">
+              <li>Utilisable sur tous les formats</li>
+              <li>Souplesse & liberté</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Carnet 20 séances</div></div>
+            <div class="price">190€</div>
+            <ul class="features">
+              <li>Utilisable sur tous les formats</li>
+              <li>Souplesse & liberté</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Carnet 30 séances</div></div>
+            <div class="price">210€</div>
+            <ul class="features">
+              <li>Utilisable sur tous les formats</li>
+              <li>Souplesse & liberté</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <div class="top"><div class="name">Drop-in (séance)</div><span class="badge">Visiteur</span></div>
+            <div class="price">12€</div>
+            <ul class="features">
+              <li>Utilisable sur tous les formats</li>
+              <li>Idéal pour un entraînement ponctuel</li>
+            </ul>
+          </article>
+        </div>
 
         <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
       </div>
@@ -191,14 +264,13 @@
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
 
-    <!-- MÉDIAS (3 images) -->
+    <!-- MÉDIAS (bandeau unique 2292×458) -->
     <section class="section" id="medias">
       <div class="wrap">
         <h2>Médias</h2>
-        <div class="wide-media"><img src=\"atp/medias.png\" alt=\"ATP Tarbes — Bandeau médias (2292×458)\"></div>
+        <div class="wide-media"><img src="atp/medias.PNG" alt="ATP Tarbes — Bandeau médias (2292×458)"></div>
       </div>
     </section>
-
   </main>
 
   <footer class="section">
