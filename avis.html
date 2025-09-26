@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ===== SEO (Top propre) ===== -->
+  <!-- ===== SEO aligné à l'index ===== -->
   <title>Vos Avis — Salle de sport & préparation physique à Tarbes | ATP Tarbes</title>
   <meta name="description" content="Découvrez les avis sur ATP Tarbes : 4.9★, coaching intelligent, préparation physique, HIIT/HEAT, running, barbell. Essai offert, rejoignez-nous à Tarbes." />
-  <link rel="canonical" href="https://exemple.fr/avis.html" /> <!-- TODO: remplace par le domaine réel -->
+  <link rel="canonical" href="https://exemple.fr/avis.html" /> <!-- TODO: remplacer par le domaine réel -->
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#1f4b3a" />
+  <meta name="theme-color" content="#1D4935" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph / Twitter (mêmes conventions que l'index) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ATP Tarbes" />
   <meta property="og:title" content="Vos Avis — ATP Tarbes" />
@@ -23,27 +23,32 @@
   <!-- ===== Google Fonts (identiques à l’index) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i -->
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap"></noscript>
 
   <style>
     :root{
-      --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
-      --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
-      --font-text:'Montserrat', Arial, Helvetica, sans-serif
+      --brand:#1D4935; /* même vert que l'index */
+      --bg:#ffffff; --text:#111; --accent:var(--brand);
+      --font-display:'Poppins','Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      --font-text:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      /* header sizing (identiques index) */
+      --header-h: 86px;   /* mobile */
+      --logo-h:   60px;   /* mobile */
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
 
-    /* ===== Header / Nav (cohérent site) ===== */
-    .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);border-bottom:none;z-index:50}
-    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+
+    /* ===== Header / Nav (copie conforme index) ===== */
+    .site-header{position:fixed;inset:0 0 auto 0;height:var(--header-h);background:var(--brand);z-index:50}
+    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}
     .brand{display:block}
-    .brand-logo{height:36px;display:block}
-    .desktop-nav{display:none;gap:6px}
-    .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
+    .brand-logo{height:var(--logo-h);display:block}
+    .desktop-nav{display:none;gap:8px}
+    .desktop-nav a{color:#fff;text-decoration:none;font-weight:800;padding:10px 16px;border-radius:999px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}
     .desktop-nav a:hover{background:rgba(255,255,255,.12)}
-    .desktop-nav a.active{background:rgba(255,255,255,.16)}
+    .desktop-nav a.active{background:rgba(255,255,255,.18)}
     .burger{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:12px;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
     .burger .bar{position:relative;display:block;width:24px;height:3px;background:#fff;border-radius:2px}
     .burger .bar::before,.burger .bar::after{content:"";position:absolute;left:50%;top:50%;width:24px;height:3px;background:#fff;border-radius:2px;transform:translate(-50%,-50%)}
@@ -55,7 +60,7 @@
     .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
     .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
-    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
+    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
     .mobile-menu a:hover{background:rgba(255,255,255,.12)}
     .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:55}
     body.menu-open .mobile-menu{transform:translateX(0)}
@@ -63,12 +68,16 @@
     body.menu-open{overflow:hidden}
 
     @media (min-width:900px){
+      :root{ --header-h: 120px; --logo-h: 84px; }
       .desktop-nav{display:flex}
       .burger{display:none}
       .mobile-menu,.backdrop{display:none}
     }
+    @media (min-width:1400px){
+      :root{ --header-h: 128px; --logo-h: 92px; }
+    }
 
-    /* ===== Titres / emphases (identiques à l’index) ===== */
+    /* ===== Titres & texte (identiques index) ===== */
     h1,h2,h3{font-family:var(--font-display)}
     h1{font-weight:900}
     h2{font-weight:900}
@@ -76,22 +85,24 @@
     strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
     em{font-style:italic}
 
-    main{display:block;padding-top:64px}
+    /* Sections > même réglage de texte que l'index */
+    .section{padding:20px 16px;text-align:center}
+    .section .wrap{width:min(1200px,96%);margin:0 auto}
+    .section h2{margin:0 0 10px;font-size:32px;color:var(--brand)}
+    .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.8}
 
-    /* ===== Hero plein écran ===== */
-    .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:url('atp/groupe.jpg') center/cover no-repeat}
-    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0}
-    .hero>*{ position: relative; z-index: 1 }
-    .hero h1{font-size:clamp(32px,5vw,64px);margin:0;color:#fff;text-shadow:none;text-wrap:balance}
-
-    /* ===== Sections ===== */
-    .section{padding:24px 16px;text-align:center}
-    .wrap{width:min(1200px,96%);margin:0 auto}
-    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand)}
-    .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.85}
+    /* ===== Hero (pleine hauteur comme l'index) ===== */
+    main{display:block;padding-top:var(--header-h)}
+    .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:
+      linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),
+      url('atp/groupe.jpg') center/cover no-repeat}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none;z-index:0}
+    .hero>*{position:relative;z-index:1}
+    .hero h1{font-size:clamp(34px, 6.2vw, 90px); line-height:.95; margin:0; color:#fff; max-width:100%;
+             word-break:normal; overflow-wrap:normal; hyphens:auto; text-wrap:balance; letter-spacing:.01em; text-transform:uppercase}
 
     /* ===== Galerie Avis (captures) ===== */
-    .reviews{padding:24px 16px}
+    .reviews{padding:20px 16px}
     .reviews .wrap{width:min(1200px,96%)}
     .gallery{position:relative}
     .rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px;-webkit-overflow-scrolling:touch}
@@ -104,15 +115,15 @@
     .nav button:disabled{opacity:.5;cursor:not-allowed}
 
     /* ===== Événements / Communauté (2 colonnes) ===== */
-    .twocol{padding:24px 16px}
+    .twocol{padding:20px 16px}
     .twocol .grid{display:grid;gap:24px;align-items:center}
     .twocol .img{border-radius:16px;overflow:hidden;background:#f2f4f7}
-    .twocol .img img{display:block;width:100%;height:auto}
-    .twocol h3{margin:0 0 8px;font-size:24px;color:var(--brand)}
-    .twocol p{margin:0;font-size:17px;line-height:1.75;text-align:justify}
+    .twocol .img img{display:block;width:100%;height:100%;object-fit:cover}
+    .twocol h3{margin:0 0 8px;font-size:28px;color:var(--brand)}
+    .twocol p{margin:0;font-size:18px;line-height:1.8;text-align:justify}
     .twocol .reverse{order:2}
     @media (min-width:900px){
-      .section{padding:32px 20px}
+      .section{padding:28px 20px}
       .twocol .grid{grid-template-columns:1fr 1fr}
     }
 
@@ -124,26 +135,35 @@
     .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
     .center-btn{display:flex;justify-content:center;margin-top:24px}
 
-    /* Avis : espacer le bouton sous la vidéo */
+    /* Avis : espacer le bouton sous la vidéo (même respiration que la home) */
     #video .embed{ margin-bottom: 18px }
-    #video .center-btn{ margin-top: 28px }
+    #video .center-btn{ margin-top: 24px }
 
     /* ===== Séparateurs wave ===== */
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
 
-    /* Footer + RS */
+    /* Footer (copie index + normalisation YT) */
     footer.section{background:#f8fafc}
     footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .footer-legal{font-size:13px;opacity:.8}
     .socials{display:flex;gap:10px}
     .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
     .social-btn:hover{filter:brightness(1.08)}
+    .social-btn img.social-icon{width:22px;height:22px;display:block;object-fit:contain;image-rendering:auto}
+    .social-btn.yt img.social-icon{transform:scale(1.28)}
+
+    @media (max-width:680px){
+      footer .wrap{justify-content:center;text-align:center}
+      .socials{width:100%;justify-content:center}
+      .footer-legal{width:100%}
+    }
   </style>
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="wrap">
-      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.jpg" alt="Accueil ATP"></a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.png" alt="Accueil ATP"></a>
       <nav class="desktop-nav" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
         <a href="equipeatp.html">Équipe ATP</a>
@@ -167,8 +187,8 @@
   <div id="backdrop" class="backdrop" hidden></div>
 
   <main>
-    <!-- HERO -->
-    <section class="hero"><h1>Vos Avis</h1></section>
+    <!-- HERO (pleine page) -->
+    <section class="hero"><h1>VOS AVIS</h1></section>
 
     <!-- INTRO TEXTE -->
     <section class="section" id="intro">
@@ -179,12 +199,11 @@
       </div>
     </section>
 
-    <!-- GALERIE AVIS (captures) -->
+    <!-- GALERIE AVIS (captures, on garde tes noms d'images) -->
     <section class="reviews" id="reviews">
       <div class="wrap">
         <div class="gallery">
           <div id="reviewsRail" class="rail">
-            <!-- Remplace ces images par tes captures d'écran d'avis -->
             <figure class="card"><img src="atp/avis1.jpg" alt="Avis Google 1"></figure>
             <figure class="card"><img src="atp/avis2.jpg" alt="Avis Google 2"></figure>
             <figure class="card"><img src="atp/avis3.jpg" alt="Avis Google 3"></figure>
@@ -206,30 +225,30 @@
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
 
-    <!-- ÉVÉNEMENTS / COMMUNAUTÉ (comme les bios) -->
+    <!-- ÉVÉNEMENTS / COMMUNAUTÉ -->
     <section class="twocol" id="extras">
       <div class="wrap">
         <div class="grid">
           <div class="img"><img src="atp/evenement.jpg" alt="Événements ATP"></div>
           <div class="text">
             <h3>Événements</h3>
-            <p>Compétitions amicales, ateliers techniques, sorties running, défis cardio : nos événements rythment l’année et donnent un vrai coup de boost à la motivation. L’idée : progresser ensemble, célébrer les petits records et partager de bons moments. Par exemple, notre ATP Race Challenge réunit des binômes pour une heure d’effort ludique : alternance de course à pied et d’exercices simples et accessibles (rameur, portés légers, ateliers cardio). Pas besoin d’un gros bagage technique : on adapte les formats et les charges à chacun, du débutant au confirmé. Ambiance garantie, avec une buvette sur place et souvent une petite tombola pour repartir avec un lot.</p>
+            <p>Compétitions amicales, ateliers techniques, sorties running, défis cardio : nos événements rythment l’année et donnent un vrai coup de boost à la motivation. L’idée : progresser ensemble, célébrer les petits records et partager de bons moments.</p>
           </div>
         </div>
         <div class="grid" style="margin-top:24px">
           <div class="text">
             <h3>Communauté</h3>
-            <p>ATP, c’est une ambiance. On s’encourage, on apprend des autres et on s’entraide pour tenir la régularité. Rejoindre la communauté, c’est aussi profiter des conseils des coachs en dehors des séances : mobilité, récup’, nutrition, et plus encore. Au quotidien, cela veut dire des séances où personne n’est laissé de côté : on vous trouve un binôme, on adapte les formats, on célèbre chaque petit record. Première reprise après une pause ? On vous guide pas à pas. Une barre qui ne passe pas ? On décortique le geste et on vous donne des repères simples pour progresser en sécurité.</p>
+            <p>ATP, c’est une ambiance. On s’encourage, on apprend des autres et on s’entraide pour tenir la régularité. Rejoindre la communauté, c’est aussi profiter des conseils des coachs en dehors des séances : mobilité, récup’, nutrition, et plus encore.</p>
           </div>
           <div class="img reverse"><img src="atp/louis+adherent.jpg" alt="Communauté ATP"></div>
         </div>
       </div>
     </section>
 
-    <!-- VIDÉO SANS TITRE -->
+    <!-- VIDÉO + CTA (espacement harmonisé) -->
     <section class="section" id="video">
       <div class="wrap">
-        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/ml9NR9tplp4?si=VIKAHqqc6E4tmlRE" title="Avis — ATP Tarbes (vidéo)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/ml9NR9tplp4?si=VIKAHqqc6E4tmlRE" title="Avis — ATP Tarbes (vidéo)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="center-btn"><a class="cta" href="planning.html">Voir le planning</a></p>
       </div>
     </section>
@@ -241,10 +260,17 @@
 
   <footer class="section">
     <div class="wrap">
-      <div>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></div>
+      <div class="footer-legal"><small>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></small></div>
       <div class="socials">
-        <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
-        <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
+        <a class="social-btn" href="https://www.instagram.com/atpprepaphysique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/IG.png" alt="Instagram">
+        </a>
+        <a class="social-btn" href="https://www.facebook.com/profile.php?id=100089940827994" aria-label="Facebook" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/FB.png" alt="Facebook">
+        </a>
+        <a class="social-btn yt" href="https://www.youtube.com/channel/UC9avJ7nTcTF31O6JDmZHenQ" aria-label="YouTube" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/YT.webp" alt="YouTube">
+        </a>
       </div>
     </div>
   </footer>
