@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ===== SEO (Top propre) ===== -->
+  <!-- ===== SEO aligné à l'index ===== -->
   <title>Planning — Cours & créneaux | ATP Tarbes</title>
   <meta name="description" content="Planning des cours ATP Tarbes : salle de sport à Tarbes, préparation physique, HIIT/HEAT, barbell, running, accès libre. Choisis ton créneau, essai offert." />
-  <link rel="canonical" href="https://exemple.fr/planning.html" /> <!-- TODO: remplace par le domaine réel -->
+  <link rel="canonical" href="https://exemple.fr/planning.html" /> <!-- TODO: remplacer par le domaine réel -->
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#1f4b3a" />
+  <meta name="theme-color" content="#1D4935" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph / Twitter (mêmes conventions que l'index) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ATP Tarbes" />
   <meta property="og:title" content="Planning — ATP Tarbes" />
@@ -23,32 +23,32 @@
   <!-- ===== Google Fonts (identiques à l’index) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i -->
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap"></noscript>
 
   <style>
     :root{
-      --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
-      --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
-      --font-text:'Montserrat', Arial, Helvetica, sans-serif;
-      /* Couleurs planning */
-      --c1:#0e7490; /* bleu canard */
-      --c2:#f59e0b; /* jaune */
-      --c3:#caa186; /* sable/bronze */
-      --c4:#1d4ed8; /* bleu */
-      --card-shadow:0 10px 26px rgba(0,0,0,.10);
+      --brand:#1D4935; /* même vert que l'index */
+      --bg:#ffffff; --text:#111; --accent:var(--brand);
+      --font-display:'Poppins','Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      --font-text:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      /* header sizing (identiques index) */
+      --header-h: 86px;   /* mobile */
+      --logo-h:   60px;   /* mobile */
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
 
-    /* ===== Header / Nav ===== */
-    .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);z-index:50}
-    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand-logo{height:36px;display:block}
-    .desktop-nav{display:none;gap:6px}
-    .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+
+    /* ===== Header / Nav (copie conforme index) ===== */
+    .site-header{position:fixed;inset:0 0 auto 0;height:var(--header-h);background:var(--brand);z-index:50}
+    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:block}
+    .brand-logo{height:var(--logo-h);display:block}
+    .desktop-nav{display:none;gap:8px}
+    .desktop-nav a{color:#fff;text-decoration:none;font-weight:800;padding:10px 16px;border-radius:999px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}
     .desktop-nav a:hover{background:rgba(255,255,255,.12)}
-    .desktop-nav a.active{background:rgba(255,255,255,.16)}
+    .desktop-nav a.active{background:rgba(255,255,255,.18)}
     .burger{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:12px;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
     .burger .bar{position:relative;display:block;width:24px;height:3px;background:#fff;border-radius:2px}
     .burger .bar::before,.burger .bar::after{content:"";position:absolute;left:50%;top:50%;width:24px;height:3px;background:#fff;border-radius:2px;transform:translate(-50%,-50%)}
@@ -60,7 +60,7 @@
     .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
     .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
-    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
+    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
     .mobile-menu a:hover{background:rgba(255,255,255,.12)}
     .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:55}
     body.menu-open .mobile-menu{transform:translateX(0)}
@@ -68,12 +68,16 @@
     body.menu-open{overflow:hidden}
 
     @media (min-width:900px){
+      :root{ --header-h: 120px; --logo-h: 84px; }
       .desktop-nav{display:flex}
       .burger{display:none}
       .mobile-menu,.backdrop{display:none}
     }
+    @media (min-width:1400px){
+      :root{ --header-h: 128px; --logo-h: 92px; }
+    }
 
-    /* ===== Titres / emphases (identiques à l’index) ===== */
+    /* ===== Titres & texte (identiques index) ===== */
     h1,h2,h3{font-family:var(--font-display)}
     h1{font-weight:900}
     h2{font-weight:900}
@@ -81,21 +85,22 @@
     strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
     em{font-style:italic}
 
-    main{display:block;padding-top:64px}
+    /* Sections > même réglage que l'index */
+    .section{padding:20px 16px;text-align:center}
+    .wrap{width:min(1200px,96%);margin:0 auto}
+    .section h2{margin:0 0 10px;font-size:32px;color:var(--brand)}
+    .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.8}
 
-    /* ===== Hero ===== */
-    .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/louisecrit.jpg') center/cover no-repeat}
-    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0}
-    .hero>*{ position: relative; z-index: 1 }
-    .hero h1{font-size:clamp(32px,5vw,64px);margin:0;color:#fff;text-shadow:none;text-wrap:balance}
+    /* ===== Hero (pleine hauteur comme l'index) ===== */
+    main{display:block;padding-top:var(--header-h)}
+    .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:
+      linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),
+      url('atp/planning-hero2.jpg') center/cover no-repeat}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none;z-index:0}
+    .hero>*{position:relative;z-index:1}
+    .hero h1{font-size:clamp(34px, 6.2vw, 90px); line-height:.95; margin:0; color:#fff; max-width:100%; text-wrap:balance; letter-spacing:.01em; text-transform:uppercase}
     .hero-badges{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);display:flex;gap:10px;flex-wrap:wrap}
     .hero-badges .chip{color:#fff;border:1px solid rgba(255,255,255,.6);padding:6px 12px;border-radius:999px;font-weight:700}
-
-    /* ===== Sections ===== */
-    .section{padding:24px 16px;text-align:center}
-    .wrap{width:min(1200px,96%);margin:0 auto}
-    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand)}
-    .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.85}
 
     /* ===== Cartes cours (5 types) ===== */
     .cards{display:grid;gap:16px}
@@ -109,22 +114,12 @@
     @media (min-width:720px){.cards{grid-template-columns:repeat(3,1fr)}}
     @media (min-width:1040px){.cards{grid-template-columns:repeat(5,1fr)}}
 
-    /* ===== Schedule (codé) ===== */
-    .schedule{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));align-items:stretch}
-    .day-card{background:#fff;border:1px solid #e5e7eb;border-radius:22px;box-shadow:var(--card-shadow);padding:18px}
-    .day{font-family:var(--font-display);font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);text-align:center;margin:2px 0 12px}
-    .slots{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
-    .slot{display:flex;flex-direction:column;gap:4px}
-    .slot time{font-family:var(--font-display);font-weight:900;letter-spacing:.08em;color:var(--c1)}
-    .line,.line2{font-weight:700;letter-spacing:.04em}
-    .line2:empty{display:none}
-    .slot.c1 time,.slot.c1 .line,.slot.c1 .line2{color:var(--c1)}
-    .slot.c2 time,.slot.c2 .line,.slot.c2 .line2{color:var(--c2)}
-    .slot.c3 time,.slot.c3 .line,.slot.c3 .line2{color:var(--c3)}
-    .slot.c4 time,.slot.c4 .line,.slot.c4 .line2{color:var(--c4)}
-    .slot.open-gym time,.slot.open-gym .line{color:var(--c2)}
+    /* ===== Planning image (remplace l'ancien schéma codé) ===== */
+    .plan-wrap{width:min(1200px,96%);margin:0 auto}
+    .plan-img{width:100%;display:block;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.10);background:#f2f4f7}
+    .plan-caption{margin-top:8px;font-size:14px;opacity:.8}
 
-    /* ===== Bouton ===== */
+    /* ===== Bouton / CTA ===== */
     .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
     .center-btn{display:flex;justify-content:center;margin-top:24px}
 
@@ -132,21 +127,30 @@
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
 
-    /* Footer + RS */
+    /* Footer (copie index) */
     footer.section{background:#f8fafc}
     footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .footer-legal{font-size:13px;opacity:.8}
     .socials{display:flex;gap:10px}
     .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
     .social-btn:hover{filter:brightness(1.08)}
+    .social-btn img.social-icon{width:22px;height:22px;display:block;object-fit:contain;image-rendering:auto}
+    .social-btn.yt img.social-icon{transform:scale(1.28)}
+
+    @media (max-width:680px){
+      footer .wrap{justify-content:center;text-align:center}
+      .socials{width:100%;justify-content:center}
+      .footer-legal{width:100%}
+    }
   </style>
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="wrap">
-      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.jpg" alt="Accueil ATP"></a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.png" alt="Accueil ATP"></a>
       <nav class="desktop-nav" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
-        <a href="equipeatp.html">Équipe ATP</a>
+        <a href="equipeatp.html">L'ÉQUIPE ATP</a>
         <a href="avis.html">Avis</a>
         <a class="active" href="planning.html">Planning</a>
         <a href="salle.html">Salle</a>
@@ -158,7 +162,7 @@
 
   <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
     <a href="index.html">Accueil</a>
-    <a href="equipeatp.html">Équipe ATP</a>
+    <a href="equipeatp.html">L'ÉQUIPE ATP</a>
     <a href="avis.html">Avis</a>
     <a class="active" href="planning.html">Planning</a>
     <a href="salle.html">Salle</a>
@@ -169,7 +173,7 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <h1>Planning</h1>
+      <h1>PLANNING</h1>
       <div class="hero-badges">
         <span class="chip">Lun → Sam</span>
         <span class="chip">Matin</span>
@@ -182,7 +186,7 @@
     <section class="section" id="intro">
       <div class="wrap">
         <h2>Comment fonctionne le planning ?</h2>
-        <p>Nous organisons la semaine autour de 5 formats complémentaires : <strong>ATP Class</strong>, <strong>Team Running</strong>, <strong>Team Cardio</strong>, <strong>Barbell Club</strong> et <strong>Gainage</strong>. L’objectif : te proposer des créneaux réguliers et lisibles, pour t’entraîner quand c’est le plus simple pour toi : matin, midi ou soir.</p>
+        <p>Nous organisons la semaine autour de 5 formats complémentaires : <strong>ATP Class</strong>, <strong>Team Running</strong>, <strong>Team Cardio</strong>, <strong>Barbell Club</strong> et <strong>Gainage</strong>. L’objectif : te proposer des créneaux réguliers et lisibles, pour t’entraîner quand c’est le plus simple pour toi : matin, midi ou soir.</p>
         <p>Tu peux démarrer quand tu veux : choisis un créneau d’essai, viens découvrir une séance et on t’aide à bâtir une routine efficace et durable. Tout est pensé pour progresser sans se blesser, dans une ambiance motivante.</p>
       </div>
     </section>
@@ -224,87 +228,14 @@
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
 
-    <!-- PLANNING CODÉ (remplace l'ancienne image) -->
-    <section class="section" id="schema">
-      <div class="wrap">
+    <!-- PLANNING IMAGE (remplace l'ancien schéma codé) -->
+    <section class="section" id="planning-img">
+      <div class="plan-wrap">
         <h2>Le planning en un coup d’œil</h2>
-
-        <div class="schedule">
-          <!-- LUNDI -->
-          <article class="day-card">
-            <h3 class="day">LUNDI</h3>
-            <ul class="slots">
-              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
-            </ul>
-          </article>
-
-          <!-- MARDI -->
-          <article class="day-card">
-            <h3 class="day">MARDI</h3>
-            <ul class="slots">
-              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
-            </ul>
-          </article>
-
-          <!-- MERCREDI -->
-          <article class="day-card">
-            <h3 class="day">MERCREDI</h3>
-            <ul class="slots">
-              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
-            </ul>
-          </article>
-
-          <!-- JEUDI -->
-          <article class="day-card">
-            <h3 class="day">JEUDI</h3>
-            <ul class="slots">
-              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
-            </ul>
-          </article>
-
-          <!-- VENDREDI -->
-          <article class="day-card">
-            <h3 class="day">VENDREDI</h3>
-            <ul class="slots">
-              <li class="slot c1"><time>9h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c2"><time>12h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>17h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>18h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot c4"><time>19h15</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot open-gym"><time>Open Gym</time><span class="line">8h30 – 20h30</span></li>
-            </ul>
-          </article>
-
-          <!-- SAMEDI -->
-          <article class="day-card">
-            <h3 class="day">SAMEDI</h3>
-            <ul class="slots">
-              <li class="slot c1"><time>10h00</time><span class="line">Type de cours</span><span class="line2"></span></li>
-              <li class="slot open-gym"><time>Open Gym</time><span class="line">9h30 – 12h30</span></li>
-            </ul>
-          </article>
-        </div>
-
+        <figure class="plan-figure">
+          <img class="plan-img" src="atp/planning.jpg" alt="Planning hebdomadaire ATP (aperçu)" />
+          <figcaption class="plan-caption">Planning susceptible d’évoluer légèrement lors d’événements ponctuels.</figcaption>
+        </figure>
         <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
       </div>
     </section>
@@ -313,10 +244,17 @@
 
   <footer class="section">
     <div class="wrap">
-      <div>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></div>
+      <div class="footer-legal"><small>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></small></div>
       <div class="socials">
-        <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
-        <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
+        <a class="social-btn" href="https://www.instagram.com/atpprepaphysique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/IG.png" alt="Instagram">
+        </a>
+        <a class="social-btn" href="https://www.facebook.com/profile.php?id=100089940827994" aria-label="Facebook" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/FB.png" alt="Facebook">
+        </a>
+        <a class="social-btn yt" href="https://www.youtube.com/channel/UC9avJ7nTcTF31O6JDmZHenQ" aria-label="YouTube" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/YT.webp" alt="YouTube">
+        </a>
       </div>
     </div>
   </footer>
