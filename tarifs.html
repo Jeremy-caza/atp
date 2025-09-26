@@ -86,7 +86,7 @@
     /* ===== Hero (pleine hauteur) ===== */
     .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:
       linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),
-      url('atp/tarifs.heic') center/cover no-repeat}
+      url('atp/tarifs.jpg') center/cover no-repeat}
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none;z-index:0}
     .hero>*{position:relative;z-index:1}
     .hero h1{font-size:clamp(34px,6.2vw,90px);line-height:.95;margin:0;text-transform:uppercase}
@@ -119,9 +119,8 @@
 
     /* Médias */
     .media-row{display:grid;gap:14px;margin-top:6px}
-    .media-row .item{aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#f1f5f9}
-    .media-row img{display:block;width:100%;height:100%;object-fit:cover}
-    @media (min-width:900px){.media-row{grid-template-columns:repeat(3,1fr)}}
+    .wide-media{aspect-ratio:2292/458;border-radius:14px;overflow:hidden;background:#f1f5f9}
+    .wide-media img{display:block;width:100%;height:100%;object-fit:cover}
 
     /* CTA */
     .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
@@ -175,114 +174,14 @@
       <div class="wrap">
         <div class="pricing-head">
           <h2>Nos formules</h2>
-          <div class="pillnav">
-            <a class="pill active" href="#abos">Abonnements</a>
-            <a class="pill" href="#alacarte">À la carte</a>
-          </div>
+          
         </div>
 
         <!-- Abonnements -->
         <h3 id="abos" class="sr-only" style="position:absolute;left:-9999px">Abonnements</h3>
         <div class="pricing-grid cols-4" aria-label="Abonnements">
           <article class="tier">
-            <div class="top"><div class="name">12 mois</div></div>
-            <div class="price">65€<span>/mois</span></div>
-            <ul class="features">
-              <li>Accès illimité aux cours</li>
-              <li>Accès aux espaces hors cours</li>
-            </ul>
-          </article>
-
-          <article class="tier featured">
-            <div class="top"><div class="name">6 mois</div></div>
-            <div class="price">75€<span>/mois</span></div>
-            <ul class="features">
-              <li>Accès illimité aux cours</li>
-              <li>Accès aux espaces hors cours</li>
-            </ul>
-          </article>
-
-          <article class="tier">
-            <div class="top"><div class="name">3 mois</div></div>
-            <div class="price">85€<span>/mois</span></div>
-            <ul class="features">
-              <li>Accès illimité aux cours</li>
-              <li>Accès aux espaces hors cours</li>
-            </ul>
-          </article>
-
-          <article class="tier">
-            <div class="top"><div class="name">Accès libre (salle)</div><span class="badge">Libre accès</span></div>
-            <div class="price">30€<span>/mois</span></div>
-            <ul class="features">
-              <li>Accès aux espaces hors cours</li>
-              <li>Idéal horaires autonomes</li>
-            </ul>
-          </article>
-        </div>
-
-        <!-- Promo du moment : garder en mémoire (désactivée pour le moment) -->
-        <!--
-        <div class="callout" style="margin-top:14px">
-          <strong>PROMO du moment :</strong> décris ici l'offre (ex. 1er mois -20%, frais offerts…).
-        </div>
-        -->
-
-        <!-- À la carte -->
-        <h3 id="alacarte" style="margin:18px 0 6px;font-size:22px;color:#111">À la carte</h3>
-        <div class="pricing-grid cols-4" aria-label="À la carte">
-          <article class="tier">
-            <div class="top"><div class="name">Carnet 10 séances</div></div>
-            <div class="price">120€</div>
-            <ul class="features">
-              <li>Utilisable sur tous les formats</li>
-              <li>Souplesse & liberté</li>
-            </ul>
-          </article>
-
-          <article class="tier">
-            <div class="top"><div class="name">Carnet 20 séances</div></div>
-            <div class="price">190€</div>
-            <ul class="features">
-              <li>Utilisable sur tous les formats</li>
-              <li>Souplesse & liberté</li>
-            </ul>
-          </article>
-
-          <article class="tier">
-            <div class="top"><div class="name">Carnet 30 séances</div></div>
-            <div class="price">210€</div>
-            <ul class="features">
-              <li>Utilisable sur tous les formats</li>
-              <li>Souplesse & liberté</li>
-            </ul>
-          </article>
-
-          <article class="tier">
-            <div class="top"><div class="name">Drop‑in (séance)</div><span class="badge">Visiteur</span></div>
-            <div class="price">12€</div>
-            <ul class="features">
-              <li>Utilisable sur tous les formats</li>
-              <li>Idéal pour un entraînement ponctuel</li>
-            </ul>
-          </article>
-        </div></div>
-            <div class="price">120€</div>
-            <ul class="features">
-              <li>Utilisable sur tous les formats</li>
-              <li>Souplesse & liberté</li>
-            </ul>
-          </article>
-
-          <article class="tier">
-            <div class="top"><div class="name">Drop‑in (séance)</div><span class="badge">Visiteur</span></div>
-            <div class="price">12€</div>
-            <ul class="features">
-              <li>Utilisable sur tous les formats</li>
-              <li>Idéal pour un entraînement ponctuel</li>
-            </ul>
-          </article>
-        </div>
+            <div class="top"><div class="name">12 mois</div>
 
         <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver une séance d’essai</a></p>
       </div>
@@ -296,11 +195,7 @@
     <section class="section" id="medias">
       <div class="wrap">
         <h2>Médias</h2>
-        <div class="media-row">
-          <div class="item"><img src="atp/ladepeche.png" alt="Média 1"></div>
-          <div class="item"><img src="atp/yvette.png" alt="Média 2"></div>
-          <div class="item"><img src="atp/larepublique.jpg" alt="Média 3"></div>
-        </div>
+        <div class="wide-media"><img src=\"atp/medias.png\" alt=\"ATP Tarbes — Bandeau médias (2292×458)\"></div>
       </div>
     </section>
 
