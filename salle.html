@@ -4,45 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ===== SEO (Top propre) ===== -->
+  <!-- ===== SEO (aligné à l'index) ===== -->
   <title>Salle de sport à Tarbes — La salle & équipements | ATP Tarbes</title>
   <meta name="description" content="Visitez la salle ATP Tarbes : équipements barbell, cardio, HIIT/HEAT, pistes de sprint, vestiaires. Accès facile, parking gratuit, PMR. Essai offert." />
-  <link rel="canonical" href="https://exemple.fr/salle.html" /> <!-- TODO: remplace par le domaine réel -->
+  <link rel="canonical" href="https://exemple.fr/salle.html" /> <!-- TODO: domaine réel -->
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#1f4b3a" />
+  <meta name="theme-color" content="#1D4935" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ATP Tarbes" />
   <meta property="og:title" content="La salle — ATP Tarbes" />
   <meta property="og:description" content="Salle de sport à Tarbes : équipements complets, accès PMR, parking gratuit. Préparation physique, barbell, cardio, HIIT/HEAT." />
-  <meta property="og:url" content="https://exemple.fr/salle.html" /> <!-- TODO -->
-  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" /> <!-- TODO -->
+  <meta property="og:url" content="https://exemple.fr/salle.html" />
+  <meta property="og:image" content="https://exemple.fr/atp/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- ===== Google Fonts (identiques à l’index) ===== -->
+  <!-- Fonts (Poppins / Manrope comme l'index) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- League Spartan 700/900 + Montserrat 400/400i/700/700i -->
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap"></noscript>
 
   <style>
     :root{
-      --brand:#1f4b3a;--bg:#ffffff;--text:#111;--accent:#1f4b3a;
-      --font-display:'League Spartan', Impact, 'Arial Black', sans-serif;
-      --font-text:'Montserrat', Arial, Helvetica, sans-serif
+      --brand:#1D4935; --bg:#ffffff; --text:#111; --accent:var(--brand);
+      --font-display:'Poppins','Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      --font-text:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      /* header sizing (comme index) */
+      --header-h: 86px;   /* mobile */
+      --logo-h:   60px;   /* mobile */
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400}
 
-    /* ===== Header / Nav ===== */
-    .site-header{position:fixed;inset:0 0 auto 0;height:64px;background:var(--brand);z-index:50}
-    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand-logo{height:36px;display:block}
-    .desktop-nav{display:none;gap:6px}
-    .desktop-nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:999px}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+
+    /* ===== Header / Nav (copie index) ===== */
+    .site-header{position:fixed;inset:0 0 auto 0;height:var(--header-h);background:var(--brand);z-index:50}
+    .site-header .wrap{width:min(1200px,96%);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:block}
+    .brand-logo{height:var(--logo-h);display:block}
+    .desktop-nav{display:none;gap:8px}
+    .desktop-nav a{color:#fff;text-decoration:none;font-weight:800;padding:10px 16px;border-radius:999px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}
     .desktop-nav a:hover{background:rgba(255,255,255,.12)}
-    .desktop-nav a.active{background:rgba(255,255,255,.16)}
+    .desktop-nav a.active{background:rgba(255,255,255,.18)}
     .burger{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:12px;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
     .burger .bar{position:relative;display:block;width:24px;height:3px;background:#fff;border-radius:2px}
     .burger .bar::before,.burger .bar::after{content:"";position:absolute;left:50%;top:50%;width:24px;height:3px;background:#fff;border-radius:2px;transform:translate(-50%,-50%)}
@@ -54,7 +59,7 @@
     .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
     .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
-    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
+    .mobile-menu a{padding:14px 8px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
     .mobile-menu a:hover{background:rgba(255,255,255,.12)}
     .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:55}
     body.menu-open .mobile-menu{transform:translateX(0)}
@@ -62,12 +67,14 @@
     body.menu-open{overflow:hidden}
 
     @media (min-width:900px){
+      :root{ --header-h: 120px; --logo-h: 84px; }
       .desktop-nav{display:flex}
       .burger{display:none}
       .mobile-menu,.backdrop{display:none}
     }
+    @media (min-width:1400px){ :root{ --header-h: 128px; --logo-h: 92px; } }
 
-    /* ===== Titres / emphases (identiques à l’index) ===== */
+    /* Titres / texte */
     h1,h2,h3{font-family:var(--font-display)}
     h1{font-weight:900}
     h2{font-weight:900}
@@ -75,66 +82,67 @@
     strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
     em{font-style:italic}
 
-    main{display:block;padding-top:64px}
+    main{display:block;padding-top:var(--header-h)}
 
-    /* ===== Hero ===== */
-    .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),url('atp/salle-hero.jpg') center/cover no-repeat}
-    .hero::before{content:"";position:absolute;inset:0;background: rgba(0,0,0,.5);pointer-events:none;z-index:0}
-    .hero>*{ position: relative; z-index: 1 }
-    .hero h1{font-size:clamp(32px,5vw,64px);margin:0;color:#fff;text-shadow:none;text-wrap:balance}
+    /* ===== Hero pleine hauteur ===== */
+    .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:
+      linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),
+      url('atp/salle-hero.jpeg') center/cover no-repeat}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none;z-index:0}
+    .hero>*{position:relative;z-index:1}
+    .hero h1{font-size:clamp(34px,6.2vw,90px);line-height:.95;margin:0;text-wrap:balance;text-transform:uppercase}
 
-    /* ===== Sections ===== */
-    .section{padding:24px 16px;text-align:center}
-    .wrap{width:min(1200px,96%);margin:0 auto}
-    .section h2{margin:0 0 12px;font-size:28px;color:var(--brand)}
-    .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.85}
+    /* Sections */
+    .section{padding:20px 16px;text-align:center}
+    .section .wrap{width:min(1200px,96%);margin:0 auto}
+    .section h2{margin:0 0 10px;font-size:32px;color:var(--brand)}
+    .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.8}
 
-    /* ===== Map / Embed ===== */
-    .embed{width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden;line-height:0}
+    /* Google Maps embed + vidéo style commun */
+    .embed{width:100%;max-width:1000px;margin:0 auto;aspect-ratio:16/9;background:#f1f5f9;border-radius:12px;overflow:hidden;line-height:0}
     .embed iframe{display:block;width:100%;height:100%;border:0}
 
-    /* ===== Équipement ===== */
-    .equip{padding:24px 16px}
+    /* Équipement */
+    .equip{padding:20px 16px}
     .equip .grid{display:grid;gap:24px;align-items:center}
     .equip .img{border-radius:16px;overflow:hidden;background:#f2f4f7}
     .equip .img img{display:block;width:100%;height:auto}
-    .equip h3{margin:0 0 8px;font-size:24px;color:var(--brand)}
+    .equip h3{margin:0 0 8px;font-size:28px;color:var(--brand)}
     .equip .prose{max-width:700px;margin:0 auto;text-align:left}
     .equip ul{padding-left:0;margin:10px 0 0;list-style:none}
     .equip li{position:relative;padding-left:28px;margin:6px 0;font-size:17px;line-height:1.7}
     .equip li::before{content:"";position:absolute;left:6px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--brand)}
-
-    /* 2 images en bas de la section */
     .equip .two-img{display:grid;gap:14px;margin-top:16px}
     .equip .two-img .img{aspect-ratio:16/9}
     @media (min-width:900px){
       .equip .grid{grid-template-columns:1fr 1fr}
       .equip .two-img{grid-template-columns:1fr 1fr}
+      .section{padding:28px 20px}
     }
 
-    /* ===== Bouton ===== */
-    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none}
-    .center-btn{display:flex;justify-content:center;margin-top:24px}
-
-    /* ===== Waves ===== */
+    /* Waves */
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
 
-    /* Footer + RS */
+    /* Footer (comme index) */
     footer.section{background:#f8fafc}
     footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .footer-legal{font-size:13px;opacity:.8}
     .socials{display:flex;gap:10px}
     .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
     .social-btn:hover{filter:brightness(1.08)}
+    .social-btn img.social-icon{width:22px;height:22px;display:block;object-fit:contain}
+    .social-btn.yt img.social-icon{transform:scale(1.28)}
+    @media (max-width:680px){footer .wrap{justify-content:center;text-align:center}.socials{width:100%;justify-content:center}.footer-legal{width:100%}}
   </style>
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="wrap">
-      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.jpg" alt="Accueil ATP"></a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="atp/logo.png" alt="Accueil ATP"></a>
       <nav class="desktop-nav" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
-        <a href="equipeatp.html">Équipe ATP</a>
+        <a href="equipeatp.html">L'ÉQUIPE ATP</a>
         <a href="avis.html">Avis</a>
         <a href="planning.html">Planning</a>
         <a class="active" href="salle.html">Salle</a>
@@ -146,7 +154,7 @@
 
   <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
     <a href="index.html">Accueil</a>
-    <a href="equipeatp.html">Équipe ATP</a>
+    <a href="equipeatp.html">L'ÉQUIPE ATP</a>
     <a href="avis.html">Avis</a>
     <a href="planning.html">Planning</a>
     <a class="active" href="salle.html">Salle</a>
@@ -156,9 +164,9 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero"><h1>La Salle</h1></section>
+    <section class="hero"><h1>LA SALLE</h1></section>
 
-    <!-- ACCÈS -->
+    <!-- ACCÈS (texte) -->
     <section class="section" id="acces">
       <div class="wrap">
         <h2>Accès & infos pratiques</h2>
@@ -171,26 +179,11 @@
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
 
-    <!-- GOOGLE MAPS -->
-    <section class="section" id="map">
-      <div class="wrap">
-        <h2>Nous trouver</h2>
-        <div class="embed">
-          <!-- Colle ici le code d'intégration Google Maps (Embed). Exemple : -->
-          <iframe src="" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation ATP Tarbes"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <div class="sep-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
-    </div>
-
-    <!-- ÉQUIPEMENT -->
+    <!-- ÉQUIPEMENTS & ESPACES (placé AVANT la carte) -->
     <section class="equip" id="equipement">
       <div class="wrap">
         <div class="grid">
-          <div class="img"><img src="atp/salle-equip.jpg" alt="Espace et matériel de la salle"></div>
+          <div class="img"><img src="atp/salle-equip.jpeg" alt="Espace et matériel de la salle"></div>
           <div class="text">
             <h3>Équipements & espaces</h3>
             <div class="prose">
@@ -208,10 +201,24 @@
           </div>
         </div>
         <div class="two-img">
-          <div class="img"><img src="atp/salle-01.jpg" alt="Vue de la salle"></div>
-          <div class="img"><img src="atp/salle-02.jpg" alt="Zone barbell & cardio"></div>
+          <div class="img"><img src="atp/salle-01.jpeg" alt="Vue de la salle"></div>
+          <div class="img"><img src="atp/salle-02.jpeg" alt="Zone barbell & cardio"></div>
         </div>
         <p class="center-btn"><a class="cta" href="tarifs.html">Voir les tarifs</a></p>
+      </div>
+    </section>
+
+    <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
+
+    <!-- NOUS TROUVER (Google Maps, placé APRÈS équipements) -->
+    <section class="section" id="map">
+      <div class="wrap">
+        <h2>Nous trouver</h2>
+        <div class="embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11630.323728171672!2d0.09120987266375515!3d43.21827831625934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a9d3032d111105%3A0x208d411f3b44f5fa!2sATP%20Tarbes!5e0!3m2!1sfr!2sfr!4v1758886189509!5m2!1sfr!2sfr" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation ATP Tarbes"></iframe>
+        </div>
       </div>
     </section>
 
@@ -219,10 +226,17 @@
 
   <footer class="section">
     <div class="wrap">
-      <div>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></div>
+      <div class="footer-legal"><small>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></small></div>
       <div class="socials">
-        <a class="social-btn" href="#" aria-label="Instagram"><span>IG</span></a>
-        <a class="social-btn" href="#" aria-label="Facebook"><span>FB</span></a>
+        <a class="social-btn" href="https://www.instagram.com/atpprepaphysique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/IG.png" alt="Instagram">
+        </a>
+        <a class="social-btn" href="https://www.facebook.com/profile.php?id=100089940827994" aria-label="Facebook" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/FB.png" alt="Facebook">
+        </a>
+        <a class="social-btn yt" href="https://www.youtube.com/channel/UC9avJ7nTcTF31O6JDmZHenQ" aria-label="YouTube" target="_blank" rel="noopener">
+          <img class="social-icon" src="atp/YT.webp" alt="YouTube">
+        </a>
       </div>
     </div>
   </footer>
