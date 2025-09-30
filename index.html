@@ -181,9 +181,14 @@
     /* Listes et centrage du bloc texte */
     .dash-list{list-style:disc;padding-left:1.25rem;margin:10px 0 14px}
     .dash-list li{margin:6px 0}
-    .try-body{max-width:780px;margin:0 auto}
+    .try-body{max-width:780px;margin:0 auto;text-align:center}
 
-    /* Boutons centrés génériques */
+    /* listes propres centrées (pour "Pourquoi c’est ATyPique ?") */
+.clean-list{list-style:none;padding:0;margin:10px 0 16px;text-align:center}
+.clean-list li{margin:8px 0;line-height:1.7}
+.clean-list li::before{content:"— ";color:var(--brand);font-weight:700}
+
+/* Boutons centrés génériques */
     .center-btn{display:flex;justify-content:center;margin-top:24px}
 
     /* ÉQUIPE */
@@ -283,12 +288,11 @@
       <p><em>Un de nos adhérents nous a partagé un jour :</em></p>
 
 <h3>Pourquoi c’est ATyPique ?</h3>
-<ul class="dash-list">
+<ul class="clean-list">
   <li>Parce que ce n’est pas de la musculation.</li>
   <li>Parce que ce n’est pas du CrossFit®.</li>
   <li>Parce que c’est de l’entraînement fonctionnel.</li>
 </ul>
-
 <p><strong>Notre devise :</strong> « Le moteur, avant la carrosserie ! »</p>
 
 <h3>Qu’est-ce que cela signifie ?</h3>
