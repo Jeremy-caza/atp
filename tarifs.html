@@ -115,7 +115,10 @@
     ul.features li{position:relative;padding-left:26px;margin:6px 0;font-size:16px;line-height:1.6}
     ul.features li::before{content:"✔";position:absolute;left:0;top:0;color:var(--brand);font-weight:900}
     /* Espace vertical entre les deux blocs de tarifs */
-    {margin-top: 40px;}
+#tarifs .pricing-grid + .pricing-grid{ margin-top:40px; }
+@media (max-width:899px){
+  #tarifs .pricing-grid + .pricing-grid{ margin-top:32px; }
+}
 
     /* Médias */
     .wide-media{aspect-ratio:2292/458;border-radius:14px;overflow:hidden;background:#f1f5f9}
