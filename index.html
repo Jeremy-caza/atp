@@ -170,23 +170,24 @@
     .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.8}
 
     /* ESSAI */
-    .try-wrap{display:grid;gap:18px;align-items:start}
+    .try-wrap{display:block}
     .try-text{order:1}
     .try-embed{order:2}
-    #try{padding-top:10px;padding-bottom:16px}
+    #try{padding-top:8px;padding-bottom:8px}
     #try h2{margin-bottom:8px}
+#try h3{margin:14px 0 8px;text-align:center}
     #try p{line-height:1.8;font-size:18px}
     .calendly-inline-widget{width:100%;min-height:620px;border-radius:12px;overflow:hidden}
 
     /* Listes et centrage du bloc texte */
     .dash-list{list-style:disc;padding-left:1.25rem;margin:10px 0 14px}
     .dash-list li{margin:6px 0}
-    .try-body{max-width:780px;margin:0 auto;text-align:center}
+    .try-body{max-width:900px;margin:0 auto;text-align:justify}
 
     /* listes propres centrées (pour "Pourquoi c’est ATyPique ?") */
-.clean-list{list-style:none;padding:0;margin:10px 0 16px;text-align:center}
+.clean-list{list-style:none;padding:0;margin:10px auto 16px;max-width:900px;text-align:left}
 .clean-list li{margin:8px 0;line-height:1.7}
-.clean-list li::before{content:"— ";color:var(--brand);font-weight:700}
+.clean-list li::before{content:"—  A0";color:var(--brand);font-weight:700}
 
 /* Boutons centrés génériques */
     .center-btn{display:flex;justify-content:center;margin-top:24px}
@@ -230,8 +231,8 @@
     /* Desktop layout tweaks */
     @media (min-width:900px){
       .section{padding:28px 20px}
-      .try-wrap{grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}
-      .try-text{display:grid;grid-template-rows:auto 1fr;align-self:stretch}
+      .try-wrap{display:block}
+      .try-text{display:block}
       .try-text h2{margin:0 0 8px;align-self:start}
       .try-body{display:flex;flex-direction:column;justify-content:center;gap:12px}
       #try{padding-top:14px;padding-bottom:20px}
