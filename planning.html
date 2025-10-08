@@ -26,25 +26,16 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap"></noscript>
 
-<!-- Favicon / PWA -->
-<link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#1D4935">
+  <!-- Favicon / PWA -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1D4935">
   
   <style>
-    :root{
-      --brand:#1D4935; /* même vert que l'index */
-      --bg:#ffffff; --text:#111; --accent:var(--brand);
-      --font-display:'Poppins','Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
-      --font-text:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
-      /* header sizing (identiques index) */
-      --header-h: 74px;   /* mobile */
-      --logo-h:   60px;   /* mobile */
-    }
-
+    :root{ --brand:#1D4935; --bg:#ffffff; --text:#111; --accent:var(--brand); --font-display:'Poppins','Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif; --font-text:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif; --header-h:74px; --logo-h:60px }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-text);overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 
@@ -75,15 +66,8 @@
     body.menu-open .backdrop{opacity:1;pointer-events:auto}
     body.menu-open{overflow:hidden}
 
-    @media (min-width:900px){
-      :root{ --header-h: 104px; --logo-h: 84px; }
-      .desktop-nav{display:flex}
-      .burger{display:none}
-      .mobile-menu,.backdrop{display:none}
-    }
-    @media (min-width:1400px){
-      :root{ --header-h: 112px; --logo-h: 92px; }
-    }
+    @media (min-width:900px){ :root{ --header-h:104px; --logo-h:84px } .desktop-nav{display:flex} .burger{display:none} .mobile-menu,.backdrop{display:none} }
+    @media (min-width:1400px){ :root{ --header-h:112px; --logo-h:92px } }
 
     /* ===== Titres & texte (identiques index) ===== */
     h1,h2,h3{font-family:var(--font-display)}
@@ -99,7 +83,7 @@
     .section h2{margin:0 0 10px;font-size:32px;color:var(--brand)}
     .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.8}
 
-    /* ===== Hero (pleine hauteur comme l'index) ===== */
+    /* ===== Hero ===== */
     main{display:block;padding-top:var(--header-h)}
     .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:
       linear-gradient(transparent 55%, rgba(0,0,0,.35) 100%),
@@ -118,9 +102,18 @@
     .card .body{padding:14px}
     .card h3{margin:0 0 6px;font-size:20px;color:var(--brand)}
     .card p{margin:0;font-size:16px;line-height:1.6;text-align:justify}
-
     @media (min-width:720px){.cards{grid-template-columns:repeat(3,1fr)}}
     @media (min-width:1040px){.cards{grid-template-columns:repeat(5,1fr)}}
+
+    /* ===== Carte horizontale fine (NOUVEAU) ===== */
+    .wide-card{margin-top:16px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;text-align:left}
+    .wide-card-inner{display:grid;grid-template-columns: 1fr 1.6fr;gap:0;align-items:stretch}
+    .wide-card .media{background:#f2f4f7;min-height:180px}
+    .wide-card .media img{display:block;width:100%;height:100%;object-fit:cover}
+    .wide-card .body{padding:16px 18px}
+    .wide-card h3{margin:0 0 8px;font-size:22px;color:var(--brand)}
+    .wide-card p{margin:0;font-size:16px;line-height:1.6;text-align:justify}
+    @media (max-width:860px){.wide-card-inner{grid-template-columns:1fr}.wide-card .media{min-height:160px}}
 
     /* ===== Planning image (remplace l'ancien schéma codé) ===== */
     .plan-wrap{width:min(1200px,96%);margin:0 auto}
@@ -144,12 +137,7 @@
     .social-btn:hover{filter:brightness(1.08)}
     .social-btn img.social-icon{width:22px;height:22px;display:block;object-fit:contain;image-rendering:auto}
     .social-btn.yt img.social-icon{transform:scale(1.28)}
-
-    @media (max-width:680px){
-      footer .wrap{justify-content:center;text-align:center}
-      .socials{width:100%;justify-content:center}
-      .footer-legal{width:100%}
-    }
+    @media (max-width:680px){footer .wrap{justify-content:center;text-align:center}.socials{width:100%;justify-content:center}.footer-legal{width:100%}}
   </style>
 </head>
 <body>
@@ -228,6 +216,21 @@
             <div class="body"><h3>Gainage</h3><p>Un corps en bonne santé, c’est un tronc solide et gainé, avec une posture efficace qui prévient les blessures et améliore toutes les activités physiques, du quotidien comme sportives.</p></div>
           </article>
         </div>
+
+        <!-- ===== CARTE HORIZONTALE FINE (NOUVEAU BLOC) ===== -->
+        <article class="wide-card" aria-label="Bloc info complémentaire">
+          <div class="wide-card-inner">
+            <div class="media">
+              <img src="atp/cours-libre-acces.jpg" alt="Libre accès à la salle ATP">
+            </div>
+            <div class="body">
+              <h3>Accès libre — 8h45 → 20h30</h3>
+              <p>Entre deux créneaux ou quand votre agenda ne colle pas, vous pouvez vous entraîner en autonomie dans l’espace <strong>libre accès</strong>. Matériel complet, ambiance calme, et conseils rapides de l’équipe si besoin. Idéal pour suivre votre propre programmation, rattraper une séance ou travailler une faiblesse.</p>
+            </div>
+          </div>
+        </article>
+        <!-- ===== fin bloc ===== -->
+
       </div>
     </section>
 
