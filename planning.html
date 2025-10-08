@@ -106,14 +106,17 @@
     @media (min-width:1040px){.cards{grid-template-columns:repeat(5,1fr)}}
 
     /* ===== Carte horizontale fine (NOUVEAU) ===== */
-    .wide-card{margin-top:12px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;text-align:left}
-    .wide-card-inner{display:grid;grid-template-columns: 1fr 1.6fr;gap:0;align-items:stretch}
+    .wide-card{margin-top:16px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;text-align:left}
+    .wide-card-inner{display:grid;grid-template-columns: 1fr 1.6fr;gap:18px;align-items:center}
     .wide-card .media{background:#f2f4f7;min-height:120px}
     .wide-card .media img{display:block;width:100%;height:100%;object-fit:cover}
-    .wide-card .body{padding:12px 14px}
+    .wide-card .body{padding:16px 18px}
     .wide-card h3{margin:0 0 6px;font-size:20px;color:var(--brand)}
     .wide-card p{margin:0;font-size:15px;line-height:1.55;text-align:justify}
-    @media (max-width:860px){.wide-card-inner{grid-template-columns:1fr}.wide-card .media{min-height:110px}}
+    @media (max-width:860px){.wide-card-inner{grid-template-columns:1fr;gap:12px;align-items:start}.wide-card .media{min-height:140px}.wide-card .body{padding:14px 16px}}
+
+    /* espace bouton sous la wide-card */
+    .wide-card + .center-btn{margin-top:28px}
 
     /* ===== Planning image (remplace l'ancien schéma codé) ===== */
     .plan-wrap{width:min(1200px,96%);margin:0 auto}
