@@ -106,14 +106,14 @@
     @media (min-width:1040px){.cards{grid-template-columns:repeat(5,1fr)}}
 
     /* ===== Carte horizontale fine (NOUVEAU) ===== */
-    .wide-card{margin-top:16px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;text-align:left}
+    .wide-card{margin-top:12px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;text-align:left}
     .wide-card-inner{display:grid;grid-template-columns: 1fr 1.6fr;gap:0;align-items:stretch}
-    .wide-card .media{background:#f2f4f7;min-height:180px}
+    .wide-card .media{background:#f2f4f7;min-height:120px}
     .wide-card .media img{display:block;width:100%;height:100%;object-fit:cover}
-    .wide-card .body{padding:16px 18px}
-    .wide-card h3{margin:0 0 8px;font-size:22px;color:var(--brand)}
-    .wide-card p{margin:0;font-size:16px;line-height:1.6;text-align:justify}
-    @media (max-width:860px){.wide-card-inner{grid-template-columns:1fr}.wide-card .media{min-height:160px}}
+    .wide-card .body{padding:12px 14px}
+    .wide-card h3{margin:0 0 6px;font-size:20px;color:var(--brand)}
+    .wide-card p{margin:0;font-size:15px;line-height:1.55;text-align:justify}
+    @media (max-width:860px){.wide-card-inner{grid-template-columns:1fr}.wide-card .media{min-height:110px}}
 
     /* ===== Planning image (remplace l'ancien schéma codé) ===== */
     .plan-wrap{width:min(1200px,96%);margin:0 auto}
@@ -197,15 +197,15 @@
         <div class="cards">
           <article class="card">
             <div class="media"><img src="atp/cours-atpclass.jpg" alt="ATP Class"></div>
-            <div class="body"><h3>ATP Class</h3><p>Préparation physique générale : un renforcement fonctionnel complet mêlant force, cardio et mobilité. Adapté à tous les niveaux à chaque séance.</p></div>
+            <div class="body"><h3>ATP Class</h3><p>Condition physique générale : un renforcement fonctionnel complet mêlant renforcement, cardio et mobilité. Adapté à tous les niveaux à chaque séance.</p></div>
           </article>
           <article class="card">
             <div class="media"><img src="atp/cours-running.jpg" alt="Team Running"></div>
-            <div class="body"><h3>Team Running</h3><p>Sorties et séances structurées pour progresser en endurance, vitesse et technique de course. Développer ses capacités cardiovasculaires.</p></div>
+            <div class="body"><h3>Team Running</h3><p>Sorties et séances structurées pour progresser en course à pied, et trail. Développer ses capacités cardiovasculaires.</p></div>
           </article>
           <article class="card">
             <div class="media"><img src="atp/cours-cardio.jpg" alt="ATP Cardio"></div>
-            <div class="body"><h3>Team Cardio</h3><p>Team Cardio : cours orientés cardiovasculaire et HIIT, pour renforcer le cœur et progresser en endurance. L’intensité est soutenue mais toujours adaptable à chacun.</p></div>
+            <div class="body"><h3>Team Cardio</h3><p>Team Cardio : cours orientés cardiovasculaire et HIIT, pour renforcer le cœur et progresser en endurance.</p></div>
           </article>
           <article class="card">
             <div class="media"><img src="atp/cours-barbell.jpg" alt="ATP Barbell Club"></div>
@@ -213,7 +213,7 @@
           </article>
           <article class="card">
             <div class="media"><img src="atp/cours-gainage.jpg" alt="ATP Gainage"></div>
-            <div class="body"><h3>Gainage</h3><p>Un corps en bonne santé, c’est un tronc solide et gainé, avec une posture efficace qui prévient les blessures et améliore toutes les activités physiques, du quotidien comme sportives.</p></div>
+            <div class="body"><h3>Gainage</h3><p>Un corps en bonne santé, c’est un tronc solide et gainé, qui prévient les blessures et améliore toutes les activités physiques, du quotidien comme sportives.</p></div>
           </article>
         </div>
 
@@ -224,12 +224,15 @@
               <img src="atp/cours-libre-acces.jpg" alt="Libre accès à la salle ATP">
             </div>
             <div class="body">
-              <h3>Accès libre — 8h45 → 20h30</h3>
-              <p>Entre deux créneaux ou quand votre agenda ne colle pas, vous pouvez vous entraîner en autonomie dans l’espace <strong>libre accès</strong>. Matériel complet, ambiance calme, et conseils rapides de l’équipe si besoin. Idéal pour suivre votre propre programmation, rattraper une séance ou travailler une faiblesse.</p>
+              <h3>Préparation Physique Multi-sport — Suivi Personnalisé - Accès libre</h3>
+              <p>Parmi nos cours, ATP propose aussi de la préparation physique multisport pour celles et ceux qui veulent se concentrer sur leur performance, quelle que soit leur discipline sportive (planification ciblée, cycles de travail, progression mesurable...) Si votre objectif est ailleurs (santé, forme, mobilité, reprise, perte de poids...) optez pour un suivi personnalisé : programme sur mesure et accompagnement. Enfin, l’accès libre vous permet de vous entraîner en toute autonomie dans notre structure, de 8h45 à 20h30, tous les jours. Les programmes (préparation multisport et suivi personnalisé) se déroulent uniquement sur rendez-vous ; vous pouvez réserver ci-dessous.</p>
             </div>
           </div>
         </article>
         <!-- ===== fin bloc ===== -->
+
+        <!-- CTA sous la carte horizontale -->
+        <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Programme personnalisé</a></p>
 
       </div>
     </section>
