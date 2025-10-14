@@ -274,15 +274,10 @@ html{scroll-behavior:smooth}
 
 /* 👇 NOUVEAU : 3 pictos côte à côte dès le mobile */
 @media (max-width:899px){
-  /* 3 pictos sur une seule ligne, au plus grand possible */
-  .exercise-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100vw;margin-left:50%;transform:translateX(-50%)}
+  /* 3 pictos sur une seule ligne, même taille */
+  .exercise-row{grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; width:100vw; margin-left:50%; transform:translateX(-50%)}
   .exercise-row .ph{border-radius:12px}
-  /* images : pas de rognage haut/bas, on réduit surtout les blancs latéraux */
-  .exercise-row img{object-fit:contain;--picto-zoom:1;clip-path:inset(0 6% 0 6%)}
-}
-  /* 3e picto sur la ligne du dessous, centré, un peu plus petit */
-  .exercise-row .ph:nth-child(3){grid-column:1 / -1;justify-self:center;width:min(380px,64%)}
-  .exercise-row img{object-fit:contain;--picto-zoom:1}
+  .exercise-row img{object-fit:contain; clip-path: inset(0 6% 0 6%)}
 }
 
 /* Desktop : on conserve 3 colonnes */
