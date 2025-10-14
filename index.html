@@ -268,13 +268,16 @@ html{scroll-behavior:smooth}
 .exercise-row .ph{aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#f2f4f7;position:relative}
 .exercise-row img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(var(--picto-zoom,1.25));}
 /* zoom plus fort sur mobile pour "recadrer" les marges internes des PNG */
-@media (max-width:899px){.exercise-row img{--picto-zoom:1.5}}
+@media (max-width:899px){.exercise-row img{--picto-zoom:1; object-fit:contain}}
 @media (min-width:900px){.exercise-row img{--picto-zoom:1.28}}
 
 /* 👇 NOUVEAU : 3 pictos côte à côte dès le mobile */
 @media (max-width:899px){
-  .exercise-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100vw;margin-left:50%;transform:translateX(-50%)}
+  .exercise-row{grid-template-columns:repeat(2,1fr);gap:14px;width:100%;margin:16px auto 0;transform:none}
   .exercise-row .ph{border-radius:12px}
+  /* 3e picto sur la ligne du dessous, centré, un peu plus petit */
+  .exercise-row .ph:nth-child(3){grid-column:1 / -1;justify-self:center;width:min(420px,72%)}
+  .exercise-row img{object-fit:contain;--picto-zoom:1}
 }
 
 /* Desktop : on conserve 3 colonnes */
@@ -379,7 +382,7 @@ html{scroll-behavior:smooth}
     <section class="section" id="video">
       <div class="wrap">
         <h2>NOUS LAISSONS LES ATPISTES EN PARLER</h2>
-        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/Fwtth7kGiWw?si=JJ1BQfC7mmTN49lh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/Fwtth7kGiWw?si=-GjSKM8nnXIZwhci" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         <p class="center-btn"><a class="cta" href="avis.html">Voir les Avis d'ATP</a></p>
       </div>
     </section>
