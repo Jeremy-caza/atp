@@ -7,20 +7,20 @@
   <!-- ===== SEO aligné à l'index ===== -->
   <title>Planning — Cours & créneaux | ATP Tarbes</title>
   <meta name="description" content="Planning des cours ATP Tarbes : salle de sport à Tarbes, préparation physique, HIIT/HEAT, barbell, running, accès libre. Choisis ton créneau, essai offert." />
-  <link rel="canonical" href="https://atptarbes.fr/planning.html" /> <!-- TODO: remplacer par le domaine réel -->
+  <link rel="canonical" href="https://atptarbes.fr/planning.html" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#1D4935" />
 
-  <!-- Open Graph / Twitter (mêmes conventions que l'index) -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ATP Tarbes" />
   <meta property="og:title" content="Planning — ATP Tarbes" />
-  <meta property="og:description" content="Cours et créneaux à Tarbes : oaching intelligent, préparation physique, accès libre, HIIT, cardio, haltérophilie, force, accès libre, fitness, santé, running, gainage. Essai offert." />
-  <meta property="og:url" content="https://atptarbes.fr/planning.html" /> <!-- TODO -->
-  <meta property="og:image" content="https://atptarbes.fr/atp/og-cover.jpg" /> <!-- TODO -->
+  <meta property="og:description" content="Cours et créneaux à Tarbes : coaching intelligent, préparation physique, accès libre, HIIT, cardio, haltérophilie, force, fitness, santé, running, gainage. Essai offert." />
+  <meta property="og:url" content="https://atptarbes.fr/planning.html" />
+  <meta property="og:image" content="https://atptarbes.fr/atp/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- ===== Google Fonts (identiques à l’index) ===== -->
+  <!-- ===== Google Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Manrope:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -54,8 +54,8 @@
     .burger .bar::before{transform:translate(-50%,-50%) translateY(-7px)}
     .burger .bar::after{transform:translate(-50%,-50%) translateY(7px)}
     body.menu-open .burger .bar{background:transparent}
-    body.menu-open .burger .bar::before{transform:translate(-50%,-50%) rotate(45deg)}
-    body.menu-open .burger .bar::after{transform:translate(-50%,-50%) rotate(-45deg)}
+    body.menu-open .burger .bar::before{transform:rotate(45deg) translate(-50%,-50%)}
+    body.menu-open .burger .bar::after{transform:rotate(-45deg) translate(-50%,-50%)}
     .burger:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
     .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:84%;max-width:320px;background:var(--brand);box-shadow:-16px 0 40px rgba(0,0,0,.18);padding:20px;transform:translateX(100%);transition:transform .28s ease;z-index:60;display:flex;flex-direction:column;gap:8px}
@@ -69,7 +69,7 @@
     @media (min-width:900px){ :root{ --header-h:104px; --logo-h:84px } .desktop-nav{display:flex} .burger{display:none} .mobile-menu,.backdrop{display:none} }
     @media (min-width:1400px){ :root{ --header-h:112px; --logo-h:92px } }
 
-    /* ===== Titres & texte (identiques index) ===== */
+    /* ===== Titres & texte ===== */
     h1,h2,h3{font-family:var(--font-display)}
     h1{font-weight:900}
     h2{font-weight:900}
@@ -77,7 +77,7 @@
     strong{font-weight:700;text-decoration:underline;text-underline-offset:2px}
     em{font-style:italic}
 
-    /* Sections > même réglage que l'index */
+    /* Sections */
     .section{padding:20px 16px;text-align:center}
     .wrap{width:min(1200px,96%);margin:0 auto}
     .section h2{margin:0 0 10px;font-size:32px;color:var(--brand)}
@@ -105,8 +105,8 @@
     @media (min-width:720px){.cards{grid-template-columns:repeat(3,1fr)}}
     @media (min-width:1040px){.cards{grid-template-columns:repeat(5,1fr)}}
 
-    /* ===== Carte horizontale fine (NOUVEAU) ===== */
-    .wide-card{margin-top:16px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;text-align:left}
+    /* ===== Carte horizontale fine (bloc Prépa Physique / Accès libre) ===== */
+    .wide-card{margin-top:0;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;text-align:left}
     .wide-card-inner{display:grid;grid-template-columns: 1fr 1.6fr;gap:18px;align-items:center}
     .wide-card .media{background:#f2f4f7;min-height:120px}
     .wide-card .media img{display:block;width:100%;height:100%;object-fit:cover}
@@ -118,7 +118,7 @@
     /* espace bouton sous la wide-card */
     .wide-card + .center-btn{margin-top:28px}
 
-    /* ===== Planning image (remplace l'ancien schéma codé) ===== */
+    /* ===== Planning image ===== */
     .plan-wrap{width:min(1200px,96%);margin:0 auto}
     .plan-img{width:100%;display:block;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.10);background:#f2f4f7}
     .plan-caption{margin-top:8px;font-size:14px;opacity:.8}
@@ -131,7 +131,7 @@
     .sep-wave{height:70px}
     .sep-wave svg{display:block;width:100%;height:70px}
 
-    /* Footer (copie index) */
+    /* Footer */
     footer.section{background:#f8fafc}
     footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .footer-legal{font-size:13px;opacity:.8}
@@ -193,7 +193,7 @@
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
 
-    <!-- 5 TYPES DE COURS -->
+    <!-- SECTION 1 : 5 TYPES DE COURS -->
     <section class="section" id="cours">
       <div class="wrap">
         <h2>Les 5 formats de cours</h2>
@@ -219,24 +219,29 @@
             <div class="body"><h3>Gainage</h3><p>Un corps en bonne santé, c’est un tronc solide et gainé, qui prévient les blessures et améliore toutes les activités physiques, du quotidien comme sportives.</p></div>
           </article>
         </div>
+      </div>
+    </section>
 
-        <!-- ===== CARTE HORIZONTALE FINE (NOUVEAU BLOC) ===== -->
-        <article class="wide-card" aria-label="Bloc info complémentaire">
+    <!-- SÉPARATEUR entre les 5 cartes et le bloc Prépa Physique -->
+    <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
+
+    <!-- SECTION 2 : BLOC PRÉPARATION PHYSIQUE / ACCÈS LIBRE -->
+    <section class="section" id="suivi">
+      <div class="wrap">
+        <article class="wide-card" aria-label="Préparation Physique — Suivi Personnalisé — Accès Libre">
           <div class="wide-card-inner">
             <div class="media">
               <img src="atp/cours-libre-acces.jpg" alt="Libre accès à la salle ATP">
             </div>
             <div class="body">
-              <h3>Préparation Physique — Suivi Personnalisé - Accès Libre</h3>
-              <p>Parmi nos cours, ATP propose aussi de la préparation physique multisport pour celles et ceux qui veulent se concentrer sur leur performance, quelle que soit leur discipline sportive (planification ciblée, cycles de travail, progression mesurable...) Si votre objectif est ailleurs (santé, forme, mobilité, reprise, perte de poids...) optez pour un suivi personnalisé : programme sur mesure et accompagnement. Enfin, l’accès libre vous permet de vous entraîner en toute autonomie dans notre structure, de 8h45 à 20h30, tous les jours. Les programmes (préparation multisport et suivi personnalisé) se déroulent uniquement sur rendez-vous ; vous pouvez réserver ci-dessous.</p>
+              <h3>Préparation Physique — Suivi Personnalisé — Accès Libre</h3>
+              <p>Parmi nos cours, ATP propose aussi de la préparation physique multisport pour celles et ceux qui veulent se concentrer sur leur performance, quelle que soit leur discipline sportive (planification ciblée, cycles de travail, progression mesurable…). Si votre objectif est ailleurs (santé, forme, mobilité, reprise, perte de poids…), optez pour un suivi personnalisé : programme sur mesure et accompagnement. Enfin, l’accès libre vous permet de vous entraîner en toute autonomie dans notre structure, de 8h45 à 20h30, tous les jours. Les programmations (préparation multisport et suivi personnalisé) se déroulent uniquement sur rendez‑vous ; vous pouvez réserver ci‑dessous.</p>
             </div>
           </div>
         </article>
-        <!-- ===== fin bloc ===== -->
-
-        <!-- CTA sous la carte horizontale -->
         <p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie">Programme personnalisé</a></p>
-
       </div>
     </section>
 
@@ -244,7 +249,7 @@
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
 
-    <!-- PLANNING IMAGE (remplace l'ancien schéma codé) -->
+    <!-- PLANNING IMAGE -->
     <section class="section" id="planning-img">
       <div class="plan-wrap">
         <h2>Le planning en un coup d’œil</h2>
