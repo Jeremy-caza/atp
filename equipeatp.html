@@ -152,6 +152,19 @@
       .socials{width:100%;justify-content:center}
       .footer-legal{width:100%}
     }
+    
+    /* Logo en filigrane derrière les 2 textes des coachs (section équipe) */
+#team .team-text{position:relative}
+#team .team-text::before{
+  content:"";
+  position:absolute; inset:-10px -10px -10px -10px;
+  background:url("atp/logo_atp_texte.png") center/contain no-repeat;
+  opacity:.35;
+  pointer-events:none;
+  z-index:0;
+}
+#team .team-text > *{position:relative;z-index:1}
+
   </style>
 </head>
 <body>
@@ -232,7 +245,7 @@ Sportif curieux plus jeune, il s’oriente vers la musculation avant de se passi
 
   <footer class="section">
     <div class="wrap">
-      <div class="footer-legal"><small>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></small></div>
+      <div class="footer-legal"><small>© 2025 ATP — 1 rue Youri Gagarine — Tarbes <a href="mentions.html">Mentions légales</a></small></div>
       <div class="socials">
         <a class="social-btn" href="https://www.instagram.com/atpprepaphysique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank" rel="noopener">
           <img class="social-icon" src="atp/IG.png" alt="Instagram">
