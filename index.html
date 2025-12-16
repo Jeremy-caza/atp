@@ -351,7 +351,7 @@ html{scroll-behavior:smooth}
   </div>
 </div>
 
-<p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie?month=2025-09">Découvrir</a></p>
+<p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie?month=2025-09">3 séances offertes</a></p>
       
     </section>
 
@@ -391,10 +391,24 @@ html{scroll-behavior:smooth}
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
   </main>
+            
+    <section class="section" id="booking">
+      <div class="wrap">
+        <h2>Réserver votre séance</h2>
+
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/atp-seancedessaie/seancedessaie"
+             aria-label="Calendrier de réservation ATP Tarbes"></div>
+      </div>
+    </section>
+
+              <div class="sep-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
+    </div>
 
   <footer class="section" style="background:#f8fafc">
     <div class="wrap">
-      <div class="footer-legal"><small>© 2025 Ton Nom — Adresse — <a href="mentions.html">Mentions légales</a></small></div>
+      <div class="footer-legal"><small>© 2025 ATP — 1 rue Youri Gagarine — Tarbes <a href="mentions.html">Mentions légales</a></small></div>
       <div class="socials">
         <a class="social-btn" href="https://www.instagram.com/atpprepaphysique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank" rel="noopener">
           <img class="social-icon" src="atp/IG.png" alt="Instagram">
@@ -421,5 +435,6 @@ html{scroll-behavior:smooth}
     menu.addEventListener('click',e=>{if(e.target.tagName==='A') closeMenu()});
     document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu()});
   </script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
