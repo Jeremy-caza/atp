@@ -183,7 +183,9 @@
     #try h2{margin-bottom:8px}
 #try h3{margin:14px 0 8px;text-align:center}
     #try p{line-height:1.8;font-size:18px}
-    .calendly-inline-widget{width:100%;min-height:620px;border-radius:12px;overflow:hidden}
+    .calendly-inline-widget{width:100%;min-width:320px;height:780px;border-radius:12px;overflow:hidden}
+@media (max-width:680px){.calendly-inline-widget{height:720px}}
+@media (min-width:900px){.calendly-inline-widget{height:840px}}
 
     /* Listes et centrage du bloc texte */
     .dash-list{list-style:disc;padding-left:1.25rem;margin:10px 0 14px}
@@ -390,7 +392,6 @@ html{scroll-behavior:smooth}
     <div class="sep-wave" aria-hidden="true">
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
-  </main>
             
     <section class="section" id="booking">
       <div class="wrap">
@@ -405,6 +406,7 @@ html{scroll-behavior:smooth}
               <div class="sep-wave" aria-hidden="true">
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="var(--brand)" d="M0,90 C240,0 1200,0 1440,90 L1440,90 L0,90 Z"/></svg>
     </div>
+   </main>
 
   <footer class="section" style="background:#f8fafc">
     <div class="wrap">
