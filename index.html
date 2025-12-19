@@ -38,6 +38,7 @@
       /* header sizing */
       --header-h: 74px;           /* mobile par défaut */
       --logo-h:   60px;           /* mobile par défaut */
+      --cta-red:#E11D2E;
     }
 
     *{box-sizing:border-box}
@@ -150,7 +151,7 @@
   transform:translateX(-50%); display:flex; flex-direction:column; align-items:center;
   gap:10px; width:min(1120px,96%)
 }
-    
+
     /* Nouveau sizing de titre : */
     .hero h1{font-size:clamp(34px, 6.2vw, 90px); line-height:.95; margin:0; color:#fff; max-width:100%;
              word-break:normal; overflow-wrap:normal; hyphens:auto; text-wrap:balance; letter-spacing:.01em; text-transform:uppercase}
@@ -176,16 +177,16 @@
     .section p{max-width:min(1100px,92%);margin:0 auto 12px;text-align:justify;color:#111;font-size:18px;line-height:1.8}
 
     /* ESSAI */
-    .try-wrap{display:ge block}
+    .try-wrap{display:block}
     .try-text{order:1}
     .try-embed{order:2}
     #try{padding-top:8px;padding-bottom:8px}
     #try h2{margin-bottom:8px}
-#try h3{margin:14px 0 8px;text-align:center}
+    #try h3{margin:14px 0 8px;text-align:center}
     #try p{line-height:1.8;font-size:18px}
     .calendly-inline-widget{width:100%;min-width:320px;height:780px;border-radius:12px;overflow:hidden}
-@media (max-width:680px){.calendly-inline-widget{height:720px}}
-@media (min-width:900px){.calendly-inline-widget{height:840px}}
+    @media (max-width:680px){.calendly-inline-widget{height:720px}}
+    @media (min-width:900px){.calendly-inline-widget{height:840px}}
 
     /* Listes et centrage du bloc texte */
     .dash-list{list-style:disc;padding-left:1.25rem;margin:10px 0 14px}
@@ -193,24 +194,24 @@
     .try-body{max-width:min(1150px,96%);margin:0 auto;text-align:justify}
 
     /* listes propres centrées (pour "Pourquoi c’est ATyPique ?") */
-.clean-list{list-style:none;padding:0;margin:10px auto 16px;max-width:900px;text-align:left}
-.clean-list li{margin:8px 0;line-height:1.7}
-.clean-list li::before{content:"— ";color:var(--brand);font-weight:700}
+    .clean-list{list-style:none;padding:0;margin:10px auto 16px;max-width:900px;text-align:left}
+    .clean-list li{margin:8px 0;line-height:1.7}
+    .clean-list li::before{content:"— ";color:var(--brand);font-weight:700}
 
-/* Boutons centrés génériques */
+    /* Boutons centrés génériques */
     .center-btn{display:flex;justify-content:center;margin-top:24px}
 
     /* ÉQUIPE */
     #team{padding-top:36px;padding-bottom:40px}
     #team .center-btn{display:flex;justify-content:center;margin-top:28px}
 
-/* --- Team grid (texte + photo) --- */
-.team-grid{display:grid;gap:18px}
-.team-media{margin:0}
-.team-photo{width:100%;height:100%;object-fit:cover;border-radius:12px;aspect-ratio:4/3}
-@media (min-width:900px){
-  .team-grid{grid-template-columns:1.1fr .9fr;align-items:center}
-}
+    /* --- Team grid (texte + photo) --- */
+    .team-grid{display:grid;gap:18px}
+    .team-media{margin:0}
+    .team-photo{width:100%;height:100%;object-fit:cover;border-radius:12px;aspect-ratio:4/3}
+    @media (min-width:900px){
+      .team-grid{grid-template-columns:1.1fr .9fr;align-items:center}
+    }
 
     /* VIDÉO */
     #video .center-btn{display:flex;justify-content:center;margin-top:24px}
@@ -219,18 +220,18 @@
 
     /* Footer */
     footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.footer-legal{font-size:13px;opacity:.8}
-@media (max-width:680px){
-  footer .wrap{justify-content:center;text-align:center}
-  .socials{width:100%;justify-content:center}
-  .footer-legal{width:100%}
-}
+    .footer-legal{font-size:13px;opacity:.8}
+    @media (max-width:680px){
+      footer .wrap{justify-content:center;text-align:center}
+      .socials{width:100%;justify-content:center}
+      .footer-legal{width:100%}
+    }
     .socials{display:flex;gap:10px}
     .social-btn{width:40px;height:40px;border-radius:50%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700}
     .social-btn:hover{filter:brightness(1.08)}
     .social-btn img.social-icon{width:22px;height:22px;display:block;object-fit:contain;image-rendering:auto}
-/* Normalisation visuelle de l'icône YouTube (source avec marges internes) */
-.social-btn.yt img.social-icon{transform:scale(1.28)}
+    /* Normalisation visuelle de l'icône YouTube (source avec marges internes) */
+    .social-btn.yt img.social-icon{transform:scale(1.28)}
 
     /* WAVES */
     .sep-wave{height:70px}
@@ -248,14 +249,15 @@
       #team{padding-top:56px;padding-bottom:56px}
       #team .center-btn{margin-top:36px}
     }
+
   /* === Scroll indicator (double chevrons) === */
 html{scroll-behavior:smooth}
 .scroll-indicator{position:absolute;left:50%;bottom:clamp(64px,7vh,120px);transform:translateX(-50%);color:#fff;text-decoration:none;z-index:3;opacity:.9;transition:opacity .2s ease}
 .scroll-indicator:hover{opacity:1}
 .scroll-indicator:active{opacity:.85}
-.scroll-indicator .chevrons{width:clamp(64px,11vw,160px);height:auto;display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.35));animation:floatDown 1.8s ease-in-out infinite}
+.scroll-indicator .chevrons{width:clamp(64px,11vw,160px);height:auto;display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.35));animation:floatDown 1.4s ease-in-out infinite}
 .scroll-indicator .chevrons path{fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
-@keyframes floatDown{0%{transform:translateY(0);opacity:.9}50%{transform:translateY(8px);opacity:1}100%{transform:translateY(0);opacity:.9}}
+@keyframes floatDown{0%{transform:translateY(0);opacity:.9}50%{transform:translateY(14px);opacity:1}100%{transform:translateY(0);opacity:.9}}
 @media (prefers-reduced-motion:reduce){.scroll-indicator .chevrons{animation:none}}
 .hero-bottom,.scroll-indicator{z-index:3}
 
@@ -265,25 +267,30 @@ html{scroll-behavior:smooth}
 #team p{line-height:1.75;font-size:clamp(15px,1.6vw,17px);color:#1b2a25}
 .try-body{max-width:min(1000px,96%);margin:0 auto;text-align:justify}
 
-/* Grille 3 images carrées sous le texte */
-.exercise-row{display:grid;gap:16px;margin-top:16px}
-.exercise-row .ph{aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#fff;position:relative}
-.exercise-row img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;clip-path:inset(0 8% 0 8%)}
-/* Mobile : on serre un peu plus les côtés pour réduire le blanc interne */
-@media (max-width:899px){.exercise-row img{clip-path:inset(0 6% 0 6%)}}
-/* Desktop : on garde un cadrage confortable */
-@media (min-width:900px){.exercise-row img{clip-path:inset(0 8% 0 8%)}}
+/* ===== CTA rouges (clignotant + pulse) ===== */
+.cta.cta-attn{background:var(--cta-red);border:2px solid rgba(255,255,255,.18);box-shadow:0 10px 22px rgba(0,0,0,.22)}
+.cta.cta-attn:hover{filter:brightness(1.03)}
+.cta-attn{animation:ctaPulse 1.8s ease-in-out infinite, ctaBlink 3.2s ease-in-out infinite}
+@keyframes ctaPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes ctaBlink{0%,100%{box-shadow:0 10px 22px rgba(0,0,0,.22),0 0 0 rgba(225,29,46,0)}50%{box-shadow:0 10px 22px rgba(0,0,0,.22),0 0 18px rgba(225,29,46,.75)}}
+@media (prefers-reduced-motion:reduce){.cta-attn{animation:none}}
 
-/* 👇 NOUVEAU : 3 pictos côte à côte dès le mobile */
-@media (max-width:899px){
-  /* 3 pictos sur une seule ligne, même taille */
-  .exercise-row{grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; width:100vw; margin-left:50%; transform:translateX(-50%)}
-  .exercise-row .ph{border-radius:12px}
-  .exercise-row img{object-fit:contain; clip-path: inset(0 6% 0 6%)}
-}
+/* Hero CTA (position + respiration) */
+.hero-cta{margin-top:16px}
 
-/* Desktop : on conserve 3 colonnes */
-@media (min-width:900px){.exercise-row{grid-template-columns:repeat(3,1fr)}}
+/* Bloc CTA + flèche (section ATP C'EST ATYPIQUE) */
+.cta-attention{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:16px auto 10px}
+.wiggle-arrow{display:inline-flex;align-items:center;justify-content:center;animation:wiggleX 1.15s ease-in-out infinite}
+.wiggle-arrow svg{width:78px;height:30px;display:block}
+.wiggle-arrow path{stroke:var(--cta-red);stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@keyframes wiggleX{0%,100%{transform:translateX(0)}50%{transform:translateX(-12px)}}
+@media (prefers-reduced-motion:reduce){.wiggle-arrow{animation:none}}
+
+/* Double bouton centré (Équipe) */
+.cta-pair{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.cta-pair .cta{min-width:220px;text-align:center}
+@media (min-width:900px){.cta-pair{gap:28px}}
+
   </style>
 </head>
 <body>
@@ -322,6 +329,11 @@ html{scroll-behavior:smooth}
   <div class="hero-inner">
     <h1>ATHLETIC TRAINING PERFORMANCE</h1>
     <h2>ATP... Une salle ATYPIQUE</h2>
+
+    <!-- CTA Calendly (Hero) -->
+    <div class="cta-row hero-cta">
+      <a class="cta cta-attn" href="https://calendly.com/atp-seancedessaie/seancedessaie">Réserver mon essai (Calendly)</a>
+    </div>
   </div>
 
   <!-- Scroll cue: double chevrons blancs -->
@@ -338,23 +350,25 @@ html{scroll-behavior:smooth}
         <div class="try-text">
           <h2>ATP C'EST ATYPIQUE</h2>
           <div class="try-body">
-      <p>Un jour, on nous a posé la question : Pourquoi est-ce ATyPique ? Parce qu’ ATP privilégie l’entraînement fonctionnel, et non la musculation ou le CrossFit®. Notre devise : « Le moteur, avant la carrosserie ! »</p>
+            <p>Un jour, on nous a posé la question : Pourquoi est-ce ATyPique ? Parce qu’ ATP privilégie l’entraînement fonctionnel, et non la musculation ou le CrossFit®. Notre devise : « Le moteur, avant la carrosserie ! »</p>
 
-<h3>Qu’est-ce que cela signifie ?</h3>
-<p>Notre priorité, c’est le bon fonctionnement du corps (le moteur). Que l’on soit athlète professionnel, sportif amateur ou totalement débutant, les besoins sont les mêmes : un corps en bonne santé, capable d’accomplir sans difficulté tous vos objectifs sportifs. Les exercices fonctionnels renforcent ces capacités à travers des actions simples mais essentielles : s’asseoir, pousser, courir, ramasser un objet au sol…</p>
-</div>
+            <!-- CTA déplacé entre les 2 textes + flèche rouge animée -->
+            <div class="cta-attention" aria-label="Réserver vos 3 séances offertes">
+              <a class="cta cta-attn" href="https://calendly.com/atp-seancedessaie/seancedessaie?month=2025-09">3 séances offertes</a>
+              <span class="wiggle-arrow" aria-hidden="true">
+                <svg viewBox="0 0 120 40" role="img" aria-hidden="true">
+                  <path d="M110 20H26" />
+                  <path d="M26 20 L40 8" />
+                  <path d="M26 20 L40 32" />
+                </svg>
+              </span>
+            </div>
 
-<!-- 3 images d'exercices (remplace les sources par tes fichiers) -->
-<div class="wrap">
-  <div class="exercise-row" aria-label="Exemples d'exercices">
-    <figure class="ph"><img src="atp/exercice-1.png" alt="Exercice fonctionnel 1"></figure>
-    <figure class="ph"><img src="atp/exercice-2.png" alt="Exercice fonctionnel 2"></figure>
-    <figure class="ph"><img src="atp/exercice-3.png" alt="Exercice fonctionnel 3"></figure>
-  </div>
-</div>
-
-<p class="center-btn"><a class="cta" href="https://calendly.com/atp-seancedessaie/seancedessaie?month=2025-09">3 séances offertes</a></p>
-      
+            <h3>Qu’est-ce que cela signifie ?</h3>
+            <p>Notre priorité, c’est le bon fonctionnement du corps (le moteur). Que l’on soit athlète professionnel, sportif amateur ou totalement débutant, les besoins sont les mêmes : un corps en bonne santé, capable d’accomplir sans difficulté tous vos objectifs sportifs. Les exercices fonctionnels renforcent ces capacités à travers des actions simples mais essentielles : s’asseoir, pousser, courir, ramasser un objet au sol…</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <div class="sep-wave" aria-hidden="true">
@@ -373,7 +387,12 @@ html{scroll-behavior:smooth}
             <img class="team-photo" src="atp/equipe-atp.jpg" alt="Équipe ATP">
           </figure>
         </div>
-        <p class="center-btn"><a class="cta" href="equipeatp.html">Découvrir l’équipe</a></p>
+
+        <!-- 2 boutons symétriques et centrés -->
+        <div class="center-btn cta-pair">
+          <a class="cta" href="equipeatp.html">Découvrir l’équipe</a>
+          <a class="cta cta-attn" href="https://calendly.com/atp-seancedessaie/seancedessaie?month=2025-09">3 séances offertes</a>
+        </div>
       </div>
     </section>
 
